@@ -1460,17 +1460,18 @@
                 const safeHospital = escapeMarkdown(hospital.trim()) || '—';
                 const safeDetails = escapeMarkdown(details.trim()) || '—';
 
+               // ✅ FIXED: Using \n for newlines instead of %0A
                 const message =
-                    `📋 *NEW ENQUIRY — MYRTILLE INDUSTRIES*%0A` +
-                    `━━━━━━━━━━━━━━━━━━━━━%0A` +
-                    `👤 *Name*%0A${safeName}%0A%0A` +
-                    `📱 *Mobile*%0A${safeMobile}%0A%0A` +
-                    `🏥 *Hospital / Institute*%0A${safeHospital}%0A%0A` +
-                    `📝 *Requirement Details*%0A${safeDetails}%0A%0A` +
-                    `━━━━━━━━━━━━━━━━━━━━━%0A` +
-                    `🕒 ${dateStr}%0A` +
-                    `🏢 *Myrtille Industries*%0A` +
-                    `📞 9782099489 · myrtilleindia@gmail.com`;
+                    '📋 *NEW ENQUIRY — MYRTILLE INDUSTRIES*\n' +
+                    '━━━━━━━━━━━━━━━━━━━━━\n' +
+                    '👤 *Name*\n' + safeName + '\n\n' +
+                    '📱 *Mobile*\n' + safeMobile + '\n\n' +
+                    '🏥 *Hospital / Institute*\n' + safeHospital + '\n\n' +
+                    '📝 *Requirement Details*\n' + safeDetails + '\n\n' +
+                    '━━━━━━━━━━━━━━━━━━━━━\n' +
+                    '🕒 ' + dateStr + '\n' +
+                    '🏢 *Myrtille Industries*\n' +
+                    '📞 9782099489 · myrtilleindia@gmail.com';
 
                 const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
