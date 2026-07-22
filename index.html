@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
-    <title>RAD-XR · Securely Send Radiology Reports (PDF) to Patients via WhatsApp</title>
+    <title>Myrtille Industries · Medical Equipment Supplier</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
@@ -22,7 +22,7 @@
         body {
             font-family: "Inter", sans-serif;
             background: #0d111c;
-            background-image: radial-gradient(circle at 20% 30%, #172237 0%, #070b12 90%);
+            background-image: radial-gradient(circle at 20% 30%, #1a2a3a 0%, #070b12 90%);
             min-height: 100vh;
             padding: 1.5rem;
             display: flex;
@@ -42,6 +42,7 @@
             box-shadow: 0 40px 70px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.02);
         }
 
+        /* HEADER */
         .header {
             display: flex;
             flex-wrap: wrap;
@@ -77,12 +78,13 @@
             font-size: 0.5rem;
         }
 
+        /* PAGE TITLE */
         .page-title {
             text-align: center;
             margin: 0.2rem 0 1.8rem 0;
         }
         .page-title h1 {
-            font-size: 1.9rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: #eaf0fa;
             letter-spacing: -0.01em;
@@ -94,11 +96,16 @@
         }
         .page-title .sub {
             color: #6b8aaa;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 400;
             margin-top: 4px;
         }
+        .page-title .sub i {
+            color: #f472b6;
+            margin: 0 4px;
+        }
 
+        /* GLASS TILE WRAPPER */
         .preview-wrapper {
             max-width: 1100px;
             margin: 0 auto 2rem auto;
@@ -158,10 +165,11 @@
 
         .app-inner-grid {
             display: grid;
-            grid-template-columns: 220px 1fr;
+            grid-template-columns: 240px 1fr;
             gap: 1rem;
         }
 
+        /* LEFT PANEL — COMPANY PROFILE */
         .app-left-panel {
             background: rgba(255, 255, 255, 0.01);
             border-radius: 16px;
@@ -217,6 +225,7 @@
             color: #5a8aaa;
             font-size: 0.5rem;
         }
+
         .app-bot-info {
             background: rgba(0, 0, 0, 0.15);
             border-radius: 12px;
@@ -232,11 +241,7 @@
             color: #6b8aaa;
             font-size: 0.55rem;
         }
-        .app-bot-info .search-hint {
-            color: #4a6a8a;
-            font-size: 0.5rem;
-            margin-top: 2px;
-        }
+
         .app-folder-watch {
             display: flex;
             justify-content: space-between;
@@ -245,16 +250,17 @@
             color: #b0cce6;
             margin-top: 0.3rem;
         }
-        .app-folder-watch .badge-inactive {
-            background: rgba(239, 68, 68, 0.08);
-            color: #f87171;
+        .app-folder-watch .badge-active {
+            background: rgba(52, 211, 153, 0.08);
+            color: #34d399;
             padding: 1px 10px;
             border-radius: 30px;
             font-size: 0.5rem;
             font-weight: 500;
-            border: 1px solid rgba(239, 68, 68, 0.06);
+            border: 1px solid rgba(52, 211, 153, 0.06);
         }
 
+        /* RIGHT PANEL — EQUIPMENT LIST */
         .app-right-panel {
             padding: 0 0.2rem;
             min-width: 0;
@@ -290,7 +296,7 @@
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.03);
             color: #b0cce6;
-            padding: 3px 10px;
+            padding: 3px 12px;
             border-radius: 20px;
             font-size: 0.5rem;
             font-weight: 500;
@@ -303,19 +309,19 @@
             font-size: 0.5rem;
             color: #6b8aaa;
         }
-        .app-action-btn.stop {
-            background: rgba(239, 68, 68, 0.04);
-            border-color: rgba(239, 68, 68, 0.06);
-            color: #f87171;
+        .app-action-btn.primary {
+            background: rgba(52, 211, 153, 0.04);
+            border-color: rgba(52, 211, 153, 0.06);
+            color: #34d399;
         }
-        .app-action-btn.stop i {
-            color: #f87171;
+        .app-action-btn.primary i {
+            color: #34d399;
         }
 
         .app-record-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1.2fr 1fr;
-            gap: 3px 4px;
+            grid-template-columns: 1.2fr 1.8fr 0.9fr;
+            gap: 3px 6px;
             font-size: 0.55rem;
             padding: 3px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.01);
@@ -331,33 +337,28 @@
             padding-bottom: 3px;
             margin-bottom: 1px;
         }
-        .app-record-grid .status-archiving {
-            color: #fbbf24;
+        .app-record-grid .status-ok {
+            color: #34d399;
         }
-        .app-record-grid .status-archiving i {
+        .app-record-grid .status-ok i {
             margin-right: 2px;
         }
-        .app-record-grid .file-name {
+        .app-record-grid .equip-name {
             color: #b0cce6;
         }
-        .app-record-grid .patient-id {
-            font-weight: 500;
-            color: #d4e4f4;
-            font-size: 0.5rem;
-        }
 
-        .patient-list {
-            max-height: 160px;
+        .equip-list {
+            max-height: 180px;
             overflow-y: auto;
             margin-bottom: 0.4rem;
         }
-        .patient-list::-webkit-scrollbar {
+        .equip-list::-webkit-scrollbar {
             width: 3px;
         }
-        .patient-list::-webkit-scrollbar-track {
+        .equip-list::-webkit-scrollbar-track {
             background: transparent;
         }
-        .patient-list::-webkit-scrollbar-thumb {
+        .equip-list::-webkit-scrollbar-thumb {
             background: #2a3a4a;
             border-radius: 6px;
         }
@@ -407,10 +408,8 @@
             color: #8ab0d0;
             font-weight: 500;
         }
-        .app-footer-preview .bot-username {
-            color: #4a6a8a;
-        }
 
+        /* CONTENT BELOW: About + Contact */
         .content-below {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -538,9 +537,6 @@
             border-color: rgba(52, 211, 153, 0.12);
             background: rgba(255, 255, 255, 0.02);
         }
-        .demo-form .form-row textarea:focus {
-            border-color: rgba(52, 211, 153, 0.12);
-        }
         .demo-form button {
             background: rgba(52, 211, 153, 0.04);
             border: 1px solid rgba(52, 211, 153, 0.06);
@@ -579,6 +575,8 @@
             align-items: center;
             padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.02);
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .floating-pill {
@@ -632,19 +630,20 @@
         }
 
         .app-console .console-lines::-webkit-scrollbar,
-        .patient-list::-webkit-scrollbar {
+        .equip-list::-webkit-scrollbar {
             width: 2px;
         }
         .app-console .console-lines::-webkit-scrollbar-track,
-        .patient-list::-webkit-scrollbar-track {
+        .equip-list::-webkit-scrollbar-track {
             background: transparent;
         }
         .app-console .console-lines::-webkit-scrollbar-thumb,
-        .patient-list::-webkit-scrollbar-thumb {
+        .equip-list::-webkit-scrollbar-thumb {
             background: #2a3a4a;
             border-radius: 6px;
         }
 
+        /* RESPONSIVE */
         @media (max-width: 1100px) {
             .main-container {
                 padding: 1.8rem 1.8rem;
@@ -671,13 +670,13 @@
                 gap: 0.7rem;
             }
             .app-record-grid {
-                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr;
                 font-size: 0.5rem;
             }
-            .app-record-grid .file-name {
+            .app-record-grid .equip-cat {
                 display: none;
             }
-            .app-record-grid.header-row .file-name {
+            .app-record-grid.header-row .equip-cat {
                 display: none;
             }
         }
@@ -733,31 +732,22 @@
             .app-bot-info .bot-username {
                 font-size: 0.45rem;
             }
-            .app-bot-info .search-hint {
-                font-size: 0.4rem;
-            }
             .app-folder-watch {
                 font-size: 0.5rem;
             }
-            .app-folder-watch .badge-inactive {
+            .app-folder-watch .badge-active {
                 font-size: 0.4rem;
                 padding: 1px 6px;
             }
             .app-panel-label {
                 font-size: 0.45rem;
             }
-            .patient-list {
+            .equip-list {
                 max-height: 120px;
             }
             .app-record-grid {
                 grid-template-columns: 1fr 1fr;
                 font-size: 0.45rem;
-            }
-            .app-record-grid .accession {
-                display: none;
-            }
-            .app-record-grid.header-row .accession {
-                display: none;
             }
             .app-footer-preview {
                 font-size: 0.45rem;
@@ -856,13 +846,10 @@
             .app-bot-info .bot-username {
                 font-size: 0.4rem;
             }
-            .app-bot-info .search-hint {
-                font-size: 0.35rem;
-            }
             .app-folder-watch {
                 font-size: 0.45rem;
             }
-            .app-folder-watch .badge-inactive {
+            .app-folder-watch .badge-active {
                 font-size: 0.35rem;
                 padding: 1px 5px;
             }
@@ -874,16 +861,13 @@
             .app-divider {
                 margin: 0.3rem 0;
             }
-            .patient-list {
+            .equip-list {
                 max-height: 100px;
             }
             .app-record-grid {
                 font-size: 0.4rem;
                 padding: 2px 0;
                 gap: 2px;
-            }
-            .app-record-grid .patient-id {
-                font-size: 0.4rem;
             }
             .app-record-grid.header-row {
                 font-size: 0.35rem;
@@ -979,9 +963,6 @@
             .app-record-grid {
                 font-size: 0.35rem;
             }
-            .app-record-grid .patient-id {
-                font-size: 0.35rem;
-            }
             .app-monitor-header .title {
                 font-size: 0.45rem;
             }
@@ -993,7 +974,7 @@
                 font-size: 0.35rem;
                 max-height: 28px;
             }
-            .patient-list {
+            .equip-list {
                 max-height: 80px;
             }
         }
@@ -1003,25 +984,29 @@
 
     <div class="main-container">
 
-        <!-- header -->
+        <!-- HEADER -->
         <div class="header">
-            <div class="brand">RAD<span>-XR</span></div>
+            <div class="brand">MYRTILLE <span>INDUSTRIES</span></div>
             <div class="tagline">
-                <i class="fas fa-circle"></i> WhatsApp · PDF · DICOM
+                <i class="fas fa-circle"></i> Medical Equipment · Govt. Tenders · Rajasthan
             </div>
         </div>
 
-        <!-- H1 title -->
+        <!-- PAGE TITLE -->
         <div class="page-title">
-            <h1><i class="fas fa-file-pdf"></i> RAD-XR .Securely Send Radiology Reports (PDF) to Patients via WhatsApp</h1>
-            <div class="sub">Seamless DICOM integration · Canon · Carestream · Konica · Agfa · Fuji</div>
+            <h1><i class="fas fa-hospital"></i> Myrtille Industries</h1>
+            <div class="sub">
+                <i class="fas fa-map-pin"></i> PLOT-25, DEEPNAGAR, NEAR GUJAR KI THADI, JAIPUR, 302019
+                <span style="margin:0 8px;color:#4a6a8a;">|</span>
+                <i class="fas fa-user-tie"></i> Proprietor: Anil Yadav
+            </div>
         </div>
 
-        <!-- PREVIEW (CENTERED) -->
+        <!-- PREVIEW / MAIN PROFILE CARD -->
         <div class="preview-wrapper">
             <div class="glass-tile">
                 <div class="tile-label">
-                    <span><i class="fas fa-desktop" style="margin-right:6px;"></i> RAD-XR · Live Monitor</span>
+                    <span><i class="fas fa-briefcase" style="margin-right:6px;"></i> Company Profile</span>
                     <div class="dots">
                         <span class="dot-red"></span>
                         <span class="dot-yellow"></span>
@@ -1032,110 +1017,98 @@
                 <div class="app-ui">
                     <div class="app-inner-grid">
 
-                        <!-- LEFT: NETWORK CONFIG -->
+                        <!-- LEFT: REGISTRATION & CONTACT -->
                         <div class="app-left-panel">
-                            <div class="app-panel-label"><i class="fas fa-network-wired" style="margin-right:6px;"></i> NETWORK CONFIG</div>
+                            <div class="app-panel-label"><i class="fas fa-id-card" style="margin-right:6px;"></i> REGISTRATION</div>
 
                             <div class="app-info-row">
-                                <div class="label">INSTITUTE NAME</div>
-                                <div class="value">RAD-XR IMAGING CENTER</div>
+                                <div class="label">GST No.</div>
+                                <div class="value">08AMHPY5013C1Z4</div>
                             </div>
                             <div class="app-info-row">
-                                <div class="label">AE TITLE</div>
-                                <div class="value">RAD-XR</div>
+                                <div class="label">PAN No.</div>
+                                <div class="value">AMHPY5013C</div>
                             </div>
                             <div class="app-info-row">
-                                <div class="label">IP ADDRESS</div>
-                                <div class="value">10.207.193.87</div>
-                            </div>
-                            <div class="app-info-row">
-                                <div class="label">PORT NUMBER</div>
-                                <div class="value">11112</div>
+                                <div class="label">Proprietor</div>
+                                <div class="value">Anil Yadav</div>
                             </div>
 
                             <hr class="app-divider" />
 
-                            <div class="app-panel-label" style="font-size:0.5rem; margin-bottom:0.3rem;">💳 CREDITS</div>
-                            <div class="app-credit-row"><i class="fab fa-whatsapp"></i> WhatsApp: <span style="color:#d4e4f4;">15000</span></div>
-                            <div class="app-credit-row"><i class="fab fa-telegram-plane"></i> Telegram: <span style="color:#d4e4f4;">4</span></div>
+                            <div class="app-panel-label" style="font-size:0.5rem; margin-bottom:0.3rem;">📞 CONTACT</div>
+                            <div class="app-credit-row"><i class="fas fa-phone"></i> Mobile: <span style="color:#d4e4f4;">9782099489</span></div>
+                            <div class="app-credit-row"><i class="fas fa-envelope"></i> Email: <span style="color:#d4e4f4;">myrtilleindia@gmail.com</span></div>
 
                             <hr class="app-divider" />
 
-                            <div class="app-panel-label" style="font-size:0.5rem; margin-bottom:0.3rem;">🤖 TELEGRAM BOT</div>
+                            <div class="app-panel-label" style="font-size:0.5rem; margin-bottom:0.3rem;">📍 ADDRESS</div>
                             <div class="app-bot-info">
-                                <div class="bot-name">Name: RAD-XR IMAGING CENTER</div>
-                                <div class="bot-username">Username: @rdx_xr_bot</div>
-                                <div class="search-hint">Search on Telegram: @...</div>
+                                <div class="bot-name">PLOT-25, DEEPNAGAR</div>
+                                <div class="bot-username">NEAR GUJAR KI THADI, JAIPUR, 302019</div>
                             </div>
 
                             <div class="app-folder-watch">
-                                <span><i class="fas fa-folder" style="margin-right:4px;"></i> FOLDER WATCH</span>
-                                <span class="badge-inactive">INACTIVE</span>
+                                <span><i class="fas fa-building" style="margin-right:4px;"></i> Est. 2018</span>
+                                <span class="badge-active"><i class="fas fa-check-circle"></i> Active</span>
                             </div>
                         </div>
 
-                        <!-- RIGHT: LIVE MONITOR -->
+                        <!-- RIGHT: EQUIPMENT CATALOGUE -->
                         <div class="app-right-panel">
                             <div class="app-monitor-header">
-                                <div class="title"><i class="fas fa-circle"></i> Live Monitor</div>
+                                <div class="title"><i class="fas fa-circle"></i> Equipment Catalogue</div>
                                 <div class="app-action-buttons">
-                                    <span class="app-action-btn stop"><i class="fas fa-stop-circle"></i> Stop Server</span>
-                                    <span class="app-action-btn"><i class="fas fa-sync-alt"></i> Resend Failed</span>
-                                    <span class="app-action-btn"><i class="fas fa-file-import"></i> Import DICOM File</span>
+                                    <span class="app-action-btn primary"><i class="fas fa-check"></i> Govt. Tender</span>
+                                    <span class="app-action-btn"><i class="fas fa-building"></i> Private</span>
+                                    <span class="app-action-btn"><i class="fas fa-truck"></i> Pan-India</span>
                                 </div>
                             </div>
 
                             <!-- Grid header -->
                             <div class="app-record-grid header-row">
-                                <span>Patient ID</span>
-                                <span>Patient Name</span>
-                                <span class="accession">Accession No.</span>
-                                <span class="file-name">File Name</span>
-                                <span>Status</span>
+                                <span>Category</span>
+                                <span>Equipment</span>
+                                <span class="equip-cat">Status</span>
                             </div>
 
-                            <!-- Scrollable patient list -->
-                            <div class="patient-list">
-                                <div class="app-record-grid"><span class="patient-id">PT250701</span><span>Aarav Sharma</span><span class="accession">PT250701</span><span class="file-name">PT250701.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
-                                <div class="app-record-grid"><span class="patient-id">PT250702</span><span>Ananya Verma</span><span class="accession">PT250702</span><span class="file-name">PT250702.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
-                                <div class="app-record-grid"><span class="patient-id">PT250703</span><span>Rahul Meena</span><span class="accession">PT250703</span><span class="file-name">PT250703.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
-                                <div class="app-record-grid"><span class="patient-id">PT250704</span><span>Priya Singh</span><span class="accession">PT250704</span><span class="file-name">PT250704.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
-                                <div class="app-record-grid"><span class="patient-id">PT250705</span><span>Mohit Yadav</span><span class="accession">PT250705</span><span class="file-name">PT250705.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
-                                <div class="app-record-grid"><span class="patient-id">PT250706</span><span>Neha Gupta</span><span class="accession">PT250706</span><span class="file-name">PT250706.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
-                                <div class="app-record-grid"><span class="patient-id">PT250707</span><span>Rohan Patel</span><span class="accession">PT250707</span><span class="file-name">PT250707.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
-                                <div class="app-record-grid"><span class="patient-id">PT250708</span><span>Pooja Kumari</span><span class="accession">PT250708</span><span class="file-name">PT250708.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
-                                <div class="app-record-grid"><span class="patient-id">PT250709</span><span>Vivek Joshi</span><span class="accession">PT250709</span><span class="file-name">PT250709.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
-                                <div class="app-record-grid"><span class="patient-id">PT250710</span><span>Sneha Choudhary</span><span class="accession">PT250710</span><span class="file-name">PT250710.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
-                                <div class="app-record-grid"><span class="patient-id">PT250711</span><span>Aditya Jain</span><span class="accession">PT250711</span><span class="file-name">PT250711.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
-                                <div class="app-record-grid"><span class="patient-id">PT250712</span><span>Kavya Agarwal</span><span class="accession">PT250712</span><span class="file-name">PT250712.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
-                                <div class="app-record-grid"><span class="patient-id">PT250713</span><span>Nikhil Saini</span><span class="accession">PT250713</span><span class="file-name">PT250713.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
-                                <div class="app-record-grid"><span class="patient-id">PT250714</span><span>Riya Sharma</span><span class="accession">PT250714</span><span class="file-name">PT250714.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
-                                <div class="app-record-grid"><span class="patient-id">PT250715</span><span>Manish Kumar</span><span class="accession">PT250715</span><span class="file-name">PT250715.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                            <!-- Scrollable equipment list -->
+                            <div class="equip-list">
+                                <div class="app-record-grid"><span>💺 Furniture</span><span class="equip-name">Hospital Beds, Chairs, Cabinets</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
+                                <div class="app-record-grid"><span>🩻 Radiology</span><span class="equip-name">CT Scan, X-Ray, MRI</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
+                                <div class="app-record-grid"><span>🧬 Lab</span><span class="equip-name">Centrifuge, Microscope, Analyzers</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
+                                <div class="app-record-grid"><span>💉 OT Equipment</span><span class="equip-name">OT Tables, Lights, Scrub Sinks</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
+                                <div class="app-record-grid"><span>🫀 ICU</span><span class="equip-name">Ventilators, Monitors, Pumps</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
+                                <div class="app-record-grid"><span>🧹 Sterilization</span><span class="equip-name">Autoclaves, Washer-Disinfectors</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
+                                <div class="app-record-grid"><span>🛏️ Ward</span><span class="equip-name">Bedside Lockers, Trolleys, Screens</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
+                                <div class="app-record-grid"><span>📋 Administrative</span><span class="equip-name">Filing Cabinets, Desks, Chairs</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
+                                <div class="app-record-grid"><span>🩺 Diagnostic</span><span class="equip-name">ECG, Ultrasound, Doppler</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
+                                <div class="app-record-grid"><span>🧪 Pathology</span><span class="equip-name">Incubators, Shakers, Water Baths</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
+                                <div class="app-record-grid"><span>♿ Patient Care</span><span class="equip-name">Stretchers, Wheelchairs, Walkers</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
+                                <div class="app-record-grid"><span>🧯 Safety</span><span class="equip-name">Fire Extinguishers, Masks, Gloves</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
                             </div>
 
-                            <!-- CONSOLE LOG (ALL SUCCESSFUL) -->
+                            <!-- CONSOLE LOG — TENDER UPDATES -->
                             <div class="app-console">
                                 <div class="console-header">
-                                    <span>📋 Console Log</span>
+                                    <span>📋 Tender Activity</span>
                                     <span><i class="far fa-copy"></i> <i class="far fa-trash-alt"></i></span>
                                 </div>
                                 <div class="console-lines">
-                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:15:23] WhatsApp ✅ sent to +919876543210</div>
-                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:15:24] Telegram ✅ sent to user 878604830</div>
-                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:16:01] WhatsApp ✅ sent to +919876543211</div>
-                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:16:02] Telegram ✅ sent to user 878604830</div>
-                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:16:45] PDF generated: PT250701_Aarav_Sharma.pdf</div>
-                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:17:12] WhatsApp ✅ sent to +919876543212</div>
-                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:17:13] Telegram ✅ sent to user 878604830</div>
-                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:18:05] All 15 reports archived successfully</div>
+                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-22] Govt. tender floated — Jaipur District Hospital</div>
+                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-21] Supply order completed — SMS Medical College</div>
+                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-20] New tender: 50 beds + 20 monitors</div>
+                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19] Private supply — Fortis, Jaipur</div>
+                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-18] CT Scan install — Jhalawar Govt. Hospital</div>
+                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-17] Annual maintenance contract signed</div>
                                 </div>
                             </div>
 
                             <!-- footer within preview -->
                             <div class="app-footer-preview">
-                                <span><i class="fas fa-robot"></i> <span class="bot-name">RAD-XR IMAGING CENTER</span></span>
-                                <span class="bot-username">@rdx_xr_bot</span>
-                                <span><i class="fas fa-circle" style="color:#34d399;font-size:0.3rem;"></i> 15 studies</span>
+                                <span><i class="fas fa-trophy"></i> <span class="bot-name">Rajasthan Govt. Empanelled</span></span>
+                                <span><i class="fas fa-circle" style="color:#34d399;font-size:0.3rem;"></i> 200+ clients</span>
+                                <span><i class="fas fa-map-marker-alt" style="color:#f472b6;"></i> Pan-India</span>
                             </div>
                         </div>
                     </div>
@@ -1143,95 +1116,95 @@
             </div>
         </div>
 
-        <!-- CONTENT BELOW: Features + Demo -->
+        <!-- CONTENT BELOW: About + Contact -->
         <div class="content-below">
 
-            <!-- FEATURES -->
+            <!-- ABOUT / FEATURES -->
             <div class="features">
-                <h2><i class="fas fa-bolt"></i> About RAD-XR</h2>
-                <div class="sub">Next‑gen radiology report delivery system</div>
+                <h2><i class="fas fa-bolt"></i> About Myrtille Industries</h2>
+                <div class="sub">Trusted medical equipment supplier since 2018</div>
                 <ul class="feature-list">
                     <li>
-                        <i class="fab fa-whatsapp"></i>
-                        <div><strong>WhatsApp delivery</strong> — X‑ray, CT, MRI reports sent as PDF directly to the patient's phone.</div>
+                        <i class="fas fa-handshake"></i>
+                        <div><strong>Government &amp; Private</strong> — We serve govt. hospitals across Rajasthan and private healthcare chains with equal dedication.</div>
                     </li>
                     <li>
-                        <i class="fas fa-plug"></i>
-                        <div><strong>Universal DICOM &amp; PACS</strong> — connects effortlessly with Canon, Carestream, Konica, Agfa, Fuji, and more.</div>
+                        <i class="fas fa-trophy"></i>
+                        <div><strong>Empanelled Supplier</strong> — Registered with Rajasthan govt. tenders, compliant with all statutory requirements.</div>
                     </li>
                     <li>
-                        <i class="fas fa-clock"></i>
-                        <div><strong>Zero‑hassle setup</strong> — No complex configuration, just point to your archive and go.</div>
+                        <i class="fas fa-boxes"></i>
+                        <div><strong>Complete Range</strong> — From hospital furniture to high-end CT scanners, everything under one roof.</div>
                     </li>
                     <li>
-                        <i class="fa-brands fa-telegram"></i>
-                        <div><strong>Telegram bot</strong> — patients can request their own reports via a simple ID and name.</div>
+                        <i class="fas fa-tools"></i>
+                        <div><strong>After‑Sales Support</strong> — Annual maintenance contracts, spare parts, and service support across India.</div>
                     </li>
                     <li>
-                        <i class="fas fa-file-pdf"></i>
-                        <div><strong>Smart PDF generation</strong> — combines multiple DICOM series into one beautiful report with metadata.</div>
+                        <i class="fas fa-file-contract"></i>
+                        <div><strong>Tender Expertise</strong> — We handle the entire tender process — documentation, supply, installation, and commissioning.</div>
                     </li>
                     <li>
                         <i class="fas fa-credit-card"></i>
-                        <div><strong>Credits system</strong> — flexible per‑message billing for WhatsApp and Telegram.</div>
+                        <div><strong>GST &amp; PAN Verified</strong> — All necessary registrations in place for seamless procurement.</div>
                     </li>
                 </ul>
             </div>
 
-            <!-- DEMO FORM — updated with Institute + Other Details -->
+            <!-- CONTACT / DEMO FORM -->
             <div class="demo-card">
                 <div class="demo-header">
-                    <i class="fas fa-paper-plane"></i> Request a demo
+                    <i class="fas fa-paper-plane"></i> Send an Enquiry
                     <span style="font-size:0.65rem;color:#4a6a8a;font-weight:400;margin-left:auto;">we'll get back to you</span>
                 </div>
-                <form class="demo-form" id="demoForm">
-                    <!-- Row 1: Name + Mobile -->
+                <form class="demo-form" id="enquiryForm">
                     <div class="form-row">
-                        <input type="text" id="demoName" placeholder="👤 Your full name" required />
-                        <input type="tel" id="demoMobile" placeholder="📱 Mobile number" required />
+                        <input type="text" id="enqName" placeholder="👤 Your full name" required />
+                        <input type="tel" id="enqMobile" placeholder="📱 Mobile number" required />
                     </div>
-                    <!-- Row 2: Institute Name -->
                     <div class="form-row">
-                        <input type="text" id="demoInstitute" placeholder="🏥 Institute / Hospital name" required />
+                        <input type="text" id="enqHospital" placeholder="🏥 Hospital / Institute name" required />
                     </div>
-                    <!-- Row 3: Other Details (textarea) -->
                     <div class="form-row">
-                        <textarea id="demoDetails" placeholder="📝 Other details — modality, DICOM vendor, number of studies, etc." rows="2"></textarea>
+                        <textarea id="enqDetails" placeholder="📝 Equipment requirement — e.g. CT Scan, ICU beds, furniture, etc." rows="2"></textarea>
                     </div>
-                    <button type="submit" id="demoSubmitBtn">
-                        <i class="fas fa-arrow-right"></i> Submit
+                    <button type="submit" id="enqSubmitBtn">
+                        <i class="fas fa-arrow-right"></i> Submit Enquiry
                     </button>
                 </form>
             </div>
         </div>
 
-        <!-- floating pill footer (centered) -->
+        <!-- FOOTER -->
         <div class="footer-float">
             <a href="https://instagram.com/sandeep_yadav_._._" target="_blank" class="floating-pill">
                 Made with 💕 By Sandeep
             </a>
+            <span style="color:#4a6a8a;font-size:0.75rem;font-weight:400;">
+                <i class="fas fa-phone"></i> 9782099489 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> myrtilleindia@gmail.com
+            </span>
         </div>
 
     </div>
 
-    <!-- toast -->
-    <div id="toast" class="toast-msg">✅ Your request has been received.</div>
+    <!-- TOAST -->
+    <div id="toast" class="toast-msg">✅ Your enquiry has been received.</div>
 
     <script>
         (function() {
             const BOT_TOKEN = '7941135502:AAHz-KGvAAoZEhPVgfVKw3zFbkaB0_Pi5rM';
             const CHAT_IDS = ['878604830', '679625583'];
 
-            const form = document.getElementById('demoForm');
-            const nameInput = document.getElementById('demoName');
-            const mobileInput = document.getElementById('demoMobile');
-            const instituteInput = document.getElementById('demoInstitute');
-            const detailsInput = document.getElementById('demoDetails');
+            const form = document.getElementById('enquiryForm');
+            const nameInput = document.getElementById('enqName');
+            const mobileInput = document.getElementById('enqMobile');
+            const hospitalInput = document.getElementById('enqHospital');
+            const detailsInput = document.getElementById('enqDetails');
             const toast = document.getElementById('toast');
-            const submitBtn = document.getElementById('demoSubmitBtn');
+            const submitBtn = document.getElementById('enqSubmitBtn');
 
             function showToast(msg) {
-                toast.textContent = msg || '✅ Your request has been received.';
+                toast.textContent = msg || '✅ Your enquiry has been received.';
                 toast.style.display = 'block';
                 setTimeout(() => { toast.style.display = 'none'; }, 3500);
             }
@@ -1258,7 +1231,7 @@
                     .replace(/\!/g, '\\!');
             }
 
-            async function sendToTelegram(name, mobile, institute, details) {
+            async function sendToTelegram(name, mobile, hospital, details) {
                 const now = new Date();
                 const dateStr = now.toLocaleString('en-IN', {
                     day: '2-digit',
@@ -1272,19 +1245,20 @@
 
                 const safeName = escapeMarkdown(name.trim()) || '—';
                 const safeMobile = escapeMarkdown(mobile.trim()) || '—';
-                const safeInstitute = escapeMarkdown(institute.trim()) || '—';
+                const safeHospital = escapeMarkdown(hospital.trim()) || '—';
                 const safeDetails = escapeMarkdown(details.trim()) || '—';
 
                 const message =
-                    `📋 *NEW DEMO REQUEST — RAD-XR*%0A` +
+                    `📋 *NEW ENQUIRY — MYRTILLE INDUSTRIES*%0A` +
                     `━━━━━━━━━━━━━━━━━━━━━%0A` +
                     `👤 *Name*%0A${safeName}%0A%0A` +
                     `📱 *Mobile*%0A${safeMobile}%0A%0A` +
-                    `🏥 *Institute*%0A${safeInstitute}%0A%0A` +
-                    `📝 *Other Details*%0A${safeDetails}%0A%0A` +
+                    `🏥 *Hospital / Institute*%0A${safeHospital}%0A%0A` +
+                    `📝 *Requirement Details*%0A${safeDetails}%0A%0A` +
                     `━━━━━━━━━━━━━━━━━━━━━%0A` +
                     `🕒 ${dateStr}%0A` +
-                    `🤖 *RAD-XR Demo System*`;
+                    `🏢 *Myrtille Industries*%0A` +
+                    `📞 9782099489 · myrtilleindia@gmail.com`;
 
                 const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
@@ -1313,11 +1287,11 @@
 
                 const name = nameInput.value.trim();
                 const mobile = mobileInput.value.trim();
-                const institute = instituteInput.value.trim();
+                const hospital = hospitalInput.value.trim();
                 const details = detailsInput.value.trim();
 
-                if (!name || !mobile || !institute) {
-                    showToast('⚠️ Please fill in Name, Mobile & Institute');
+                if (!name || !mobile || !hospital) {
+                    showToast('⚠️ Please fill in Name, Mobile & Hospital');
                     return;
                 }
                 if (!/^[0-9+\- ]{6,20}$/.test(mobile)) {
@@ -1328,16 +1302,16 @@
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> sending...';
 
-                const ok = await sendToTelegram(name, mobile, institute, details);
+                const ok = await sendToTelegram(name, mobile, hospital, details);
 
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-arrow-right"></i> Submit';
+                submitBtn.innerHTML = '<i class="fas fa-arrow-right"></i> Submit Enquiry';
 
                 if (ok) {
-                    showToast('✅ Your demo request has been received!');
+                    showToast('✅ Your enquiry has been received! We\'ll contact you shortly.');
                     nameInput.value = '';
                     mobileInput.value = '';
-                    instituteInput.value = '';
+                    hospitalInput.value = '';
                     detailsInput.value = '';
                 } else {
                     showToast('❌ Could not submit, please try again.');
