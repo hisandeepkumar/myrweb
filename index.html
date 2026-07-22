@@ -249,7 +249,7 @@
         /* ===== PRODUCT GRID ===== */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
             gap: 1.5rem;
             margin: 0 0 2rem 0;
         }
@@ -367,51 +367,26 @@
             letter-spacing: 0.3px;
         }
 
-        /* ===== POLICY BUTTONS ===== */
-        .policy-bar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-            margin: 0.5rem 0 1.5rem 0;
-            padding: 0.5rem 0;
+        /* Dental tile special */
+        .product-tile.dental {
+            border-color: rgba(96, 165, 250, 0.08);
+            background: rgba(96, 165, 250, 0.02);
         }
-
-        .policy-btn {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 10px 28px;
-            border-radius: 60px;
-            color: #b0cce6;
-            font-size: 0.8rem;
-            font-weight: 500;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.25s ease;
-            font-family: inherit;
-            cursor: pointer;
+        .product-tile.dental:hover {
+            border-color: rgba(96, 165, 250, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(96, 165, 250, 0.06);
         }
-        .policy-btn:hover {
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(52, 211, 153, 0.08);
-            color: #eaf0fa;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        .product-tile.dental .product-name {
+            color: #60a5fa;
         }
-        .policy-btn i {
-            color: #34d399;
-            font-size: 0.85rem;
+        .product-tile.dental .product-arrow {
+            color: #60a5fa;
         }
-        .policy-btn.terms i {
-            color: #fbbf24;
-        }
-        .policy-btn.privacy i {
+        .product-tile.dental:hover .product-arrow {
             color: #60a5fa;
         }
 
-        /* ===== ENQUIRY SECTION ===== */
+        /* ===== ENQUIRY + ABOUT SECTION ===== */
         .enquiry-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -570,9 +545,125 @@
             cursor: not-allowed;
         }
 
+        /* ===== INFO BUTTONS SECTION ===== */
+        .info-buttons-section {
+            margin: 2.5rem 0 1.5rem 0;
+            padding: 1.2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        }
+        .info-buttons-section .info-label {
+            text-align: center;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #4a6a8a;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+        .info-buttons-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .info-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 10px 26px;
+            border-radius: 60px;
+            color: #b0cce6;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.25s ease;
+            font-family: inherit;
+            cursor: pointer;
+        }
+        .info-btn:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(52, 211, 153, 0.08);
+            color: #eaf0fa;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        .info-btn i {
+            font-size: 0.85rem;
+        }
+        .info-btn.privacy i {
+            color: #60a5fa;
+        }
+        .info-btn.terms i {
+            color: #fbbf24;
+        }
+        .info-btn.performance i {
+            color: #34d399;
+        }
+        .info-btn.owner i {
+            color: #f472b6;
+        }
+        .info-btn.team i {
+            color: #a78bfa;
+        }
+        .info-btn.certificates i {
+            color: #f59e0b;
+        }
+        .info-btn.contact i {
+            color: #34d399;
+        }
+
+        /* ===== CONTACT DETAILS BAR ===== */
+        .contact-details-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 28px;
+            padding: 1rem 0.5rem;
+            margin: 0.5rem 0;
+        }
+        .contact-details-bar .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #b0cce6;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .contact-details-bar .contact-item:hover {
+            color: #eaf0fa;
+        }
+        .contact-details-bar .contact-item i {
+            color: #34d399;
+            font-size: 1.1rem;
+            width: 24px;
+            text-align: center;
+        }
+        .contact-details-bar .contact-item .label {
+            color: #4a6a8a;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            display: block;
+        }
+        .contact-details-bar .contact-item .value {
+            font-weight: 500;
+        }
+        .contact-divider {
+            color: #2a3a4a;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
         /* ===== FOOTER ===== */
         .footer-section {
-            margin-top: 2.2rem;
+            margin-top: 1.5rem;
             padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.02);
             display: flex;
@@ -690,6 +781,9 @@
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            }
         }
 
         @media (max-width: 860px) {
@@ -703,7 +797,7 @@
                 grid-template-columns: 1fr 1fr 1fr;
             }
             .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
                 gap: 1rem;
             }
             .footer-section {
@@ -716,12 +810,23 @@
             .footer-right {
                 justify-content: center;
             }
-            .policy-bar {
-                gap: 12px;
+            .info-buttons-grid {
+                gap: 10px;
             }
-            .policy-btn {
-                padding: 8px 20px;
+            .info-btn {
+                padding: 8px 18px;
                 font-size: 0.7rem;
+            }
+            .contact-details-bar {
+                gap: 16px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .contact-divider {
+                display: none;
+            }
+            .contact-details-bar .contact-item {
+                width: 100%;
             }
         }
 
@@ -787,17 +892,6 @@
             .product-tile .product-category {
                 font-size: 0.45rem;
             }
-            .policy-bar {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-            .policy-btn {
-                width: 100%;
-                justify-content: center;
-                padding: 10px 20px;
-                font-size: 0.75rem;
-            }
             .demo-card {
                 padding: 1rem;
             }
@@ -828,6 +922,17 @@
                 height: 26px;
                 font-size: 0.75rem;
             }
+            .info-buttons-grid {
+                gap: 8px;
+            }
+            .info-btn {
+                padding: 6px 14px;
+                font-size: 0.65rem;
+                gap: 6px;
+            }
+            .info-btn i {
+                font-size: 0.7rem;
+            }
             .footer-pill {
                 padding: 8px 20px;
                 font-size: 0.8rem;
@@ -837,6 +942,13 @@
             }
             .footer-right a {
                 font-size: 0.65rem;
+            }
+            .contact-details-bar .contact-item {
+                font-size: 0.75rem;
+            }
+            .contact-details-bar .contact-item i {
+                font-size: 0.9rem;
+                width: 20px;
             }
         }
 
@@ -887,9 +999,16 @@
             .section-title .sub {
                 font-size: 0.75rem;
             }
-            .policy-btn {
-                font-size: 0.65rem;
-                padding: 8px 16px;
+            .info-buttons-grid {
+                gap: 6px;
+            }
+            .info-btn {
+                padding: 5px 12px;
+                font-size: 0.6rem;
+                gap: 5px;
+            }
+            .info-btn i {
+                font-size: 0.6rem;
             }
             .demo-form .form-row input {
                 font-size: 0.75rem;
@@ -931,6 +1050,17 @@
             .footer-right a {
                 font-size: 0.6rem;
             }
+            .contact-details-bar .contact-item {
+                font-size: 0.7rem;
+                gap: 8px;
+            }
+            .contact-details-bar .contact-item i {
+                font-size: 0.8rem;
+                width: 18px;
+            }
+            .contact-details-bar .contact-item .label {
+                font-size: 0.5rem;
+            }
         }
 
         @media (max-width: 380px) {
@@ -952,6 +1082,16 @@
             }
             .stat-card .number {
                 font-size: 1rem;
+            }
+            .info-buttons-grid {
+                gap: 4px;
+            }
+            .info-btn {
+                padding: 4px 10px;
+                font-size: 0.55rem;
+            }
+            .info-btn i {
+                font-size: 0.5rem;
             }
         }
     </style>
@@ -1011,12 +1151,6 @@
         <div class="section-title">
             <h2><i class="fas fa-boxes"></i> Our Product Range</h2>
             <div class="sub">Click on any product to explore more details</div>
-        </div>
-
-        <!-- ===== POLICY BUTTONS ===== -->
-        <div class="policy-bar">
-            <a href="privacy-policy.html" class="policy-btn privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
-            <a href="terms.html" class="policy-btn terms"><i class="fas fa-file-contract"></i> Terms &amp; Conditions</a>
         </div>
 
         <!-- ===== PRODUCT GRID ===== -->
@@ -1118,7 +1252,15 @@
                 <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
             </a>
 
-            <!-- Product 13: RAD-XR (Special) -->
+            <!-- Product 13: Dental Equipment (NEW) -->
+            <a href="product-dental.html" class="product-tile dental">
+                <img src="images/dental.png" alt="Dental Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/dental/300/300'"/>
+                <div class="product-name">Dental Equipment</div>
+                <div class="product-category">Chairs · Units · X-Ray · Autoclaves</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 14: RAD-XR (Special) -->
             <a href="product-rad-xr.html" class="product-tile rad-xr">
                 <img src="images/rad-xr.png" alt="RAD-XR" class="product-image" onerror="this.src='https://picsum.photos/seed/radxr/300/300'"/>
                 <div class="product-name">RAD-XR</div>
@@ -1129,7 +1271,7 @@
 
         </div>
 
-        <!-- ===== ENQUIRY SECTION ===== -->
+        <!-- ===== ENQUIRY + ABOUT SECTION ===== -->
         <div class="enquiry-section">
 
             <!-- ABOUT / FEATURES -->
@@ -1185,6 +1327,55 @@
                         <i class="fas fa-arrow-right"></i> Submit Enquiry
                     </button>
                 </form>
+            </div>
+        </div>
+
+        <!-- ===== CONTACT DETAILS BAR ===== -->
+        <div class="contact-details-bar">
+            <a href="tel:9782099489" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <span class="label">Phone</span>
+                    <span class="value">9782099489</span>
+                </div>
+            </a>
+            <span class="contact-divider">|</span>
+            <a href="mailto:myrtilleindia@gmail.com" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <span class="label">Email</span>
+                    <span class="value">myrtilleindia@gmail.com</span>
+                </div>
+            </a>
+            <span class="contact-divider">|</span>
+            <a href="#" class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <span class="label">Address</span>
+                    <span class="value">Plot-25, Deepnagar, Near Gujar Ki Thadi, Jaipur 302019</span>
+                </div>
+            </a>
+            <span class="contact-divider">|</span>
+            <div class="contact-item">
+                <i class="fas fa-id-card"></i>
+                <div>
+                    <span class="label">GST / PAN</span>
+                    <span class="value">08AMHPY5013C1Z4 / AMHPY5013C</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== INFO BUTTONS SECTION ===== -->
+        <div class="info-buttons-section">
+            <div class="info-label"><i class="fas fa-chevron-down" style="margin-right:8px;"></i> Company Resources <i class="fas fa-chevron-down" style="margin-left:8px;"></i></div>
+            <div class="info-buttons-grid">
+                <a href="privacy-policy.html" class="info-btn privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+                <a href="terms.html" class="info-btn terms"><i class="fas fa-file-contract"></i> Terms &amp; Conditions</a>
+                <a href="past-performance.html" class="info-btn performance"><i class="fas fa-chart-line"></i> Past Performance</a>
+                <a href="about-owner.html" class="info-btn owner"><i class="fas fa-user-tie"></i> About Owner</a>
+                <a href="team.html" class="info-btn team"><i class="fas fa-users"></i> Team</a>
+                <a href="certificates.html" class="info-btn certificates"><i class="fas fa-certificate"></i> Certificates</a>
+                <a href="#contact" class="info-btn contact"><i class="fas fa-address-book"></i> Contact Details</a>
             </div>
         </div>
 
