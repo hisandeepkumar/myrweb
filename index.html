@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
+    <title>Myrtille Industries · Medical Equipment Supplier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f0f4f8;
+            background-image:
+                radial-gradient(circle at 20% 20%, #e8edf4 0%, #d5dde8 90%);
+            min-height: 100vh;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-container {
+            max-width: 1320px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.70);
+            backdrop-filter: blur(14px) saturate(160%);
+            -webkit-backdrop-filter: blur(14px) saturate(160%);
+            border-radius: 48px;
+            padding: 2.2rem 2.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.5);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            gap: 12px;
+        }
+
+        .brand-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand-logo {
+            height: 52px;
+            width: auto;
+            filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.04));
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 4px 8px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            object-fit: contain;
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: -0.02em;
+            color: #1a2634;
+            text-shadow: 0 0 18px rgba(0, 0, 0, 0.02);
+            line-height: 1;
+        }
+        .brand span {
+            font-weight: 300;
+            color: #5a7a8a;
+        }
+
+        .tagline {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 8px 22px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            color: #2a4a5a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+        }
+        .tagline i {
+            color: #1a8a5a;
+            font-size: 0.5rem;
+        }
+
+        /* ===== HERO ===== */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 0.5rem 0 2rem 0;
+            align-items: center;
+        }
+
+        .hero-left h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #1a2634;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        .hero-left h1 i {
+            color: #1a8a5a;
+            margin-right: 8px;
+        }
+        .hero-left .hero-sub {
+            color: #3a5a6a;
+            font-size: 1.05rem;
+            font-weight: 400;
+            margin-top: 10px;
+            max-width: 90%;
+            line-height: 1.6;
+        }
+        .hero-left .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            color: #2a4a5a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+        .hero-badge i {
+            color: #1a8a5a;
+            font-size: 0.55rem;
+        }
+
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .hero-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+        }
+        .stat-card {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-radius: 20px;
+            padding: 16px 14px;
+            text-align: center;
+            backdrop-filter: blur(4px);
+            transition: 0.2s;
+        }
+        .stat-card:hover {
+            border-color: rgba(26, 138, 90, 0.15);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .stat-card .number {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1a2634;
+            letter-spacing: -0.02em;
+        }
+        .stat-card .label {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            color: #5a7a8a;
+            letter-spacing: 0.4px;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+        .stat-card .number i {
+            color: #1a8a5a;
+            font-size: 1.2rem;
+            margin-right: 4px;
+        }
+
+        .hero-contact-chip {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-radius: 60px;
+            padding: 10px 22px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 4px;
+        }
+        .hero-contact-chip a {
+            color: #2a4a5a;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+        .hero-contact-chip a:hover {
+            color: #1a2634;
+        }
+        .hero-contact-chip a i {
+            color: #1a8a5a;
+            font-size: 0.7rem;
+            width: 20px;
+        }
+
+        /* ===== SECTION TITLE ===== */
+        .section-title {
+            text-align: center;
+            margin: 2rem 0 1.8rem 0;
+        }
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a2634;
+            letter-spacing: -0.02em;
+        }
+        .section-title h2 i {
+            color: #1a8a5a;
+            margin-right: 10px;
+        }
+        .section-title .sub {
+            color: #5a7a8a;
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        /* ===== PRODUCT GRID ===== */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 1.5rem;
+            margin: 0 0 2rem 0;
+        }
+
+        .product-tile {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 1.2rem 1rem 1.4rem;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-tile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(26, 138, 90, 0.03) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .product-tile:hover {
+            border-color: rgba(26, 138, 90, 0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(26, 138, 90, 0.04);
+            background: rgba(255, 255, 255, 0.75);
+        }
+        .product-tile:hover::before {
+            opacity: 1;
+        }
+        .product-tile:active {
+            transform: scale(0.97);
+        }
+
+        .product-tile .product-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 16px;
+            object-fit: cover;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: 0.3s ease;
+        }
+        .product-tile:hover .product-image {
+            border-color: rgba(26, 138, 90, 0.08);
+        }
+
+        .product-tile .product-name {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #1a2634;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+            margin-top: 2px;
+        }
+        .product-tile .product-category {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #5a7a8a;
+            font-weight: 500;
+        }
+        .product-tile .product-arrow {
+            color: #7a9aaa;
+            font-size: 0.7rem;
+            transition: 0.3s ease;
+            margin-top: 2px;
+        }
+        .product-tile:hover .product-arrow {
+            color: #1a8a5a;
+            transform: translateX(4px);
+        }
+
+        /* RAD-XR special tile */
+        .product-tile.rad-xr {
+            border-color: rgba(180, 80, 120, 0.08);
+            background: rgba(244, 114, 182, 0.04);
+        }
+        .product-tile.rad-xr:hover {
+            border-color: rgba(180, 80, 120, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(180, 80, 120, 0.06);
+        }
+        .product-tile.rad-xr .product-name {
+            color: #b44a7a;
+        }
+        .product-tile.rad-xr .product-arrow {
+            color: #b44a7a;
+        }
+        .product-tile.rad-xr:hover .product-arrow {
+            color: #b44a7a;
+        }
+        .product-tile.rad-xr .product-badge {
+            background: rgba(180, 80, 120, 0.08);
+            color: #b44a7a;
+            font-size: 0.45rem;
+            text-transform: uppercase;
+            padding: 2px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(180, 80, 120, 0.06);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* Dental tile special */
+        .product-tile.dental {
+            border-color: rgba(60, 120, 200, 0.08);
+            background: rgba(96, 165, 250, 0.04);
+        }
+        .product-tile.dental:hover {
+            border-color: rgba(60, 120, 200, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(60, 120, 200, 0.06);
+        }
+        .product-tile.dental .product-name {
+            color: #3a7ab8;
+        }
+        .product-tile.dental .product-arrow {
+            color: #3a7ab8;
+        }
+        .product-tile.dental:hover .product-arrow {
+            color: #3a7ab8;
+        }
+
+        /* ===== ENQUIRY + ABOUT SECTION ===== */
+        .enquiry-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .features h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1a2634;
+            letter-spacing: -0.02em;
+        }
+        .features h2 i {
+            color: #1a8a5a;
+            margin-right: 8px;
+        }
+        .features .sub {
+            color: #5a7a8a;
+            font-size: 0.92rem;
+            margin-bottom: 0.2rem;
+            font-weight: 400;
+        }
+        .feature-list {
+            list-style: none;
+            margin-top: 0.2rem;
+        }
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            color: #2a4a5a;
+            font-weight: 400;
+            font-size: 0.92rem;
+        }
+        .feature-list li i {
+            width: 30px;
+            height: 30px;
+            background: rgba(26, 138, 90, 0.04);
+            border: 1px solid rgba(26, 138, 90, 0.06);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a8a5a;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .feature-list li strong {
+            color: #1a2634;
+            font-weight: 600;
+        }
+
+        .demo-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 1.2rem 1.6rem 1.6rem;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .demo-card .demo-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+            color: #2a4a5a;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .demo-card .demo-header i {
+            color: #1a8a5a;
+            font-size: 1rem;
+        }
+        .demo-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .demo-form .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .demo-form .form-row input,
+        .demo-form .form-row textarea {
+            flex: 1 1 150px;
+            min-width: 120px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 11px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #1a2634;
+            outline: none;
+            transition: 0.15s;
+            font-family: inherit;
+        }
+        .demo-form .form-row textarea {
+            border-radius: 20px;
+            resize: vertical;
+            min-height: 60px;
+            width: 100%;
+            flex: 1 1 100%;
+        }
+        .demo-form .form-row input::placeholder,
+        .demo-form .form-row textarea::placeholder {
+            color: #7a9aaa;
+            font-weight: 300;
+        }
+        .demo-form .form-row input:focus,
+        .demo-form .form-row textarea:focus {
+            border-color: rgba(26, 138, 90, 0.2);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .demo-form button {
+            background: rgba(26, 138, 90, 0.04);
+            border: 1px solid rgba(26, 138, 90, 0.06);
+            padding: 11px 26px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: #1a2634;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: 0.15s;
+            font-family: inherit;
+            backdrop-filter: blur(4px);
+            margin-top: 4px;
+        }
+        .demo-form button:hover {
+            background: rgba(26, 138, 90, 0.06);
+            border-color: rgba(26, 138, 90, 0.1);
+            color: #1a2634;
+        }
+        .demo-form button i {
+            color: #1a8a5a;
+        }
+        .demo-form button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* ===== INFO BUTTONS SECTION ===== */
+        .info-buttons-section {
+            margin: 2.5rem 0 1.5rem 0;
+            padding: 1.2rem 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .info-buttons-section .info-label {
+            text-align: center;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #5a7a8a;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+        .info-buttons-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .info-btn {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 10px 26px;
+            border-radius: 60px;
+            color: #2a4a5a;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.25s ease;
+            font-family: inherit;
+            cursor: pointer;
+        }
+        .info-btn:hover {
+            background: rgba(255, 255, 255, 0.7);
+            border-color: rgba(26, 138, 90, 0.08);
+            color: #1a2634;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+        .info-btn i {
+            font-size: 0.85rem;
+        }
+        .info-btn.privacy i {
+            color: #3a7ab8;
+        }
+        .info-btn.terms i {
+            color: #c88a2a;
+        }
+        .info-btn.performance i {
+            color: #1a8a5a;
+        }
+        .info-btn.owner i {
+            color: #b44a7a;
+        }
+        .info-btn.team i {
+            color: #7a5aaa;
+        }
+        .info-btn.certificates i {
+            color: #c88a2a;
+        }
+        .info-btn.contact i {
+            color: #1a8a5a;
+        }
+
+        /* ===== CONTACT DETAILS BAR ===== */
+        .contact-details-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 28px;
+            padding: 1rem 0.5rem;
+            margin: 0.5rem 0;
+        }
+        .contact-details-bar .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #2a4a5a;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .contact-details-bar .contact-item:hover {
+            color: #1a2634;
+        }
+        .contact-details-bar .contact-item i {
+            color: #1a8a5a;
+            font-size: 1.1rem;
+            width: 24px;
+            text-align: center;
+        }
+        .contact-details-bar .contact-item .label {
+            color: #5a7a8a;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            display: block;
+        }
+        .contact-details-bar .contact-item .value {
+            font-weight: 500;
+        }
+        .contact-divider {
+            color: #c0d0d8;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-section {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .footer-left .copy {
+            color: #5a7a8a;
+            font-size: 0.75rem;
+        }
+        .footer-left .copy i {
+            color: #1a8a5a;
+            margin-right: 4px;
+        }
+
+        .footer-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .footer-right a {
+            color: #5a7a8a;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.2s;
+        }
+        .footer-right a:hover {
+            color: #2a4a5a;
+        }
+        .footer-right a i {
+            color: #1a8a5a;
+            font-size: 0.7rem;
+        }
+
+        .footer-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 10px 28px;
+            border-radius: 100px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            color: #2a4a5a;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: 0.25s;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.2px;
+            font-family: inherit;
+        }
+        .footer-pill i {
+            color: #b44a7a;
+            font-size: 1rem;
+            filter: drop-shadow(0 0 12px rgba(180, 80, 120, 0.04));
+        }
+        .footer-pill:hover {
+            background: rgba(255, 255, 255, 0.7);
+            border-color: rgba(180, 80, 120, 0.06);
+            color: #1a2634;
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ===== TOAST ===== */
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(26, 138, 90, 0.06);
+            padding: 12px 30px;
+            border-radius: 60px;
+            color: #1a2634;
+            font-weight: 400;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            display: none;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1100px) {
+            .main-container {
+                padding: 1.8rem 1.8rem;
+            }
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .hero-left h1 {
+                font-size: 2.2rem;
+            }
+            .hero-left .hero-sub {
+                max-width: 100%;
+            }
+            .enquiry-section {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            }
+        }
+
+        @media (max-width: 860px) {
+            .main-container {
+                padding: 1.5rem 1.2rem;
+            }
+            .hero-left h1 {
+                font-size: 1.8rem;
+            }
+            .hero-stats {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+                gap: 1rem;
+            }
+            .footer-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-left {
+                justify-content: center;
+            }
+            .footer-right {
+                justify-content: center;
+            }
+            .info-buttons-grid {
+                gap: 10px;
+            }
+            .info-btn {
+                padding: 8px 18px;
+                font-size: 0.7rem;
+            }
+            .contact-details-bar {
+                gap: 16px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .contact-divider {
+                display: none;
+            }
+            .contact-details-bar .contact-item {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .main-container {
+                padding: 1.2rem 1rem;
+                border-radius: 32px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .brand-wrapper {
+                width: 100%;
+            }
+            .brand-logo {
+                height: 40px;
+            }
+            .brand {
+                font-size: 1.4rem;
+            }
+            .tagline {
+                font-size: 0.7rem;
+                padding: 6px 16px;
+                white-space: normal;
+            }
+            .hero-left h1 {
+                font-size: 1.5rem;
+            }
+            .hero-left .hero-sub {
+                font-size: 0.9rem;
+            }
+            .hero-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stat-card .number {
+                font-size: 1.3rem;
+            }
+            .hero-contact-chip {
+                flex-direction: column;
+                gap: 8px;
+                padding: 12px 18px;
+                border-radius: 24px;
+            }
+            .hero-contact-chip a {
+                font-size: 0.75rem;
+            }
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 0.8rem;
+            }
+            .product-tile {
+                padding: 1rem 0.8rem 1.2rem;
+                border-radius: 18px;
+            }
+            .product-tile .product-name {
+                font-size: 0.75rem;
+            }
+            .product-tile .product-category {
+                font-size: 0.45rem;
+            }
+            .demo-card {
+                padding: 1rem;
+            }
+            .demo-card .demo-header {
+                font-size: 0.8rem;
+            }
+            .demo-form .form-row input {
+                flex: 1 1 100%;
+                min-width: 100%;
+            }
+            .demo-form .form-row textarea {
+                flex: 1 1 100%;
+                min-width: 100%;
+            }
+            .demo-form button {
+                width: 100%;
+                justify-content: center;
+            }
+            .features h2 {
+                font-size: 1.1rem;
+            }
+            .feature-list li {
+                font-size: 0.8rem;
+                padding: 10px 0;
+            }
+            .feature-list li i {
+                width: 26px;
+                height: 26px;
+                font-size: 0.75rem;
+            }
+            .info-buttons-grid {
+                gap: 8px;
+            }
+            .info-btn {
+                padding: 6px 14px;
+                font-size: 0.65rem;
+                gap: 6px;
+            }
+            .info-btn i {
+                font-size: 0.7rem;
+            }
+            .footer-pill {
+                padding: 8px 20px;
+                font-size: 0.8rem;
+            }
+            .footer-left .copy {
+                font-size: 0.65rem;
+            }
+            .footer-right a {
+                font-size: 0.65rem;
+            }
+            .contact-details-bar .contact-item {
+                font-size: 0.75rem;
+            }
+            .contact-details-bar .contact-item i {
+                font-size: 0.9rem;
+                width: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 0.8rem 0.6rem;
+                border-radius: 24px;
+            }
+            .brand {
+                font-size: 1.1rem;
+            }
+            .brand-logo {
+                height: 34px;
+            }
+            .hero-left h1 {
+                font-size: 1.2rem;
+            }
+            .hero-stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .stat-card {
+                padding: 12px 8px;
+            }
+            .stat-card .number {
+                font-size: 1.1rem;
+            }
+            .stat-card .label {
+                font-size: 0.45rem;
+            }
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+                gap: 0.6rem;
+            }
+            .product-tile {
+                padding: 0.8rem 0.6rem 1rem;
+                border-radius: 14px;
+            }
+            .product-tile .product-name {
+                font-size: 0.65rem;
+            }
+            .product-tile .product-image {
+                border-radius: 12px;
+            }
+            .section-title h2 {
+                font-size: 1.2rem;
+            }
+            .section-title .sub {
+                font-size: 0.75rem;
+            }
+            .info-buttons-grid {
+                gap: 6px;
+            }
+            .info-btn {
+                padding: 5px 12px;
+                font-size: 0.6rem;
+                gap: 5px;
+            }
+            .info-btn i {
+                font-size: 0.6rem;
+            }
+            .demo-form .form-row input {
+                font-size: 0.75rem;
+                padding: 9px 14px;
+            }
+            .demo-form .form-row textarea {
+                font-size: 0.75rem;
+                padding: 9px 14px;
+                min-height: 50px;
+            }
+            .demo-form button {
+                font-size: 0.75rem;
+                padding: 9px 18px;
+            }
+            .features .sub {
+                font-size: 0.7rem;
+            }
+            .feature-list li {
+                font-size: 0.7rem;
+                padding: 8px 0;
+                gap: 10px;
+            }
+            .feature-list li i {
+                width: 22px;
+                height: 22px;
+                font-size: 0.65rem;
+            }
+            .footer-pill {
+                padding: 6px 14px;
+                font-size: 0.7rem;
+                gap: 6px;
+            }
+            .footer-pill i {
+                font-size: 0.8rem;
+            }
+            .footer-left .copy {
+                font-size: 0.6rem;
+            }
+            .footer-right a {
+                font-size: 0.6rem;
+            }
+            .contact-details-bar .contact-item {
+                font-size: 0.7rem;
+                gap: 8px;
+            }
+            .contact-details-bar .contact-item i {
+                font-size: 0.8rem;
+                width: 18px;
+            }
+            .contact-details-bar .contact-item .label {
+                font-size: 0.5rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            .product-tile {
+                padding: 0.6rem 0.4rem 0.8rem;
+            }
+            .product-tile .product-name {
+                font-size: 0.6rem;
+            }
+            .product-tile .product-category {
+                font-size: 0.4rem;
+            }
+            .hero-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stat-card .number {
+                font-size: 1rem;
+            }
+            .info-buttons-grid {
+                gap: 4px;
+            }
+            .info-btn {
+                padding: 4px 10px;
+                font-size: 0.55rem;
+            }
+            .info-btn i {
+                font-size: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <!-- ===== HEADER ===== -->
+        <div class="header">
+            <div class="brand-wrapper">
+                <img src="myrtillelogo.png" alt="Myrtille Industries Logo" class="brand-logo" />
+                <div class="brand">MYRTILLE <span>INDUSTRIES</span></div>
+            </div>
+            <div class="tagline">
+                <i class="fas fa-circle"></i> Medical Equipment · Govt. Tenders · Rajasthan
+            </div>
+        </div>
+
+        <!-- ===== HERO SECTION ===== -->
+        <div class="hero-section">
+            <div class="hero-left">
+                <h1><i class="fas fa-handshake"></i> Trusted Medical<br />Equipment Partner</h1>
+                <div class="hero-sub">
+                    Supplying high‑quality medical equipment to government hospitals, private healthcare chains, and nursing homes across India — from furniture to advanced CT scanners.
+                </div>
+                <div class="hero-badges">
+                    <span class="hero-badge"><i class="fas fa-check-circle"></i> Govt. Empanelled</span>
+                    <span class="hero-badge"><i class="fas fa-check-circle"></i> GST &amp; PAN Verified</span>
+                    <span class="hero-badge"><i class="fas fa-check-circle"></i> Pan‑India Supply</span>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="number"><i class="fas fa-building"></i>200+</div>
+                        <div class="label">Clients Served</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number"><i class="fas fa-file-signature"></i>50+</div>
+                        <div class="label">Govt. Tenders</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number"><i class="fas fa-truck"></i>15+</div>
+                        <div class="label">Districts</div>
+                    </div>
+                </div>
+                <div class="hero-contact-chip">
+                    <a href="tel:9782099489"><i class="fas fa-phone"></i> 9782099489</a>
+                    <a href="mailto:myrtilleindia@gmail.com"><i class="fas fa-envelope"></i> myrtilleindia@gmail.com</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Jaipur, Rajasthan</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PRODUCTS SECTION ===== -->
+        <div class="section-title">
+            <h2><i class="fas fa-boxes"></i> Our Product Range</h2>
+            <div class="sub">Click on any product to explore more details</div>
+        </div>
+
+        <!-- ===== PRODUCT GRID ===== -->
+        <div class="product-grid">
+
+            <!-- Product 1: Hospital Furniture -->
+            <a href="product-furniture.html" class="product-tile">
+                <img src="images/furniture.png" alt="Hospital Furniture" class="product-image" onerror="this.src='https://picsum.photos/seed/furniture/300/300'"/>
+                <div class="product-name">Hospital Furniture</div>
+                <div class="product-category">Beds · Chairs · Cabinets</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 2: Radiology Equipment -->
+            <a href="product-radiology.html" class="product-tile">
+                <img src="images/radiology.png" alt="Radiology Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/radiology/300/300'"/>
+                <div class="product-name">Radiology Equipment</div>
+                <div class="product-category">CT Scan · X-Ray · MRI</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 3: Laboratory Equipment -->
+            <a href="product-laboratory.html" class="product-tile">
+                <img src="images/laboratory.png" alt="Laboratory Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/laboratory/300/300'"/>
+                <div class="product-name">Laboratory Equipment</div>
+                <div class="product-category">Centrifuge · Microscope · Analyzers</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 4: OT Equipment -->
+            <a href="product-ot.html" class="product-tile">
+                <img src="images/ot-equipment.png" alt="OT Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/ot/300/300'"/>
+                <div class="product-name">OT Equipment</div>
+                <div class="product-category">Tables · Lights · Scrub Sinks</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 5: ICU Equipment -->
+            <a href="product-icu.html" class="product-tile">
+                <img src="images/icu-equipment.png" alt="ICU Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/icu/300/300'"/>
+                <div class="product-name">ICU Equipment</div>
+                <div class="product-category">Ventilators · Monitors · Pumps</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 6: Sterilization Equipment -->
+            <a href="product-sterilization.html" class="product-tile">
+                <img src="images/sterilization.png" alt="Sterilization Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/sterilization/300/300'"/>
+                <div class="product-name">Sterilization Equipment</div>
+                <div class="product-category">Autoclaves · Washer-Disinfectors</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 7: Ward Equipment -->
+            <a href="product-ward.html" class="product-tile">
+                <img src="images/ward-equipment.png" alt="Ward Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/ward/300/300'"/>
+                <div class="product-name">Ward Equipment</div>
+                <div class="product-category">Lockers · Trolleys · Screens</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 8: Administrative Furniture -->
+            <a href="product-administrative.html" class="product-tile">
+                <img src="images/administrative.png" alt="Administrative Furniture" class="product-image" onerror="this.src='https://picsum.photos/seed/admin/300/300'"/>
+                <div class="product-name">Administrative Furniture</div>
+                <div class="product-category">Cabinets · Desks · Chairs</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 9: Diagnostic Equipment -->
+            <a href="product-diagnostic.html" class="product-tile">
+                <img src="images/diagnostic.png" alt="Diagnostic Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/diagnostic/300/300'"/>
+                <div class="product-name">Diagnostic Equipment</div>
+                <div class="product-category">ECG · Ultrasound · Doppler</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 10: Pathology Equipment -->
+            <a href="product-pathology.html" class="product-tile">
+                <img src="images/pathology.png" alt="Pathology Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/pathology/300/300'"/>
+                <div class="product-name">Pathology Equipment</div>
+                <div class="product-category">Incubators · Shakers · Water Baths</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 11: Patient Care Equipment -->
+            <a href="product-patient-care.html" class="product-tile">
+                <img src="images/patient-care.png" alt="Patient Care Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/patientcare/300/300'"/>
+                <div class="product-name">Patient Care Equipment</div>
+                <div class="product-category">Stretchers · Wheelchairs · Walkers</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 12: Safety Equipment -->
+            <a href="product-safety.html" class="product-tile">
+                <img src="images/safety-equipment.png" alt="Safety Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/safety/300/300'"/>
+                <div class="product-name">Safety Equipment</div>
+                <div class="product-category">Fire Extinguishers · Masks · Gloves</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 13: Dental Equipment -->
+            <a href="product-dental.html" class="product-tile dental">
+                <img src="images/dental.png" alt="Dental Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/dental/300/300'"/>
+                <div class="product-name">Dental Equipment</div>
+                <div class="product-category">Chairs · Units · X-Ray · Autoclaves</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 14: RAD-XR (Special) -->
+            <a href="product-rad-xr.html" class="product-tile rad-xr">
+                <img src="images/rad-xr.png" alt="RAD-XR" class="product-image" onerror="this.src='https://picsum.photos/seed/radxr/300/300'"/>
+                <div class="product-name">RAD-XR</div>
+                <div class="product-category">Radiology Report Delivery</div>
+                <span class="product-badge"><i class="fas fa-star"></i> Featured</span>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+        </div>
+
+        <!-- ===== ENQUIRY + ABOUT SECTION ===== -->
+        <div class="enquiry-section">
+
+            <!-- ABOUT / FEATURES -->
+            <div class="features">
+                <h2><i class="fas fa-bolt"></i> About Myrtille Industries</h2>
+                <div class="sub">Trusted medical equipment supplier since 2018</div>
+                <ul class="feature-list">
+                    <li>
+                        <i class="fas fa-handshake"></i>
+                        <div><strong>Government &amp; Private</strong> — We serve govt. hospitals across Rajasthan and private healthcare chains with equal dedication.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-trophy"></i>
+                        <div><strong>Empanelled Supplier</strong> — Registered with Rajasthan govt. tenders, compliant with all statutory requirements.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-boxes"></i>
+                        <div><strong>Complete Range</strong> — From hospital furniture to high-end CT scanners, everything under one roof.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-tools"></i>
+                        <div><strong>After‑Sales Support</strong> — Annual maintenance contracts, spare parts, and service support across India.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-file-contract"></i>
+                        <div><strong>Tender Expertise</strong> — We handle the entire tender process — documentation, supply, installation, and commissioning.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-credit-card"></i>
+                        <div><strong>GST &amp; PAN Verified</strong> — All necessary registrations in place for seamless procurement.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ENQUIRY FORM -->
+            <div class="demo-card">
+                <div class="demo-header">
+                    <i class="fas fa-paper-plane"></i> Send an Enquiry
+                    <span style="font-size:0.65rem;color:#5a7a8a;font-weight:400;margin-left:auto;">we'll get back to you</span>
+                </div>
+                <form class="demo-form" id="enquiryForm">
+                    <div class="form-row">
+                        <input type="text" id="enqName" placeholder="👤 Your full name" required />
+                        <input type="tel" id="enqMobile" placeholder="📱 Mobile number" required />
+                    </div>
+                    <div class="form-row">
+                        <input type="text" id="enqHospital" placeholder="🏥 Hospital / Institute name" required />
+                    </div>
+                    <div class="form-row">
+                        <textarea id="enqDetails" placeholder="📝 Equipment requirement — e.g. CT Scan, ICU beds, furniture, etc." rows="2"></textarea>
+                    </div>
+                    <button type="submit" id="enqSubmitBtn">
+                        <i class="fas fa-arrow-right"></i> Submit Enquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ===== CONTACT DETAILS BAR ===== -->
+        <div class="contact-details-bar">
+            <a href="tel:9782099489" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <span class="label">Phone</span>
+                    <span class="value">9782099489</span>
+                </div>
+            </a>
+            <span class="contact-divider">|</span>
+            <a href="mailto:myrtilleindia@gmail.com" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <span class="label">Email</span>
+                    <span class="value">myrtilleindia@gmail.com</span>
+                </div>
+            </a>
+            <span class="contact-divider">|</span>
+            <a href="#" class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <span class="label">Address</span>
+                    <span class="value">Plot-25, Deepnagar, Near Gujar Ki Thadi, Jaipur 302019</span>
+                </div>
+            </a>
+            <span class="contact-divider">|</span>
+            <div class="contact-item">
+                <i class="fas fa-id-card"></i>
+                <div>
+                    <span class="label">GST / PAN</span>
+                    <span class="value">08AMHPY5013C1Z4 / AMHPY5013C</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== INFO BUTTONS SECTION ===== -->
+        <div class="info-buttons-section">
+            <div class="info-label"><i class="fas fa-chevron-down" style="margin-right:8px;"></i> Company Resources <i class="fas fa-chevron-down" style="margin-left:8px;"></i></div>
+            <div class="info-buttons-grid">
+                <a href="privacy-policy.html" class="info-btn privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+                <a href="terms.html" class="info-btn terms"><i class="fas fa-file-contract"></i> Terms &amp; Conditions</a>
+                <a href="past-performance.html" class="info-btn performance"><i class="fas fa-chart-line"></i> Past Performance</a>
+                <a href="certificates.html" class="info-btn certificates"><i class="fas fa-certificate"></i> Certificates</a>
+                <a href="about-owner.html" class="info-btn owner"><i class="fas fa-user-tie"></i> About Owner</a>
+                <a href="team.html" class="info-btn team"><i class="fas fa-users"></i> Team</a>
+                <a href="contact.html" class="info-btn contact"><i class="fas fa-address-book"></i> Contact Details</a>
+            </div>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="footer-section">
+            <div class="footer-left">
+                <span class="copy"><i class="fas fa-copyright"></i> 2026 Myrtille Industries. All rights reserved.</span>
+                <span style="color:#5a7a8a;font-size:0.7rem;">|</span>
+                <span style="color:#5a7a8a;font-size:0.7rem;">GST: 08AMHPY5013C1Z4</span>
+            </div>
+            <div class="footer-right">
+                <a href="tel:9782099489"><i class="fas fa-phone"></i> 9782099489</a>
+                <a href="mailto:myrtilleindia@gmail.com"><i class="fas fa-envelope"></i> myrtilleindia@gmail.com</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Jaipur</a>
+                <a href="#" class="footer-pill">
+                    <i class="fas fa-heart" style="color:#b44a7a;"></i> Made with Care
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div id="toast" class="toast-msg">✅ Your enquiry has been received.</div>
+
+    <script>
+        (function() {
+            const BOT_TOKEN = '7941135502:AAHz-KGvAAoZEhPVgfVKw3zFbkaB0_Pi5rM';
+            const CHAT_IDS = ['878604830', '679625583'];
+
+            const form = document.getElementById('enquiryForm');
+            const nameInput = document.getElementById('enqName');
+            const mobileInput = document.getElementById('enqMobile');
+            const hospitalInput = document.getElementById('enqHospital');
+            const detailsInput = document.getElementById('enqDetails');
+            const toast = document.getElementById('toast');
+            const submitBtn = document.getElementById('enqSubmitBtn');
+
+            function showToast(msg) {
+                toast.textContent = msg || '✅ Your enquiry has been received.';
+                toast.style.display = 'block';
+                setTimeout(() => { toast.style.display = 'none'; }, 3500);
+            }
+
+            function escapeMarkdown(text) {
+                if (!text) return '';
+                return text.replace(/_/g, '\\_')
+                    .replace(/\*/g, '\\*')
+                    .replace(/\[/g, '\\[')
+                    .replace(/\]/g, '\\]')
+                    .replace(/\(/g, '\\(')
+                    .replace(/\)/g, '\\)')
+                    .replace(/~/g, '\\~')
+                    .replace(/`/g, '\\`')
+                    .replace(/>/g, '\\>')
+                    .replace(/#/g, '\\#')
+                    .replace(/\+/g, '\\+')
+                    .replace(/-/g, '\\-')
+                    .replace(/=/g, '\\=')
+                    .replace(/\|/g, '\\|')
+                    .replace(/\{/g, '\\{')
+                    .replace(/\}/g, '\\}')
+                    .replace(/\./g, '\\.')
+                    .replace(/\!/g, '\\!');
+            }
+
+            async function sendToTelegram(name, mobile, hospital, details) {
+                const now = new Date();
+                const dateStr = now.toLocaleString('en-IN', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: true
+                });
+
+                const safeName = escapeMarkdown(name.trim()) || '—';
+                const safeMobile = escapeMarkdown(mobile.trim()) || '—';
+                const safeHospital = escapeMarkdown(hospital.trim()) || '—';
+                const safeDetails = escapeMarkdown(details.trim()) || '—';
+
+                
+                
+
+               // ✅ FIXED: Using \n for newlines instead of %0A
+                const message =
+                    '📋 *NEW ENQUIRY — MYRTILLE INDUSTRIES*\n' +
+                    '━━━━━━━━━━━━━━━━━━━━━\n' +
+                    '👤 *Name*\n' + safeName + '\n\n' +
+                    '📱 *Mobile*\n' + safeMobile + '\n\n' +
+                    '🏥 *Hospital / Institute*\n' + safeHospital + '\n\n' +
+                    '📝 *Requirement Details*\n' + safeDetails + '\n\n' +
+                    '━━━━━━━━━━━━━━━━━━━━━\n' +
+                    '🕒 ' + dateStr + '\n' +
+                    '🏢 *Myrtille Industries*\n' +
+                    '📞 9782099489 · myrtilleindia@gmail.com';
+
+                const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+                try {
+                    const promises = CHAT_IDS.map(chatId =>
+                        fetch(url, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                chat_id: chatId,
+                                text: message,
+                                parse_mode: 'Markdown'
+                            })
+                        })
+                    );
+                    await Promise.all(promises);
+                    return true;
+                } catch (err) {
+                    console.error('Telegram send error', err);
+                    return false;
+                }
+            }
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const name = nameInput.value.trim();
+                const mobile = mobileInput.value.trim();
+                const hospital = hospitalInput.value.trim();
+                const details = detailsInput.value.trim();
+
+                if (!name || !mobile || !hospital) {
+                    showToast('⚠️ Please fill in Name, Mobile & Hospital');
+                    return;
+                }
+                if (!/^[0-9+\- ]{6,20}$/.test(mobile)) {
+                    showToast('⚠️ Please enter a valid mobile number');
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> sending...';
+
+                const ok = await sendToTelegram(name, mobile, hospital, details);
+
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-arrow-right"></i> Submit Enquiry';
+
+                if (ok) {
+                    showToast('✅ Your enquiry has been received! We\'ll contact you shortly.');
+                    nameInput.value = '';
+                    mobileInput.value = '';
+                    hospitalInput.value = '';
+                    detailsInput.value = '';
+                } else {
+                    showToast('❌ Could not submit, please try again.');
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>
