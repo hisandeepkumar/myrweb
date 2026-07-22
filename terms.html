@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
+    <title>Terms &amp; Conditions · Myrtille Industries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #0d111c;
+            background-image: radial-gradient(circle at 20% 20%, #1a2a3a 0%, #070b12 90%);
+            min-height: 100vh;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            width: 100%;
+            background: rgba(18, 24, 40, 0.55);
+            backdrop-filter: blur(14px) saturate(160%);
+            -webkit-backdrop-filter: blur(14px) saturate(160%);
+            border-radius: 48px;
+            padding: 2.2rem 2.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.02);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 12px;
+        }
+
+        .brand-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand-logo {
+            height: 48px;
+            width: auto;
+            filter: drop-shadow(0 0 20px rgba(52, 211, 153, 0.08));
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 4px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            object-fit: contain;
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: -0.02em;
+            color: #eaf0fa;
+            text-shadow: 0 0 18px rgba(0, 160, 255, 0.06);
+            line-height: 1;
+        }
+        .brand span {
+            font-weight: 300;
+            color: #6b8aaa;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 8px 22px;
+            border-radius: 60px;
+            color: #8ab0d0;
+            font-size: 0.8rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.25s ease;
+            font-family: inherit;
+        }
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(52, 211, 153, 0.08);
+            color: #eaf0fa;
+            transform: translateY(-2px);
+        }
+        .back-btn i {
+            color: #34d399;
+        }
+
+        /* ===== PAGE TITLE ===== */
+        .page-title {
+            text-align: center;
+            margin: 0.2rem 0 2rem 0;
+        }
+        .page-title h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #eaf0fa;
+            letter-spacing: -0.02em;
+        }
+        .page-title h1 i {
+            color: #fbbf24;
+            margin-right: 12px;
+        }
+        .page-title .sub {
+            color: #6b8aaa;
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+        .page-title .sub i {
+            color: #34d399;
+            margin: 0 4px;
+        }
+        .last-updated {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 4px 18px;
+            border-radius: 40px;
+            font-size: 0.65rem;
+            color: #5a7a9a;
+            margin-top: 10px;
+        }
+
+        /* ===== CONTENT ===== */
+        .content-card {
+            background: rgba(255, 255, 255, 0.015);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 1.8rem 2.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-card h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #eaf0fa;
+            margin: 1.8rem 0 0.6rem 0;
+            letter-spacing: -0.01em;
+        }
+        .content-card h2:first-of-type {
+            margin-top: 0;
+        }
+        .content-card h2 i {
+            color: #fbbf24;
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .content-card p {
+            color: #b8d0e8;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+            font-weight: 400;
+        }
+
+        .content-card ul {
+            color: #b8d0e8;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            padding-left: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+        .content-card ul li {
+            margin-bottom: 0.4rem;
+        }
+        .content-card ul li strong {
+            color: #eaf0fa;
+        }
+
+        .content-card .highlight-box {
+            background: rgba(52, 211, 153, 0.03);
+            border: 1px solid rgba(52, 211, 153, 0.06);
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            margin: 1rem 0;
+        }
+        .content-card .highlight-box p {
+            margin-bottom: 0;
+            color: #c8dcee;
+        }
+        .content-card .highlight-box i {
+            color: #34d399;
+            margin-right: 8px;
+        }
+
+        .content-card .divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            margin: 1.8rem 0;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-section {
+            margin-top: 2.2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .footer-left .copy {
+            color: #4a6a8a;
+            font-size: 0.75rem;
+        }
+        .footer-left .copy i {
+            color: #34d399;
+            margin-right: 4px;
+        }
+
+        .footer-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .footer-right a {
+            color: #6b8aaa;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.2s;
+        }
+        .footer-right a:hover {
+            color: #b0cce6;
+        }
+        .footer-right a i {
+            color: #34d399;
+            font-size: 0.7rem;
+        }
+
+        .footer-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 10px 28px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            color: #b8d0e8;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: 0.25s;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.01);
+            letter-spacing: 0.2px;
+            font-family: inherit;
+        }
+        .footer-pill i {
+            color: #f472b6;
+            font-size: 1rem;
+            filter: drop-shadow(0 0 12px rgba(244, 114, 182, 0.08));
+        }
+        .footer-pill:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 200, 200, 0.04);
+            color: #eaf0fa;
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 860px) {
+            .main-container {
+                padding: 1.5rem 1.2rem;
+                border-radius: 32px;
+            }
+            .page-title h1 {
+                font-size: 1.8rem;
+            }
+            .content-card {
+                padding: 1.2rem 1.4rem;
+            }
+            .content-card h2 {
+                font-size: 1.1rem;
+            }
+            .content-card p,
+            .content-card ul {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .main-container {
+                padding: 1rem 0.8rem;
+                border-radius: 24px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .brand-wrapper {
+                width: 100%;
+            }
+            .brand-logo {
+                height: 36px;
+            }
+            .brand {
+                font-size: 1.3rem;
+            }
+            .back-btn {
+                font-size: 0.7rem;
+                padding: 6px 16px;
+            }
+            .page-title h1 {
+                font-size: 1.4rem;
+            }
+            .page-title .sub {
+                font-size: 0.8rem;
+            }
+            .content-card {
+                padding: 1rem 1rem;
+                border-radius: 18px;
+            }
+            .content-card h2 {
+                font-size: 1rem;
+                margin-top: 1.4rem;
+            }
+            .content-card p,
+            .content-card ul {
+                font-size: 0.8rem;
+                line-height: 1.6;
+            }
+            .content-card .highlight-box {
+                padding: 0.8rem 1rem;
+            }
+            .footer-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-left {
+                justify-content: center;
+            }
+            .footer-right {
+                justify-content: center;
+            }
+            .footer-pill {
+                padding: 8px 20px;
+                font-size: 0.8rem;
+            }
+            .footer-left .copy {
+                font-size: 0.65rem;
+            }
+            .footer-right a {
+                font-size: 0.65rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 0.8rem 0.6rem;
+                border-radius: 20px;
+            }
+            .brand {
+                font-size: 1rem;
+            }
+            .brand-logo {
+                height: 30px;
+            }
+            .page-title h1 {
+                font-size: 1.1rem;
+            }
+            .page-title h1 i {
+                margin-right: 6px;
+            }
+            .last-updated {
+                font-size: 0.55rem;
+                padding: 2px 12px;
+            }
+            .content-card {
+                padding: 0.8rem 0.8rem;
+            }
+            .content-card h2 {
+                font-size: 0.9rem;
+            }
+            .content-card p,
+            .content-card ul {
+                font-size: 0.75rem;
+            }
+            .content-card ul {
+                padding-left: 1.2rem;
+            }
+            .content-card .highlight-box {
+                padding: 0.6rem 0.8rem;
+            }
+            .footer-pill {
+                padding: 6px 14px;
+                font-size: 0.7rem;
+                gap: 6px;
+            }
+            .footer-pill i {
+                font-size: 0.8rem;
+            }
+            .footer-left .copy {
+                font-size: 0.6rem;
+            }
+            .footer-right a {
+                font-size: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <!-- ===== HEADER ===== -->
+        <div class="header">
+            <div class="brand-wrapper">
+                <img src="myrtillelogo.png" alt="Myrtille Industries Logo" class="brand-logo" />
+                <div class="brand">MYRTILLE <span>INDUSTRIES</span></div>
+            </div>
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+
+        <!-- ===== PAGE TITLE ===== -->
+        <div class="page-title">
+            <h1><i class="fas fa-file-contract"></i> Terms &amp; Conditions</h1>
+            <div class="sub"><i class="fas fa-circle"></i> Governing all supplies, tenders, and services provided by Myrtille Industries</div>
+            <div class="last-updated"><i class="far fa-calendar-alt"></i> Last Updated: 22 July 2026</div>
+        </div>
+
+        <!-- ===== CONTENT ===== -->
+        <div class="content-card">
+
+            <h2><i class="fas fa-info-circle"></i> 1. Acceptance of Terms</h2>
+            <p>
+                By accessing or using the services of <strong>Myrtille Industries</strong> (hereinafter referred to as "the Company", "we", "us", or "our"), you agree to be bound by these Terms &amp; Conditions. If you do not agree with any part of these terms, you must not use our services or website.
+            </p>
+            <p>
+                These terms apply to all visitors, users, clients, and any other parties who interact with the Company through any channel — including but not limited to website, email, phone, or in-person communication.
+            </p>
+
+            <div class="highlight-box">
+                <p><i class="fas fa-gavel"></i> <strong>Governing Law:</strong> These terms shall be governed by and construed in accordance with the laws of India. Any disputes arising out of or in connection with these terms shall be subject to the exclusive jurisdiction of the courts at Jaipur, Rajasthan.</p>
+            </div>
+
+            <hr class="divider" />
+
+            <h2><i class="fas fa-handshake"></i> 2. Scope of Services</h2>
+            <p>
+                Myrtille Industries is a supplier of medical equipment, hospital furniture, and related healthcare infrastructure products. Our services include:
+            </p>
+            <ul>
+                <li><strong>Supply of Medical Equipment:</strong> CT scanners, X-ray machines, MRI systems, ICU equipment, OT equipment, laboratory instruments, sterilization systems, and more.</li>
+                <li><strong>Hospital Furniture:</strong> Beds, trolleys, ward furniture, administrative furniture, and patient care equipment.</li>
+                <li><strong>Government Tenders:</strong> We participate in and fulfill government tenders for healthcare infrastructure across Rajasthan and other states.</li>
+                <li><strong>After‑Sales Support:</strong> Installation, commissioning, training, and annual maintenance contracts (AMC) for all equipment supplied.</li>
+                <li><strong>Custom Solutions:</strong> Tailored equipment procurement and supply chain management for private and public healthcare facilities.</li>
+            </ul>
+
+            <hr class="divider" />
+
+            <h2><i class="fas fa-file-invoice"></i> 3. Orders &amp; Tenders</h2>
+            <p>
+                All orders, whether through government tenders or private procurement, are subject to the following conditions:
+            </p>
+            <ul>
+                <li><strong>Order Confirmation:</strong> Orders are only binding once confirmed in writing by an authorized representative of Myrtille Industries.</li>
+                <li><strong>Tender Compliance:</strong> For government tenders, we strictly adhere to the terms, specifications, and timelines specified in the tender document. Any deviation must be approved in writing by the tendering authority.</li>
+                <li><strong>Quotations:</strong> All quotations provided are valid for 30 days from the date of issue unless otherwise stated.</li>
+                <li><strong>Minimum Order Value:</strong> Certain products may have minimum order quantity or value requirements, which will be communicated at the time of quotation.</li>
+                <li><strong>Specifications:</strong> Equipment specifications, models, and configurations are subject to change based on manufacturer updates. In such cases, we will provide equivalent or superior alternatives with prior approval.</li>
+            </ul>
+
+            <hr class="divider" />
+
+            <h2><i class="fas fa-money-bill-wave"></i> 4. Pricing &amp; Payment</h2>
+            <p>
+                All prices are quoted in Indian Rupees (INR) and are exclusive of applicable taxes unless stated otherwise.
+            </p>
+            <ul>
+                <li><strong>GST:</strong> Goods and Services Tax (GST) will be charged as per the prevailing rates. Our GST registration number is <strong>08AMHPY5013C1Z4</strong>.</li>
+                <li><strong>Payment Terms:</strong> Payment terms are specified in the quotation or tender document. Standard terms include an advance payment (30-50%) with the balance payable upon delivery/installation.</li>
+                <li><strong>Late Payment:</strong> Overdue payments may attract interest at a rate of 1.5% per month or as agreed in the contract.</li>
+                <li><strong>Payment Methods:</strong> We accept NEFT/RTGS, demand drafts, and other bank instruments. Cheque payments are accepted subject to clearance.</li>
+            </ul>
+
+            <hr class="divider" />
+
+            <h2><i class="fas fa-truck"></i> 5. Delivery &amp; Installation</h2>
+            <ul>
+                <li><strong>Delivery Timeline:</strong> Delivery timelines are communicated at the time of order confirmation. Any delays due to unforeseen circumstances (force majeure, supply chain disruptions, etc.) will be communicated promptly.</li>
+                <li><strong>Installation:</strong> Installation and commissioning of equipment are included as per the scope of work. Our trained technicians will install, calibrate, and demonstrate the equipment to your staff.</li>
+                <li><strong>Site Readiness:</strong> The client is responsible for ensuring that the site is ready for delivery and installation (including adequate space, power supply, and environmental conditions).</li>
+                <li><strong>Acceptance Testing:</strong> Post‑installation, acceptance testing will be conducted jointly with the client. A performance test report will be signed off upon successful completion.</li>
+                <li><strong>Risk Transfer:</strong> Risk of damage or loss passes to the client upon delivery at the specified location. We recommend adequate insurance coverage during transit and installation.</li>
+            </ul>
+
+            <hr class="divider" />
+
+            <h2><i class="fas fa-sync-alt"></i> 6. Warranty &amp; After‑Sales Support</h2>
+            <ul>
+                <li><strong>Warranty Period:</strong> All equipment supplied by Myrtille Industries comes with a manufacturer's warranty. The duration of the warranty varies by product and is specified in the quotation or product documentation.</li>
+                <li><strong>Warranty Coverage:</strong> Warranty covers manufacturing defects and functional failures under normal use. It does not cover damage due to misuse, negligence, unauthorized repairs, or normal wear and tear.</li>
+                <li><strong>AMC:</strong> We offer Annual Maintenance Contracts (AMC) for all equipment. AMC terms and pricing are available upon request.</li>
+                <li><strong>Spare Parts:</strong> Genuine spare parts are available for all equipment we supply. We maintain an inventory of critical spares for quick turnaround.</li>
+                <li><strong>Service Response:</strong> Service requests are typically responded to within 24-48 hours. Critical issues are escalated for immediate attention.</li>
+            </ul>
+
+            <hr class="divider" />
+
+            <h2><i class="fas fa-shield-alt"></i> 7. Liability &amp; Disclaimer</h2>
+            <ul>
+                <li><strong>Limitation of Liability:</strong> Myrtille Industries shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to the use of our products or services.</li>
+                <li><strong>Product Use:</strong> It is the client's responsibility to ensure that the equipment is used in accordance with the manufacturer's instructions and applicable regulatory standards.</li>
+                <li><strong>Force Majeure:</strong> We shall not be liable for any delays or failure to perform due to events beyond our reasonable control, including but not limited to acts of God, war, terrorism, natural disasters, strikes, or government actions.</li>
+                <li><strong>Product Specifications:</strong> While we strive to provide accurate product specifications, images, and descriptions, slight variations may occur. We recommend verifying specifications directly with our sales team before placing an order.</li>
+            </ul>
+
+            <hr class="divider" />
+
+            <h2><i class="fas fa-user-lock"></i> 8. Confidentiality</h2>
+            <p>
+                Both parties agree to keep confidential all information shared during the course of their business relationship, including but not limited to pricing, technical specifications, client lists, and business strategies. This obligation survives the termination of any agreement.
+            </p>
+
+            <hr class="divider" />
+
+            <h2><i class="fas fa-ban"></i> 9. Prohibited Uses</h2>
+            <p>
+                You agree not to use our services, website, or any associated platforms for any unlawful purpose or in any way that could damage the reputation or operations of Myrtille Industries. Prohibited activities include (but are not limited to):
+            </p>
+            <ul>
+                <li>Fraudulent or deceptive activities.</li>
+                <li>Unauthorized copying, distribution, or reverse‑engineering of our products or content.</li>
+                <li>Using our services to harm, harass, or defraud others.</li>
+                <li>Violating any applicable local, state, national, or international laws.</li>
+            </ul>
+
+            <hr class="divider" />
+
+            <h2><i class="fas fa-edit"></i> 10. Amendments to Terms</h2>
+            <p>
+                Myrtille Industries reserves the right to update, modify, or amend these Terms &amp; Conditions at any time without prior notice. Changes will be effective immediately upon posting on our website. Your continued use of our services constitutes your acceptance of the updated terms. We recommend reviewing this page periodically for any changes.
+            </p>
+
+            <hr class="divider" />
+
+            <h2><i class="fas fa-phone"></i> 11. Contact Information</h2>
+            <p>
+                For any questions, clarifications, or concerns regarding these Terms &amp; Conditions, please contact us:
+            </p>
+            <div class="highlight-box">
+                <p>
+                    <i class="fas fa-building"></i> <strong>Myrtille Industries</strong><br />
+                    <i class="fas fa-map-marker-alt"></i> Plot-25, Deepnagar, Near Gujar Ki Thadi, Jaipur, Rajasthan 302019<br />
+                    <i class="fas fa-phone"></i> <a href="tel:9782099489" style="color:#34d399;text-decoration:none;">9782099489</a><br />
+                    <i class="fas fa-envelope"></i> <a href="mailto:myrtilleindia@gmail.com" style="color:#34d399;text-decoration:none;">myrtilleindia@gmail.com</a><br />
+                    <i class="fas fa-id-card"></i> GST: 08AMHPY5013C1Z4 &nbsp;|&nbsp; PAN: AMHPY5013C
+                </p>
+            </div>
+
+            <p style="color:#4a6a8a;font-size:0.8rem;margin-top:0.5rem;text-align:center;">
+                <i class="fas fa-check-circle" style="color:#34d399;"></i> By using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms &amp; Conditions.
+            </p>
+
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="footer-section">
+            <div class="footer-left">
+                <span class="copy"><i class="fas fa-copyright"></i> 2026 Myrtille Industries. All rights reserved.</span>
+                <span style="color:#4a6a8a;font-size:0.7rem;">|</span>
+                <span style="color:#4a6a8a;font-size:0.7rem;">GST: 08AMHPY5013C1Z4</span>
+            </div>
+            <div class="footer-right">
+                <a href="tel:9782099489"><i class="fas fa-phone"></i> 9782099489</a>
+                <a href="mailto:myrtilleindia@gmail.com"><i class="fas fa-envelope"></i> myrtilleindia@gmail.com</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Jaipur</a>
+                <a href="index.html" class="footer-pill">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
