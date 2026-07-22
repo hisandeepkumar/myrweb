@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
+    <title>Contact · Myrtille Industries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #0d111c;
+            background-image: radial-gradient(circle at 20% 20%, #1a2a3a 0%, #070b12 90%);
+            min-height: 100vh;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            width: 100%;
+            background: rgba(18, 24, 40, 0.55);
+            backdrop-filter: blur(14px) saturate(160%);
+            -webkit-backdrop-filter: blur(14px) saturate(160%);
+            border-radius: 48px;
+            padding: 2.2rem 2.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.02);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 12px;
+        }
+
+        .brand-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand-logo {
+            height: 48px;
+            width: auto;
+            filter: drop-shadow(0 0 20px rgba(52, 211, 153, 0.08));
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 4px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            object-fit: contain;
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: -0.02em;
+            color: #eaf0fa;
+            text-shadow: 0 0 18px rgba(0, 160, 255, 0.06);
+            line-height: 1;
+        }
+        .brand span {
+            font-weight: 300;
+            color: #6b8aaa;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 8px 22px;
+            border-radius: 60px;
+            color: #8ab0d0;
+            font-size: 0.8rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.25s ease;
+            font-family: inherit;
+        }
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(52, 211, 153, 0.08);
+            color: #eaf0fa;
+            transform: translateY(-2px);
+        }
+        .back-btn i {
+            color: #34d399;
+        }
+
+        /* ===== PAGE TITLE ===== */
+        .page-title {
+            text-align: center;
+            margin: 0.2rem 0 2rem 0;
+        }
+        .page-title h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #eaf0fa;
+            letter-spacing: -0.02em;
+        }
+        .page-title h1 i {
+            color: #34d399;
+            margin-right: 12px;
+        }
+        .page-title .sub {
+            color: #6b8aaa;
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+        .page-title .sub i {
+            color: #34d399;
+            margin: 0 4px;
+        }
+
+        /* ===== CONTACT GRID ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.015);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 1.5rem 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: 0.25s ease;
+        }
+        .contact-card:hover {
+            border-color: rgba(52, 211, 153, 0.06);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-card .card-title {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #4a6a8a;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            padding-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-card .card-title i {
+            color: #34d399;
+            font-size: 0.8rem;
+        }
+
+        .contact-card .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 8px 0;
+            color: #b8d0e8;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .contact-card .contact-item i {
+            color: #34d399;
+            font-size: 0.9rem;
+            width: 22px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        .contact-card .contact-item .label {
+            color: #4a6a8a;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            display: block;
+        }
+        .contact-card .contact-item .value {
+            font-weight: 500;
+            color: #d4e4f4;
+        }
+        .contact-card .contact-item .value a {
+            color: #d4e4f4;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .contact-card .contact-item .value a:hover {
+            color: #34d399;
+        }
+
+        .contact-card .contact-item .value .sub-text {
+            color: #6b8aaa;
+            font-weight: 400;
+            font-size: 0.85rem;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(37, 211, 102, 0.08);
+            border: 1px solid rgba(37, 211, 102, 0.12);
+            padding: 6px 18px;
+            border-radius: 40px;
+            color: #25d366;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.25s ease;
+            font-family: inherit;
+            cursor: pointer;
+        }
+        .btn-whatsapp:hover {
+            background: rgba(37, 211, 102, 0.12);
+            border-color: rgba(37, 211, 102, 0.2);
+            transform: scale(1.04);
+            color: #34d399;
+        }
+        .btn-whatsapp i {
+            font-size: 0.8rem;
+        }
+
+        .btn-map {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(96, 165, 250, 0.06);
+            border: 1px solid rgba(96, 165, 250, 0.08);
+            padding: 6px 18px;
+            border-radius: 40px;
+            color: #60a5fa;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.25s ease;
+            font-family: inherit;
+            cursor: pointer;
+        }
+        .btn-map:hover {
+            background: rgba(96, 165, 250, 0.1);
+            border-color: rgba(96, 165, 250, 0.15);
+            transform: scale(1.04);
+            color: #93bbfc;
+        }
+        .btn-map i {
+            font-size: 0.8rem;
+        }
+
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(244, 114, 182, 0.06);
+            border: 1px solid rgba(244, 114, 182, 0.08);
+            padding: 6px 18px;
+            border-radius: 40px;
+            color: #f472b6;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.25s ease;
+            font-family: inherit;
+            cursor: pointer;
+        }
+        .btn-email:hover {
+            background: rgba(244, 114, 182, 0.1);
+            border-color: rgba(244, 114, 182, 0.15);
+            transform: scale(1.04);
+            color: #f9a8d4;
+        }
+        .btn-email i {
+            font-size: 0.8rem;
+        }
+
+        .contact-card .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        /* ===== STAFF SECTION ===== */
+        .staff-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .staff-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.01);
+            border-radius: 16px;
+            padding: 0.8rem 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            transition: 0.2s;
+        }
+        .staff-item:hover {
+            border-color: rgba(52, 211, 153, 0.04);
+            background: rgba(255, 255, 255, 0.015);
+        }
+        .staff-item .staff-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(52, 211, 153, 0.04);
+            border: 1px solid rgba(52, 211, 153, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #34d399;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .staff-item .staff-info .staff-name {
+            font-weight: 600;
+            color: #eaf0fa;
+            font-size: 0.9rem;
+        }
+        .staff-item .staff-info .staff-role {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            color: #4a6a8a;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+        .staff-item .staff-info .staff-mobile {
+            font-size: 0.8rem;
+            color: #b0cce6;
+            margin-top: 2px;
+        }
+        .staff-item .staff-info .staff-mobile a {
+            color: #b0cce6;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .staff-item .staff-info .staff-mobile a:hover {
+            color: #34d399;
+        }
+
+        /* ===== FORM SECTION ===== */
+        .form-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .form-left h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #eaf0fa;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .form-left h2 i {
+            color: #34d399;
+            margin-right: 8px;
+        }
+        .form-left .sub {
+            color: #7a9abb;
+            font-size: 0.92rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        .form-left .quick-info {
+            margin-top: 1.2rem;
+            background: rgba(255, 255, 255, 0.01);
+            border-radius: 16px;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
+        .form-left .quick-info .qi-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 6px 0;
+            color: #b8d0e8;
+            font-size: 0.85rem;
+        }
+        .form-left .quick-info .qi-item i {
+            color: #34d399;
+            width: 20px;
+            font-size: 0.8rem;
+        }
+
+        .demo-card {
+            background: rgba(255, 255, 255, 0.015);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 1.2rem 1.6rem 1.6rem;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .demo-card .demo-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+            color: #b8d0e8;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .demo-card .demo-header i {
+            color: #34d399;
+            font-size: 1rem;
+        }
+        .demo-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .demo-form .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .demo-form .form-row input,
+        .demo-form .form-row textarea {
+            flex: 1 1 150px;
+            min-width: 120px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 11px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #eaf0fa;
+            outline: none;
+            transition: 0.15s;
+            font-family: inherit;
+        }
+        .demo-form .form-row textarea {
+            border-radius: 20px;
+            resize: vertical;
+            min-height: 60px;
+            width: 100%;
+            flex: 1 1 100%;
+        }
+        .demo-form .form-row input::placeholder,
+        .demo-form .form-row textarea::placeholder {
+            color: #4a6a8a;
+            font-weight: 300;
+        }
+        .demo-form .form-row input:focus,
+        .demo-form .form-row textarea:focus {
+            border-color: rgba(52, 211, 153, 0.12);
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .demo-form button {
+            background: rgba(52, 211, 153, 0.04);
+            border: 1px solid rgba(52, 211, 153, 0.06);
+            padding: 11px 26px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: #b8d0e8;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: 0.15s;
+            font-family: inherit;
+            backdrop-filter: blur(4px);
+            margin-top: 4px;
+        }
+        .demo-form button:hover {
+            background: rgba(52, 211, 153, 0.06);
+            border-color: rgba(52, 211, 153, 0.1);
+            color: #eaf0fa;
+        }
+        .demo-form button i {
+            color: #34d399;
+        }
+        .demo-form button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-section {
+            margin-top: 2.2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .footer-left .copy {
+            color: #4a6a8a;
+            font-size: 0.75rem;
+        }
+        .footer-left .copy i {
+            color: #34d399;
+            margin-right: 4px;
+        }
+
+        .footer-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .footer-right a {
+            color: #6b8aaa;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.2s;
+        }
+        .footer-right a:hover {
+            color: #b0cce6;
+        }
+        .footer-right a i {
+            color: #34d399;
+            font-size: 0.7rem;
+        }
+
+        .footer-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 10px 28px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            color: #b8d0e8;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: 0.25s;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.01);
+            letter-spacing: 0.2px;
+            font-family: inherit;
+        }
+        .footer-pill i {
+            color: #f472b6;
+            font-size: 1rem;
+            filter: drop-shadow(0 0 12px rgba(244, 114, 182, 0.08));
+        }
+        .footer-pill:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 200, 200, 0.04);
+            color: #eaf0fa;
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ===== TOAST ===== */
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(18, 24, 40, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(52, 211, 153, 0.06);
+            padding: 12px 30px;
+            border-radius: 60px;
+            color: #b8d0e8;
+            font-weight: 400;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1100px) {
+            .main-container {
+                padding: 1.8rem 1.8rem;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .main-container {
+                padding: 1.5rem 1.2rem;
+                border-radius: 32px;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .staff-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-section {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .page-title h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .main-container {
+                padding: 1rem 0.8rem;
+                border-radius: 24px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .brand-wrapper {
+                width: 100%;
+            }
+            .brand-logo {
+                height: 36px;
+            }
+            .brand {
+                font-size: 1.3rem;
+            }
+            .back-btn {
+                font-size: 0.7rem;
+                padding: 6px 16px;
+            }
+            .page-title h1 {
+                font-size: 1.4rem;
+            }
+            .page-title .sub {
+                font-size: 0.8rem;
+            }
+            .contact-card {
+                padding: 1.2rem 1.2rem;
+            }
+            .contact-card .contact-item {
+                font-size: 0.8rem;
+            }
+            .staff-item {
+                padding: 0.6rem 1rem;
+            }
+            .staff-item .staff-info .staff-name {
+                font-size: 0.8rem;
+            }
+            .staff-item .staff-info .staff-mobile {
+                font-size: 0.7rem;
+            }
+            .demo-card {
+                padding: 1rem;
+            }
+            .demo-card .demo-header {
+                font-size: 0.8rem;
+            }
+            .demo-form .form-row input {
+                flex: 1 1 100%;
+                min-width: 100%;
+            }
+            .demo-form .form-row textarea {
+                flex: 1 1 100%;
+                min-width: 100%;
+            }
+            .demo-form button {
+                width: 100%;
+                justify-content: center;
+            }
+            .footer-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-left {
+                justify-content: center;
+            }
+            .footer-right {
+                justify-content: center;
+            }
+            .footer-pill {
+                padding: 8px 20px;
+                font-size: 0.8rem;
+            }
+            .footer-left .copy {
+                font-size: 0.65rem;
+            }
+            .footer-right a {
+                font-size: 0.65rem;
+            }
+            .form-left h2 {
+                font-size: 1.1rem;
+            }
+            .form-left .sub {
+                font-size: 0.8rem;
+            }
+            .form-left .quick-info .qi-item {
+                font-size: 0.75rem;
+            }
+            .btn-whatsapp,
+            .btn-map,
+            .btn-email {
+                font-size: 0.65rem;
+                padding: 5px 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 0.8rem 0.6rem;
+                border-radius: 20px;
+            }
+            .brand {
+                font-size: 1rem;
+            }
+            .brand-logo {
+                height: 30px;
+            }
+            .page-title h1 {
+                font-size: 1.1rem;
+            }
+            .page-title h1 i {
+                margin-right: 6px;
+            }
+            .contact-card {
+                padding: 0.8rem 0.8rem;
+                border-radius: 18px;
+            }
+            .contact-card .contact-item {
+                font-size: 0.7rem;
+                padding: 6px 0;
+                gap: 10px;
+            }
+            .contact-card .contact-item i {
+                font-size: 0.75rem;
+                width: 18px;
+            }
+            .contact-card .card-title {
+                font-size: 0.5rem;
+            }
+            .contact-card .contact-item .value .sub-text {
+                font-size: 0.7rem;
+            }
+            .staff-item {
+                padding: 0.5rem 0.8rem;
+                gap: 10px;
+            }
+            .staff-item .staff-avatar {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+            .staff-item .staff-info .staff-name {
+                font-size: 0.75rem;
+            }
+            .staff-item .staff-info .staff-mobile {
+                font-size: 0.65rem;
+            }
+            .staff-item .staff-info .staff-role {
+                font-size: 0.5rem;
+            }
+            .demo-form .form-row input {
+                font-size: 0.75rem;
+                padding: 9px 14px;
+            }
+            .demo-form .form-row textarea {
+                font-size: 0.75rem;
+                padding: 9px 14px;
+                min-height: 50px;
+            }
+            .demo-form button {
+                font-size: 0.75rem;
+                padding: 9px 18px;
+            }
+            .btn-whatsapp,
+            .btn-map,
+            .btn-email {
+                font-size: 0.6rem;
+                padding: 4px 12px;
+            }
+            .btn-whatsapp i,
+            .btn-map i,
+            .btn-email i {
+                font-size: 0.65rem;
+            }
+            .footer-pill {
+                padding: 6px 14px;
+                font-size: 0.7rem;
+                gap: 6px;
+            }
+            .footer-pill i {
+                font-size: 0.8rem;
+            }
+            .footer-left .copy {
+                font-size: 0.6rem;
+            }
+            .footer-right a {
+                font-size: 0.6rem;
+            }
+            .form-left h2 {
+                font-size: 1rem;
+            }
+            .form-left .sub {
+                font-size: 0.7rem;
+            }
+            .form-left .quick-info {
+                padding: 0.8rem 1rem;
+            }
+            .form-left .quick-info .qi-item {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .staff-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-card .actions {
+                flex-direction: column;
+            }
+            .contact-card .actions .btn-whatsapp,
+            .contact-card .actions .btn-map,
+            .contact-card .actions .btn-email {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <!-- ===== HEADER ===== -->
+        <div class="header">
+            <div class="brand-wrapper">
+                <img src="myrtillelogo.png" alt="Myrtille Industries Logo" class="brand-logo" />
+                <div class="brand">MYRTILLE <span>INDUSTRIES</span></div>
+            </div>
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+
+        <!-- ===== PAGE TITLE ===== -->
+        <div class="page-title">
+            <h1><i class="fas fa-address-book"></i> Contact Details</h1>
+            <div class="sub"><i class="fas fa-circle"></i> Reach out to us for any enquiries, tenders, or support</div>
+        </div>
+
+        <!-- ===== CONTACT GRID ===== -->
+        <div class="contact-grid">
+
+            <!-- Card 1: Company Info -->
+            <div class="contact-card">
+                <div class="card-title"><i class="fas fa-building"></i> Company Information</div>
+
+                <div class="contact-item">
+                    <i class="fas fa-store"></i>
+                    <div>
+                        <span class="label">Firm Name</span>
+                        <div class="value">MYRTILLE INDUSTRIES</div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-user-tie"></i>
+                    <div>
+                        <span class="label">Proprietor</span>
+                        <div class="value">Anil Yadav</div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <span class="label">Address</span>
+                        <div class="value">Plot-25, Deepnagar, Near Gujar Ki Thadi, Jaipur, 302019</div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <a href="https://maps.app.goo.gl/PwJQTjUhafoBLSTf9" target="_blank" class="btn-map">
+                        <i class="fas fa-map-pin"></i> Open in Google Maps
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: Contact Numbers -->
+            <div class="contact-card">
+                <div class="card-title"><i class="fas fa-phone"></i> Contact Numbers</div>
+
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <span class="label">Mobile</span>
+                        <div class="value"><a href="tel:9782099489">9782099489</a></div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <span class="label">Email</span>
+                        <div class="value">
+                            <a href="mailto:myrtilleindia@gmail.com">myrtilleindia@gmail.com</a>
+                            <span class="sub-text"> · </span>
+                            <a href="mailto:contact@myrtille.in">contact@myrtille.in</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-id-card"></i>
+                    <div>
+                        <span class="label">GST / PAN</span>
+                        <div class="value">
+                            GST: 08AMHPY5013C1Z4
+                            <span class="sub-text"> · </span>
+                            PAN: AMHPY5013C
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <a href="https://wa.me/919782099489" target="_blank" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="mailto:myrtilleindia@gmail.com" class="btn-email">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ===== STAFF SECTION ===== -->
+        <div class="contact-card" style="margin-bottom:2rem;">
+            <div class="card-title"><i class="fas fa-users"></i> Our Team</div>
+            <div class="staff-grid">
+                <div class="staff-item">
+                    <div class="staff-avatar"><i class="fas fa-user"></i></div>
+                    <div class="staff-info">
+                        <div class="staff-name">Sandeep Yadav</div>
+                        <div class="staff-role">Team Member</div>
+                        <div class="staff-mobile">
+                            <a href="tel:9588027038">9588027038</a>
+                            <span style="margin:0 4px;color:#4a6a8a;">|</span>
+                            <a href="https://wa.me/919588027038" target="_blank" style="color:#25d366;">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="staff-item">
+                    <div class="staff-avatar"><i class="fas fa-user"></i></div>
+                    <div class="staff-info">
+                        <div class="staff-name">Amit Yadav</div>
+                        <div class="staff-role">Team Member</div>
+                        <div class="staff-mobile">
+                            <a href="tel:8890563434">8890563434</a>
+                            <span style="margin:0 4px;color:#4a6a8a;">|</span>
+                            <a href="https://wa.me/918890563434" target="_blank" style="color:#25d366;">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== FORM SECTION ===== -->
+        <div class="form-section">
+
+            <!-- LEFT: Info -->
+            <div class="form-left">
+                <h2><i class="fas fa-paper-plane"></i> Send an Enquiry</h2>
+                <div class="sub">
+                    Fill in the form and we'll get back to you within 24 hours.
+                    For urgent enquiries, please call us directly.
+                </div>
+                <div class="quick-info">
+                    <div class="qi-item"><i class="fas fa-phone"></i> <span><strong>Call:</strong> 9782099489</span></div>
+                    <div class="qi-item"><i class="fab fa-whatsapp" style="color:#25d366;"></i> <span><strong>WhatsApp:</strong> 9782099489</span></div>
+                    <div class="qi-item"><i class="fas fa-envelope"></i> <span><strong>Email:</strong> myrtilleindia@gmail.com</span></div>
+                    <div class="qi-item"><i class="fas fa-clock"></i> <span><strong>Response:</strong> Within 24 hours</span></div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Form -->
+            <div class="demo-card">
+                <div class="demo-header">
+                    <i class="fas fa-paper-plane"></i> Enquiry Form
+                    <span style="font-size:0.65rem;color:#4a6a8a;font-weight:400;margin-left:auto;">we'll get back to you</span>
+                </div>
+                <form class="demo-form" id="enquiryForm">
+                    <div class="form-row">
+                        <input type="text" id="enqName" placeholder="👤 Your full name" required />
+                        <input type="tel" id="enqMobile" placeholder="📱 Mobile number" required />
+                    </div>
+                    <div class="form-row">
+                        <input type="text" id="enqHospital" placeholder="🏥 Hospital / Institute name" required />
+                    </div>
+                    <div class="form-row">
+                        <textarea id="enqDetails" placeholder="📝 Equipment requirement — e.g. CT Scan, ICU beds, furniture, etc." rows="2"></textarea>
+                    </div>
+                    <button type="submit" id="enqSubmitBtn">
+                        <i class="fas fa-arrow-right"></i> Submit Enquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="footer-section">
+            <div class="footer-left">
+                <span class="copy"><i class="fas fa-copyright"></i> 2026 Myrtille Industries. All rights reserved.</span>
+                <span style="color:#4a6a8a;font-size:0.7rem;">|</span>
+                <span style="color:#4a6a8a;font-size:0.7rem;">GST: 08AMHPY5013C1Z4</span>
+            </div>
+            <div class="footer-right">
+                <a href="tel:9782099489"><i class="fas fa-phone"></i> 9782099489</a>
+                <a href="mailto:myrtilleindia@gmail.com"><i class="fas fa-envelope"></i> myrtilleindia@gmail.com</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Jaipur</a>
+                <a href="index.html" class="footer-pill">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div id="toast" class="toast-msg">✅ Your enquiry has been received.</div>
+
+    <script>
+        (function() {
+            const BOT_TOKEN = '7941135502:AAHz-KGvAAoZEhPVgfVKw3zFbkaB0_Pi5rM';
+            const CHAT_IDS = ['878604830', '679625583'];
+
+            const form = document.getElementById('enquiryForm');
+            const nameInput = document.getElementById('enqName');
+            const mobileInput = document.getElementById('enqMobile');
+            const hospitalInput = document.getElementById('enqHospital');
+            const detailsInput = document.getElementById('enqDetails');
+            const toast = document.getElementById('toast');
+            const submitBtn = document.getElementById('enqSubmitBtn');
+
+            function showToast(msg) {
+                toast.textContent = msg || '✅ Your enquiry has been received.';
+                toast.style.display = 'block';
+                setTimeout(() => { toast.style.display = 'none'; }, 3500);
+            }
+
+            function escapeMarkdown(text) {
+                if (!text) return '';
+                return text.replace(/_/g, '\\_')
+                    .replace(/\*/g, '\\*')
+                    .replace(/\[/g, '\\[')
+                    .replace(/\]/g, '\\]')
+                    .replace(/\(/g, '\\(')
+                    .replace(/\)/g, '\\)')
+                    .replace(/~/g, '\\~')
+                    .replace(/`/g, '\\`')
+                    .replace(/>/g, '\\>')
+                    .replace(/#/g, '\\#')
+                    .replace(/\+/g, '\\+')
+                    .replace(/-/g, '\\-')
+                    .replace(/=/g, '\\=')
+                    .replace(/\|/g, '\\|')
+                    .replace(/\{/g, '\\{')
+                    .replace(/\}/g, '\\}')
+                    .replace(/\./g, '\\.')
+                    .replace(/\!/g, '\\!');
+            }
+
+            async function sendToTelegram(name, mobile, hospital, details) {
+                const now = new Date();
+                const dateStr = now.toLocaleString('en-IN', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: true
+                });
+
+                const safeName = escapeMarkdown(name.trim()) || '—';
+                const safeMobile = escapeMarkdown(mobile.trim()) || '—';
+                const safeHospital = escapeMarkdown(hospital.trim()) || '—';
+                const safeDetails = escapeMarkdown(details.trim()) || '—';
+
+                // ✅ FIXED: Using \n for newlines instead of %0A
+                const message =
+                    '📋 *NEW ENQUIRY — MYRTILLE INDUSTRIES*\n' +
+                    '━━━━━━━━━━━━━━━━━━━━━\n' +
+                    '👤 *Name*\n' + safeName + '\n\n' +
+                    '📱 *Mobile*\n' + safeMobile + '\n\n' +
+                    '🏥 *Hospital / Institute*\n' + safeHospital + '\n\n' +
+                    '📝 *Requirement Details*\n' + safeDetails + '\n\n' +
+                    '━━━━━━━━━━━━━━━━━━━━━\n' +
+                    '🕒 ' + dateStr + '\n' +
+                    '🏢 *Myrtille Industries*\n' +
+                    '📞 9782099489 · myrtilleindia@gmail.com';
+
+                const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+                try {
+                    const promises = CHAT_IDS.map(chatId =>
+                        fetch(url, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                chat_id: chatId,
+                                text: message,
+                                parse_mode: 'Markdown'
+                            })
+                        })
+                    );
+                    await Promise.all(promises);
+                    return true;
+                } catch (err) {
+                    console.error('Telegram send error', err);
+                    return false;
+                }
+            }
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const name = nameInput.value.trim();
+                const mobile = mobileInput.value.trim();
+                const hospital = hospitalInput.value.trim();
+                const details = detailsInput.value.trim();
+
+                if (!name || !mobile || !hospital) {
+                    showToast('⚠️ Please fill in Name, Mobile & Hospital');
+                    return;
+                }
+                if (!/^[0-9+\- ]{6,20}$/.test(mobile)) {
+                    showToast('⚠️ Please enter a valid mobile number');
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> sending...';
+
+                const ok = await sendToTelegram(name, mobile, hospital, details);
+
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-arrow-right"></i> Submit Enquiry';
+
+                if (ok) {
+                    showToast('✅ Your enquiry has been received! We\'ll contact you shortly.');
+                    nameInput.value = '';
+                    mobileInput.value = '';
+                    hospitalInput.value = '';
+                    detailsInput.value = '';
+                } else {
+                    showToast('❌ Could not submit, please try again.');
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>
