@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
+    <title>RAD-XR · Securely Send Radiology Reports (PDF) to Patients via WhatsApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #0d111c;
+            background-image: radial-gradient(circle at 20% 30%, #172237 0%, #070b12 90%);
+            min-height: 100vh;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-container {
+            max-width: 1320px;
+            width: 100%;
+            background: rgba(18, 24, 40, 0.55);
+            backdrop-filter: blur(14px) saturate(160%);
+            -webkit-backdrop-filter: blur(14px) saturate(160%);
+            border-radius: 48px;
+            padding: 2.2rem 2.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.02);
+        }
+
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 12px;
+        }
+        .brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: -0.02em;
+            color: #eaf0fa;
+            text-shadow: 0 0 18px rgba(0, 160, 255, 0.06);
+        }
+        .brand span {
+            font-weight: 300;
+            color: #6b8aaa;
+        }
+        .tagline {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 8px 22px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            color: #8ab0d0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .tagline i {
+            color: #34d399;
+            font-size: 0.5rem;
+        }
+
+        .page-title {
+            text-align: center;
+            margin: 0.2rem 0 1.8rem 0;
+        }
+        .page-title h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #eaf0fa;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+        .page-title h1 i {
+            color: #34d399;
+            margin-right: 8px;
+        }
+        .page-title .sub {
+            color: #6b8aaa;
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        .preview-wrapper {
+            max-width: 1100px;
+            margin: 0 auto 2rem auto;
+            width: 100%;
+        }
+
+        .glass-tile {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 1rem 1rem 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.01);
+            transition: 0.2s;
+        }
+        .glass-tile:hover {
+            border-color: rgba(52, 211, 153, 0.06);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .tile-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #5a7a9a;
+            margin-bottom: 0.7rem;
+            padding: 0 0.2rem;
+        }
+        .tile-label .dots span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-left: 4px;
+        }
+        .dot-red {
+            background: #ff5f57;
+        }
+        .dot-yellow {
+            background: #ffbd2e;
+        }
+        .dot-green {
+            background: #28c840;
+        }
+
+        .app-ui {
+            background: #111520;
+            border-radius: 18px;
+            padding: 0.9rem 0.9rem 0.7rem;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .app-inner-grid {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 1rem;
+        }
+
+        .app-left-panel {
+            background: rgba(255, 255, 255, 0.01);
+            border-radius: 16px;
+            padding: 0.6rem 0.7rem 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.01);
+            min-width: 0;
+        }
+        .app-panel-label {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #5a7a9a;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            padding-bottom: 0.3rem;
+        }
+        .app-info-row {
+            margin-bottom: 0.5rem;
+        }
+        .app-info-row .label {
+            font-size: 0.45rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: #4a6a8a;
+            font-weight: 600;
+        }
+        .app-info-row .value {
+            font-size: 0.6rem;
+            font-weight: 500;
+            color: #d4e4f4;
+            word-break: break-all;
+            margin-top: 1px;
+        }
+        .app-info-row .value.sub {
+            color: #8aaac8;
+            font-weight: 400;
+        }
+        .app-divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            margin: 0.5rem 0;
+        }
+        .app-credit-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.55rem;
+            color: #b0cce6;
+            padding: 2px 0;
+        }
+        .app-credit-row i {
+            width: 16px;
+            color: #5a8aaa;
+            font-size: 0.5rem;
+        }
+        .app-bot-info {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 0.4rem 0.6rem;
+            margin-top: 0.3rem;
+        }
+        .app-bot-info .bot-name {
+            font-weight: 500;
+            color: #d4e4f4;
+            font-size: 0.6rem;
+        }
+        .app-bot-info .bot-username {
+            color: #6b8aaa;
+            font-size: 0.55rem;
+        }
+        .app-bot-info .search-hint {
+            color: #4a6a8a;
+            font-size: 0.5rem;
+            margin-top: 2px;
+        }
+        .app-folder-watch {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.6rem;
+            color: #b0cce6;
+            margin-top: 0.3rem;
+        }
+        .app-folder-watch .badge-inactive {
+            background: rgba(239, 68, 68, 0.08);
+            color: #f87171;
+            padding: 1px 10px;
+            border-radius: 30px;
+            font-size: 0.5rem;
+            font-weight: 500;
+            border: 1px solid rgba(239, 68, 68, 0.06);
+        }
+
+        .app-right-panel {
+            padding: 0 0.2rem;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .app-monitor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .app-monitor-header .title {
+            font-weight: 600;
+            color: #d4e4f4;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .app-monitor-header .title i {
+            color: #34d399;
+            font-size: 0.4rem;
+        }
+        .app-action-buttons {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+        .app-action-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            color: #b0cce6;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.5rem;
+            font-weight: 500;
+            cursor: default;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .app-action-btn i {
+            font-size: 0.5rem;
+            color: #6b8aaa;
+        }
+        .app-action-btn.stop {
+            background: rgba(239, 68, 68, 0.04);
+            border-color: rgba(239, 68, 68, 0.06);
+            color: #f87171;
+        }
+        .app-action-btn.stop i {
+            color: #f87171;
+        }
+
+        .app-record-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1.2fr 1fr;
+            gap: 3px 4px;
+            font-size: 0.55rem;
+            padding: 3px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.01);
+            color: #a0bcd8;
+        }
+        .app-record-grid.header-row {
+            color: #4a6a8a;
+            font-weight: 600;
+            font-size: 0.45rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            padding-bottom: 3px;
+            margin-bottom: 1px;
+        }
+        .app-record-grid .status-archiving {
+            color: #fbbf24;
+        }
+        .app-record-grid .status-archiving i {
+            margin-right: 2px;
+        }
+        .app-record-grid .file-name {
+            color: #b0cce6;
+        }
+        .app-record-grid .patient-id {
+            font-weight: 500;
+            color: #d4e4f4;
+            font-size: 0.5rem;
+        }
+
+        .patient-list {
+            max-height: 160px;
+            overflow-y: auto;
+            margin-bottom: 0.4rem;
+        }
+        .patient-list::-webkit-scrollbar {
+            width: 3px;
+        }
+        .patient-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .patient-list::-webkit-scrollbar-thumb {
+            background: #2a3a4a;
+            border-radius: 6px;
+        }
+
+        .app-console {
+            margin-top: 0.2rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 0.3rem 0.6rem;
+            border: 1px solid rgba(255, 255, 255, 0.01);
+        }
+        .app-console .console-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.45rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: #4a6a8a;
+            margin-bottom: 1px;
+        }
+        .app-console .console-lines {
+            font-family: "Inter", monospace;
+            font-size: 0.5rem;
+            color: #7a9abb;
+            line-height: 1.5;
+            max-height: 48px;
+            overflow-y: auto;
+        }
+        .app-console .console-lines .ok {
+            color: #34d399;
+        }
+        .app-console .console-lines .ok i {
+            margin-right: 3px;
+        }
+
+        .app-footer-preview {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.3rem;
+            font-size: 0.5rem;
+            color: #4a6a8a;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        .app-footer-preview .bot-name {
+            color: #8ab0d0;
+            font-weight: 500;
+        }
+        .app-footer-preview .bot-username {
+            color: #4a6a8a;
+        }
+
+        .content-below {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.2rem;
+            margin-top: 1rem;
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .features h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #eaf0fa;
+            letter-spacing: -0.02em;
+        }
+        .features h2 i {
+            color: #34d399;
+            margin-right: 8px;
+        }
+        .features .sub {
+            color: #7a9abb;
+            font-size: 0.92rem;
+            margin-bottom: 0.2rem;
+            font-weight: 400;
+        }
+        .feature-list {
+            list-style: none;
+            margin-top: 0.2rem;
+        }
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            color: #c8dcee;
+            font-weight: 400;
+            font-size: 0.92rem;
+        }
+        .feature-list li i {
+            width: 30px;
+            height: 30px;
+            background: rgba(52, 211, 153, 0.04);
+            border: 1px solid rgba(52, 211, 153, 0.06);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #34d399;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .feature-list li strong {
+            color: #eaf0fa;
+            font-weight: 600;
+        }
+
+        .demo-card {
+            background: rgba(255, 255, 255, 0.015);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 1.2rem 1.6rem 1.6rem;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .demo-card .demo-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+            color: #b8d0e8;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .demo-card .demo-header i {
+            color: #34d399;
+            font-size: 1rem;
+        }
+        .demo-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .demo-form .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .demo-form .form-row input,
+        .demo-form .form-row textarea {
+            flex: 1 1 150px;
+            min-width: 120px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 11px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #eaf0fa;
+            outline: none;
+            transition: 0.15s;
+            font-family: inherit;
+        }
+        .demo-form .form-row textarea {
+            border-radius: 20px;
+            resize: vertical;
+            min-height: 60px;
+            width: 100%;
+            flex: 1 1 100%;
+        }
+        .demo-form .form-row input::placeholder,
+        .demo-form .form-row textarea::placeholder {
+            color: #4a6a8a;
+            font-weight: 300;
+        }
+        .demo-form .form-row input:focus,
+        .demo-form .form-row textarea:focus {
+            border-color: rgba(52, 211, 153, 0.12);
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .demo-form .form-row textarea:focus {
+            border-color: rgba(52, 211, 153, 0.12);
+        }
+        .demo-form button {
+            background: rgba(52, 211, 153, 0.04);
+            border: 1px solid rgba(52, 211, 153, 0.06);
+            padding: 11px 26px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: #b8d0e8;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: 0.15s;
+            font-family: inherit;
+            backdrop-filter: blur(4px);
+            margin-top: 4px;
+        }
+        .demo-form button:hover {
+            background: rgba(52, 211, 153, 0.06);
+            border-color: rgba(52, 211, 153, 0.1);
+            color: #eaf0fa;
+        }
+        .demo-form button i {
+            color: #34d399;
+        }
+        .demo-form button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .footer-float {
+            margin-top: 2.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .floating-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 12px 36px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            color: #b8d0e8;
+            font-weight: 500;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.25s;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.01);
+            letter-spacing: 0.2px;
+            font-family: inherit;
+        }
+        .floating-pill i {
+            color: #f472b6;
+            font-size: 1.1rem;
+            filter: drop-shadow(0 0 12px rgba(244, 114, 182, 0.08));
+        }
+        .floating-pill:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 200, 200, 0.04);
+            color: #eaf0fa;
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(18, 24, 40, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(52, 211, 153, 0.06);
+            padding: 12px 30px;
+            border-radius: 60px;
+            color: #b8d0e8;
+            font-weight: 400;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .app-console .console-lines::-webkit-scrollbar,
+        .patient-list::-webkit-scrollbar {
+            width: 2px;
+        }
+        .app-console .console-lines::-webkit-scrollbar-track,
+        .patient-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .app-console .console-lines::-webkit-scrollbar-thumb,
+        .patient-list::-webkit-scrollbar-thumb {
+            background: #2a3a4a;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 1100px) {
+            .main-container {
+                padding: 1.8rem 1.8rem;
+            }
+            .app-inner-grid {
+                grid-template-columns: 200px 1fr;
+                gap: 0.8rem;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .main-container {
+                padding: 1.5rem 1.2rem;
+            }
+            .page-title h1 {
+                font-size: 1.5rem;
+            }
+            .content-below {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .app-inner-grid {
+                grid-template-columns: 180px 1fr;
+                gap: 0.7rem;
+            }
+            .app-record-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                font-size: 0.5rem;
+            }
+            .app-record-grid .file-name {
+                display: none;
+            }
+            .app-record-grid.header-row .file-name {
+                display: none;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .main-container {
+                padding: 1.2rem 1rem;
+                border-radius: 32px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .brand {
+                font-size: 1.5rem;
+            }
+            .tagline {
+                font-size: 0.7rem;
+                padding: 6px 16px;
+            }
+            .page-title h1 {
+                font-size: 1.2rem;
+            }
+            .page-title .sub {
+                font-size: 0.8rem;
+            }
+            .glass-tile {
+                padding: 0.8rem;
+            }
+            .app-ui {
+                padding: 0.7rem;
+            }
+            .app-inner-grid {
+                grid-template-columns: 150px 1fr;
+                gap: 0.6rem;
+            }
+            .app-left-panel {
+                padding: 0.4rem 0.5rem 0.6rem;
+            }
+            .app-info-row .value {
+                font-size: 0.5rem;
+            }
+            .app-info-row .label {
+                font-size: 0.4rem;
+            }
+            .app-credit-row {
+                font-size: 0.45rem;
+            }
+            .app-bot-info .bot-name {
+                font-size: 0.5rem;
+            }
+            .app-bot-info .bot-username {
+                font-size: 0.45rem;
+            }
+            .app-bot-info .search-hint {
+                font-size: 0.4rem;
+            }
+            .app-folder-watch {
+                font-size: 0.5rem;
+            }
+            .app-folder-watch .badge-inactive {
+                font-size: 0.4rem;
+                padding: 1px 6px;
+            }
+            .app-panel-label {
+                font-size: 0.45rem;
+            }
+            .patient-list {
+                max-height: 120px;
+            }
+            .app-record-grid {
+                grid-template-columns: 1fr 1fr;
+                font-size: 0.45rem;
+            }
+            .app-record-grid .accession {
+                display: none;
+            }
+            .app-record-grid.header-row .accession {
+                display: none;
+            }
+            .app-footer-preview {
+                font-size: 0.45rem;
+            }
+            .floating-pill {
+                padding: 10px 24px;
+                font-size: 0.85rem;
+            }
+            .demo-card {
+                padding: 1rem;
+            }
+            .demo-card .demo-header {
+                font-size: 0.8rem;
+            }
+            .tile-label {
+                font-size: 0.55rem;
+            }
+            .app-monitor-header .title {
+                font-size: 0.6rem;
+            }
+            .app-action-btn {
+                font-size: 0.45rem;
+                padding: 2px 8px;
+            }
+            .demo-form .form-row input {
+                flex: 1 1 100%;
+                min-width: 100%;
+            }
+            .demo-form .form-row textarea {
+                flex: 1 1 100%;
+                min-width: 100%;
+            }
+            .demo-form button {
+                width: 100%;
+                justify-content: center;
+            }
+            .features h2 {
+                font-size: 1.1rem;
+            }
+            .feature-list li {
+                font-size: 0.8rem;
+                padding: 10px 0;
+            }
+            .feature-list li i {
+                width: 26px;
+                height: 26px;
+                font-size: 0.75rem;
+            }
+            .app-console .console-lines {
+                font-size: 0.45rem;
+                max-height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 0.8rem 0.6rem;
+                border-radius: 24px;
+            }
+            .brand {
+                font-size: 1.2rem;
+            }
+            .page-title h1 {
+                font-size: 1rem;
+            }
+            .app-inner-grid {
+                grid-template-columns: 120px 1fr;
+                gap: 0.4rem;
+            }
+            .app-left-panel {
+                padding: 0.3rem 0.4rem 0.4rem;
+            }
+            .app-info-row {
+                margin-bottom: 0.3rem;
+            }
+            .app-info-row .value {
+                font-size: 0.45rem;
+            }
+            .app-info-row .label {
+                font-size: 0.35rem;
+            }
+            .app-credit-row {
+                font-size: 0.4rem;
+                padding: 1px 0;
+            }
+            .app-credit-row i {
+                width: 12px;
+                font-size: 0.4rem;
+            }
+            .app-bot-info {
+                padding: 0.2rem 0.4rem;
+            }
+            .app-bot-info .bot-name {
+                font-size: 0.45rem;
+            }
+            .app-bot-info .bot-username {
+                font-size: 0.4rem;
+            }
+            .app-bot-info .search-hint {
+                font-size: 0.35rem;
+            }
+            .app-folder-watch {
+                font-size: 0.45rem;
+            }
+            .app-folder-watch .badge-inactive {
+                font-size: 0.35rem;
+                padding: 1px 5px;
+            }
+            .app-panel-label {
+                font-size: 0.4rem;
+                margin-bottom: 0.3rem;
+                padding-bottom: 0.2rem;
+            }
+            .app-divider {
+                margin: 0.3rem 0;
+            }
+            .patient-list {
+                max-height: 100px;
+            }
+            .app-record-grid {
+                font-size: 0.4rem;
+                padding: 2px 0;
+                gap: 2px;
+            }
+            .app-record-grid .patient-id {
+                font-size: 0.4rem;
+            }
+            .app-record-grid.header-row {
+                font-size: 0.35rem;
+            }
+            .app-right-panel {
+                padding: 0;
+            }
+            .app-monitor-header .title {
+                font-size: 0.5rem;
+            }
+            .app-action-btn {
+                font-size: 0.4rem;
+                padding: 1px 6px;
+            }
+            .app-action-btn i {
+                font-size: 0.4rem;
+            }
+            .app-console {
+                padding: 0.2rem 0.4rem;
+                margin-top: 0.2rem;
+            }
+            .app-console .console-header {
+                font-size: 0.35rem;
+            }
+            .app-console .console-lines {
+                font-size: 0.4rem;
+                max-height: 32px;
+                line-height: 1.4;
+            }
+            .app-footer-preview {
+                font-size: 0.4rem;
+                margin-top: 0.2rem;
+            }
+            .floating-pill {
+                padding: 8px 18px;
+                font-size: 0.75rem;
+                gap: 6px;
+            }
+            .floating-pill i {
+                font-size: 0.9rem;
+            }
+            .demo-form .form-row input {
+                font-size: 0.75rem;
+                padding: 9px 14px;
+            }
+            .demo-form .form-row textarea {
+                font-size: 0.75rem;
+                padding: 9px 14px;
+                min-height: 50px;
+            }
+            .demo-form button {
+                font-size: 0.75rem;
+                padding: 9px 18px;
+            }
+            .features .sub {
+                font-size: 0.7rem;
+            }
+            .feature-list li {
+                font-size: 0.7rem;
+                padding: 8px 0;
+                gap: 10px;
+            }
+            .feature-list li i {
+                width: 22px;
+                height: 22px;
+                font-size: 0.65rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .app-inner-grid {
+                grid-template-columns: 100px 1fr;
+                gap: 0.3rem;
+            }
+            .app-left-panel {
+                padding: 0.2rem 0.3rem 0.3rem;
+            }
+            .app-info-row .value {
+                font-size: 0.4rem;
+            }
+            .app-info-row .label {
+                font-size: 0.3rem;
+            }
+            .app-credit-row {
+                font-size: 0.35rem;
+            }
+            .app-bot-info .bot-name {
+                font-size: 0.4rem;
+            }
+            .app-bot-info .bot-username {
+                font-size: 0.35rem;
+            }
+            .app-record-grid {
+                font-size: 0.35rem;
+            }
+            .app-record-grid .patient-id {
+                font-size: 0.35rem;
+            }
+            .app-monitor-header .title {
+                font-size: 0.45rem;
+            }
+            .app-action-btn {
+                font-size: 0.35rem;
+                padding: 1px 5px;
+            }
+            .app-console .console-lines {
+                font-size: 0.35rem;
+                max-height: 28px;
+            }
+            .patient-list {
+                max-height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <!-- header -->
+        <div class="header">
+            <div class="brand">RAD<span>-XR</span></div>
+            <div class="tagline">
+                <i class="fas fa-circle"></i> WhatsApp · PDF · DICOM
+            </div>
+        </div>
+
+        <!-- H1 title -->
+        <div class="page-title">
+            <h1><i class="fas fa-file-pdf"></i> RAD-XR .Securely Send Radiology Reports (PDF) to Patients via WhatsApp</h1>
+            <div class="sub">Seamless DICOM integration · Canon · Carestream · Konica · Agfa · Fuji</div>
+        </div>
+
+        <!-- PREVIEW (CENTERED) -->
+        <div class="preview-wrapper">
+            <div class="glass-tile">
+                <div class="tile-label">
+                    <span><i class="fas fa-desktop" style="margin-right:6px;"></i> RAD-XR · Live Monitor</span>
+                    <div class="dots">
+                        <span class="dot-red"></span>
+                        <span class="dot-yellow"></span>
+                        <span class="dot-green"></span>
+                    </div>
+                </div>
+
+                <div class="app-ui">
+                    <div class="app-inner-grid">
+
+                        <!-- LEFT: NETWORK CONFIG -->
+                        <div class="app-left-panel">
+                            <div class="app-panel-label"><i class="fas fa-network-wired" style="margin-right:6px;"></i> NETWORK CONFIG</div>
+
+                            <div class="app-info-row">
+                                <div class="label">INSTITUTE NAME</div>
+                                <div class="value">RAD-XR IMAGING CENTER</div>
+                            </div>
+                            <div class="app-info-row">
+                                <div class="label">AE TITLE</div>
+                                <div class="value">RAD-XR</div>
+                            </div>
+                            <div class="app-info-row">
+                                <div class="label">IP ADDRESS</div>
+                                <div class="value">10.207.193.87</div>
+                            </div>
+                            <div class="app-info-row">
+                                <div class="label">PORT NUMBER</div>
+                                <div class="value">11112</div>
+                            </div>
+
+                            <hr class="app-divider" />
+
+                            <div class="app-panel-label" style="font-size:0.5rem; margin-bottom:0.3rem;">💳 CREDITS</div>
+                            <div class="app-credit-row"><i class="fab fa-whatsapp"></i> WhatsApp: <span style="color:#d4e4f4;">15000</span></div>
+                            <div class="app-credit-row"><i class="fab fa-telegram-plane"></i> Telegram: <span style="color:#d4e4f4;">4</span></div>
+
+                            <hr class="app-divider" />
+
+                            <div class="app-panel-label" style="font-size:0.5rem; margin-bottom:0.3rem;">🤖 TELEGRAM BOT</div>
+                            <div class="app-bot-info">
+                                <div class="bot-name">Name: RAD-XR IMAGING CENTER</div>
+                                <div class="bot-username">Username: @rdx_xr_bot</div>
+                                <div class="search-hint">Search on Telegram: @...</div>
+                            </div>
+
+                            <div class="app-folder-watch">
+                                <span><i class="fas fa-folder" style="margin-right:4px;"></i> FOLDER WATCH</span>
+                                <span class="badge-inactive">INACTIVE</span>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: LIVE MONITOR -->
+                        <div class="app-right-panel">
+                            <div class="app-monitor-header">
+                                <div class="title"><i class="fas fa-circle"></i> Live Monitor</div>
+                                <div class="app-action-buttons">
+                                    <span class="app-action-btn stop"><i class="fas fa-stop-circle"></i> Stop Server</span>
+                                    <span class="app-action-btn"><i class="fas fa-sync-alt"></i> Resend Failed</span>
+                                    <span class="app-action-btn"><i class="fas fa-file-import"></i> Import DICOM File</span>
+                                </div>
+                            </div>
+
+                            <!-- Grid header -->
+                            <div class="app-record-grid header-row">
+                                <span>Patient ID</span>
+                                <span>Patient Name</span>
+                                <span class="accession">Accession No.</span>
+                                <span class="file-name">File Name</span>
+                                <span>Status</span>
+                            </div>
+
+                            <!-- Scrollable patient list -->
+                            <div class="patient-list">
+                                <div class="app-record-grid"><span class="patient-id">PT250701</span><span>Aarav Sharma</span><span class="accession">PT250701</span><span class="file-name">PT250701.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                                <div class="app-record-grid"><span class="patient-id">PT250702</span><span>Ananya Verma</span><span class="accession">PT250702</span><span class="file-name">PT250702.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                                <div class="app-record-grid"><span class="patient-id">PT250703</span><span>Rahul Meena</span><span class="accession">PT250703</span><span class="file-name">PT250703.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                                <div class="app-record-grid"><span class="patient-id">PT250704</span><span>Priya Singh</span><span class="accession">PT250704</span><span class="file-name">PT250704.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                                <div class="app-record-grid"><span class="patient-id">PT250705</span><span>Mohit Yadav</span><span class="accession">PT250705</span><span class="file-name">PT250705.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                                <div class="app-record-grid"><span class="patient-id">PT250706</span><span>Neha Gupta</span><span class="accession">PT250706</span><span class="file-name">PT250706.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                                <div class="app-record-grid"><span class="patient-id">PT250707</span><span>Rohan Patel</span><span class="accession">PT250707</span><span class="file-name">PT250707.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                                <div class="app-record-grid"><span class="patient-id">PT250708</span><span>Pooja Kumari</span><span class="accession">PT250708</span><span class="file-name">PT250708.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                                <div class="app-record-grid"><span class="patient-id">PT250709</span><span>Vivek Joshi</span><span class="accession">PT250709</span><span class="file-name">PT250709.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                                <div class="app-record-grid"><span class="patient-id">PT250710</span><span>Sneha Choudhary</span><span class="accession">PT250710</span><span class="file-name">PT250710.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                                <div class="app-record-grid"><span class="patient-id">PT250711</span><span>Aditya Jain</span><span class="accession">PT250711</span><span class="file-name">PT250711.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                                <div class="app-record-grid"><span class="patient-id">PT250712</span><span>Kavya Agarwal</span><span class="accession">PT250712</span><span class="file-name">PT250712.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                                <div class="app-record-grid"><span class="patient-id">PT250713</span><span>Nikhil Saini</span><span class="accession">PT250713</span><span class="file-name">PT250713.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                                <div class="app-record-grid"><span class="patient-id">PT250714</span><span>Riya Sharma</span><span class="accession">PT250714</span><span class="file-name">PT250714.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                                <div class="app-record-grid"><span class="patient-id">PT250715</span><span>Manish Kumar</span><span class="accession">PT250715</span><span class="file-name">PT250715.dcm</span><span class="status-archiving"><i class="fas fa-archive"></i> Sent &amp; Archiving</span></div>
+                            </div>
+
+                            <!-- CONSOLE LOG (ALL SUCCESSFUL) -->
+                            <div class="app-console">
+                                <div class="console-header">
+                                    <span>📋 Console Log</span>
+                                    <span><i class="far fa-copy"></i> <i class="far fa-trash-alt"></i></span>
+                                </div>
+                                <div class="console-lines">
+                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:15:23] WhatsApp ✅ sent to +919876543210</div>
+                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:15:24] Telegram ✅ sent to user 878604830</div>
+                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:16:01] WhatsApp ✅ sent to +919876543211</div>
+                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:16:02] Telegram ✅ sent to user 878604830</div>
+                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:16:45] PDF generated: PT250701_Aarav_Sharma.pdf</div>
+                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:17:12] WhatsApp ✅ sent to +919876543212</div>
+                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:17:13] Telegram ✅ sent to user 878604830</div>
+                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19 10:18:05] All 15 reports archived successfully</div>
+                                </div>
+                            </div>
+
+                            <!-- footer within preview -->
+                            <div class="app-footer-preview">
+                                <span><i class="fas fa-robot"></i> <span class="bot-name">RAD-XR IMAGING CENTER</span></span>
+                                <span class="bot-username">@rdx_xr_bot</span>
+                                <span><i class="fas fa-circle" style="color:#34d399;font-size:0.3rem;"></i> 15 studies</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT BELOW: Features + Demo -->
+        <div class="content-below">
+
+            <!-- FEATURES -->
+            <div class="features">
+                <h2><i class="fas fa-bolt"></i> About RAD-XR</h2>
+                <div class="sub">Next‑gen radiology report delivery system</div>
+                <ul class="feature-list">
+                    <li>
+                        <i class="fab fa-whatsapp"></i>
+                        <div><strong>WhatsApp delivery</strong> — X‑ray, CT, MRI reports sent as PDF directly to the patient's phone.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-plug"></i>
+                        <div><strong>Universal DICOM &amp; PACS</strong> — connects effortlessly with Canon, Carestream, Konica, Agfa, Fuji, and more.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <div><strong>Zero‑hassle setup</strong> — No complex configuration, just point to your archive and go.</div>
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-telegram"></i>
+                        <div><strong>Telegram bot</strong> — patients can request their own reports via a simple ID and name.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-file-pdf"></i>
+                        <div><strong>Smart PDF generation</strong> — combines multiple DICOM series into one beautiful report with metadata.</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-credit-card"></i>
+                        <div><strong>Credits system</strong> — flexible per‑message billing for WhatsApp and Telegram.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- DEMO FORM — updated with Institute + Other Details -->
+            <div class="demo-card">
+                <div class="demo-header">
+                    <i class="fas fa-paper-plane"></i> Request a demo
+                    <span style="font-size:0.65rem;color:#4a6a8a;font-weight:400;margin-left:auto;">we'll get back to you</span>
+                </div>
+                <form class="demo-form" id="demoForm">
+                    <!-- Row 1: Name + Mobile -->
+                    <div class="form-row">
+                        <input type="text" id="demoName" placeholder="👤 Your full name" required />
+                        <input type="tel" id="demoMobile" placeholder="📱 Mobile number" required />
+                    </div>
+                    <!-- Row 2: Institute Name -->
+                    <div class="form-row">
+                        <input type="text" id="demoInstitute" placeholder="🏥 Institute / Hospital name" required />
+                    </div>
+                    <!-- Row 3: Other Details (textarea) -->
+                    <div class="form-row">
+                        <textarea id="demoDetails" placeholder="📝 Other details — modality, DICOM vendor, number of studies, etc." rows="2"></textarea>
+                    </div>
+                    <button type="submit" id="demoSubmitBtn">
+                        <i class="fas fa-arrow-right"></i> Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- floating pill footer (centered) -->
+        <div class="footer-float">
+            <a href="https://instagram.com/sandeep_yadav_._._" target="_blank" class="floating-pill">
+                Made with 💕 By Sandeep
+            </a>
+        </div>
+
+    </div>
+
+    <!-- toast -->
+    <div id="toast" class="toast-msg">✅ Your request has been received.</div>
+
+    <script>
+        (function() {
+            const BOT_TOKEN = '7941135502:AAHz-KGvAAoZEhPVgfVKw3zFbkaB0_Pi5rM';
+            const CHAT_IDS = ['878604830', '679625583'];
+
+            const form = document.getElementById('demoForm');
+            const nameInput = document.getElementById('demoName');
+            const mobileInput = document.getElementById('demoMobile');
+            const instituteInput = document.getElementById('demoInstitute');
+            const detailsInput = document.getElementById('demoDetails');
+            const toast = document.getElementById('toast');
+            const submitBtn = document.getElementById('demoSubmitBtn');
+
+            function showToast(msg) {
+                toast.textContent = msg || '✅ Your request has been received.';
+                toast.style.display = 'block';
+                setTimeout(() => { toast.style.display = 'none'; }, 3500);
+            }
+
+            function escapeMarkdown(text) {
+                if (!text) return '';
+                return text.replace(/_/g, '\\_')
+                    .replace(/\*/g, '\\*')
+                    .replace(/\[/g, '\\[')
+                    .replace(/\]/g, '\\]')
+                    .replace(/\(/g, '\\(')
+                    .replace(/\)/g, '\\)')
+                    .replace(/~/g, '\\~')
+                    .replace(/`/g, '\\`')
+                    .replace(/>/g, '\\>')
+                    .replace(/#/g, '\\#')
+                    .replace(/\+/g, '\\+')
+                    .replace(/-/g, '\\-')
+                    .replace(/=/g, '\\=')
+                    .replace(/\|/g, '\\|')
+                    .replace(/\{/g, '\\{')
+                    .replace(/\}/g, '\\}')
+                    .replace(/\./g, '\\.')
+                    .replace(/\!/g, '\\!');
+            }
+
+            async function sendToTelegram(name, mobile, institute, details) {
+                const now = new Date();
+                const dateStr = now.toLocaleString('en-IN', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: true
+                });
+
+                const safeName = escapeMarkdown(name.trim()) || '—';
+                const safeMobile = escapeMarkdown(mobile.trim()) || '—';
+                const safeInstitute = escapeMarkdown(institute.trim()) || '—';
+                const safeDetails = escapeMarkdown(details.trim()) || '—';
+
+                const message =
+                    `📋 *NEW DEMO REQUEST — RAD-XR*%0A` +
+                    `━━━━━━━━━━━━━━━━━━━━━%0A` +
+                    `👤 *Name*%0A${safeName}%0A%0A` +
+                    `📱 *Mobile*%0A${safeMobile}%0A%0A` +
+                    `🏥 *Institute*%0A${safeInstitute}%0A%0A` +
+                    `📝 *Other Details*%0A${safeDetails}%0A%0A` +
+                    `━━━━━━━━━━━━━━━━━━━━━%0A` +
+                    `🕒 ${dateStr}%0A` +
+                    `🤖 *RAD-XR Demo System*`;
+
+                const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+                try {
+                    const promises = CHAT_IDS.map(chatId =>
+                        fetch(url, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                chat_id: chatId,
+                                text: message,
+                                parse_mode: 'Markdown'
+                            })
+                        })
+                    );
+                    await Promise.all(promises);
+                    return true;
+                } catch (err) {
+                    console.error('Telegram send error', err);
+                    return false;
+                }
+            }
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const name = nameInput.value.trim();
+                const mobile = mobileInput.value.trim();
+                const institute = instituteInput.value.trim();
+                const details = detailsInput.value.trim();
+
+                if (!name || !mobile || !institute) {
+                    showToast('⚠️ Please fill in Name, Mobile & Institute');
+                    return;
+                }
+                if (!/^[0-9+\- ]{6,20}$/.test(mobile)) {
+                    showToast('⚠️ Please enter a valid mobile number');
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> sending...';
+
+                const ok = await sendToTelegram(name, mobile, institute, details);
+
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-arrow-right"></i> Submit';
+
+                if (ok) {
+                    showToast('✅ Your demo request has been received!');
+                    nameInput.value = '';
+                    mobileInput.value = '';
+                    instituteInput.value = '';
+                    detailsInput.value = '';
+                } else {
+                    showToast('❌ Could not submit, please try again.');
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>
