@@ -224,316 +224,199 @@
             width: 20px;
         }
 
-        /* ===== GLASS TILE ===== */
-        .preview-wrapper {
-            max-width: 1100px;
-            margin: 0 auto 2rem auto;
-            width: 100%;
+        /* ===== SECTION TITLE ===== */
+        .section-title {
+            text-align: center;
+            margin: 2rem 0 1.8rem 0;
+        }
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #eaf0fa;
+            letter-spacing: -0.02em;
+        }
+        .section-title h2 i {
+            color: #34d399;
+            margin-right: 10px;
+        }
+        .section-title .sub {
+            color: #6b8aaa;
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-top: 4px;
         }
 
-        .glass-tile {
+        /* ===== PRODUCT GRID ===== */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 0 0 2rem 0;
+        }
+
+        .product-tile {
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            border-radius: 28px;
-            padding: 1rem 1rem 1.2rem;
+            border-radius: 24px;
+            padding: 1.2rem 1rem 1.4rem;
             border: 1px solid rgba(255, 255, 255, 0.03);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.01);
-            transition: 0.2s;
-        }
-        .glass-tile:hover {
-            border-color: rgba(52, 211, 153, 0.06);
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
-        }
-
-        .tile-label {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            color: #5a7a9a;
-            margin-bottom: 0.7rem;
-            padding: 0 0.2rem;
-        }
-        .tile-label .dots span {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            margin-left: 4px;
-        }
-        .dot-red {
-            background: #ff5f57;
-        }
-        .dot-yellow {
-            background: #ffbd2e;
-        }
-        .dot-green {
-            background: #28c840;
-        }
-
-        .app-ui {
-            background: #111520;
-            border-radius: 18px;
-            padding: 0.9rem 0.9rem 0.7rem;
-            border: 1px solid rgba(255, 255, 255, 0.02);
-            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .app-inner-grid {
-            display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 1rem;
-        }
-
-        /* LEFT PANEL */
-        .app-left-panel {
-            background: rgba(255, 255, 255, 0.01);
-            border-radius: 16px;
-            padding: 0.6rem 0.7rem 0.8rem;
-            border: 1px solid rgba(255, 255, 255, 0.01);
-            min-width: 0;
-        }
-        .app-panel-label {
-            font-size: 0.55rem;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            color: #5a7a9a;
-            font-weight: 600;
-            margin-bottom: 0.6rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-            padding-bottom: 0.3rem;
-        }
-        .app-info-row {
-            margin-bottom: 0.5rem;
-        }
-        .app-info-row .label {
-            font-size: 0.45rem;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            color: #4a6a8a;
-            font-weight: 600;
-        }
-        .app-info-row .value {
-            font-size: 0.6rem;
-            font-weight: 500;
-            color: #d4e4f4;
-            word-break: break-all;
-            margin-top: 1px;
-        }
-        .app-info-row .value.sub {
-            color: #8aaac8;
-            font-weight: 400;
-        }
-        .app-divider {
-            border: none;
-            border-top: 1px solid rgba(255, 255, 255, 0.02);
-            margin: 0.5rem 0;
-        }
-        .app-credit-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.55rem;
-            color: #b0cce6;
-            padding: 2px 0;
-        }
-        .app-credit-row i {
-            width: 18px;
-            color: #5a8aaa;
-            font-size: 0.5rem;
-        }
-
-        .app-bot-info {
-            background: rgba(0, 0, 0, 0.15);
-            border-radius: 12px;
-            padding: 0.4rem 0.6rem;
-            margin-top: 0.3rem;
-        }
-        .app-bot-info .bot-name {
-            font-weight: 500;
-            color: #d4e4f4;
-            font-size: 0.6rem;
-        }
-        .app-bot-info .bot-username {
-            color: #6b8aaa;
-            font-size: 0.55rem;
-        }
-
-        .app-folder-watch {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.6rem;
-            color: #b0cce6;
-            margin-top: 0.3rem;
-        }
-        .app-folder-watch .badge-active {
-            background: rgba(52, 211, 153, 0.08);
-            color: #34d399;
-            padding: 1px 10px;
-            border-radius: 30px;
-            font-size: 0.5rem;
-            font-weight: 500;
-            border: 1px solid rgba(52, 211, 153, 0.06);
-        }
-
-        /* RIGHT PANEL */
-        .app-right-panel {
-            padding: 0 0.2rem;
-            min-width: 0;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.01);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
             display: flex;
             flex-direction: column;
-        }
-        .app-monitor-header {
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 0.5rem;
-            flex-wrap: wrap;
-            gap: 6px;
+            text-align: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
         }
-        .app-monitor-header .title {
-            font-weight: 600;
-            color: #d4e4f4;
-            font-size: 0.7rem;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        .product-tile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(52, 211, 153, 0.02) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
         }
-        .app-monitor-header .title i {
-            color: #34d399;
-            font-size: 0.4rem;
+        .product-tile:hover {
+            border-color: rgba(52, 211, 153, 0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(52, 211, 153, 0.04);
+            background: rgba(255, 255, 255, 0.025);
         }
-        .app-action-buttons {
-            display: flex;
-            gap: 4px;
-            flex-wrap: wrap;
+        .product-tile:hover::before {
+            opacity: 1;
         }
-        .app-action-btn {
+        .product-tile:active {
+            transform: scale(0.97);
+        }
+
+        .product-tile .product-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 16px;
+            object-fit: cover;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.03);
-            color: #b0cce6;
-            padding: 3px 12px;
-            border-radius: 20px;
-            font-size: 0.5rem;
+            transition: 0.3s ease;
+        }
+        .product-tile:hover .product-image {
+            border-color: rgba(52, 211, 153, 0.08);
+        }
+
+        .product-tile .product-name {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #eaf0fa;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+            margin-top: 2px;
+        }
+        .product-tile .product-category {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #5a7a9a;
             font-weight: 500;
-            cursor: default;
+        }
+        .product-tile .product-arrow {
+            color: #4a6a8a;
+            font-size: 0.7rem;
+            transition: 0.3s ease;
+            margin-top: 2px;
+        }
+        .product-tile:hover .product-arrow {
+            color: #34d399;
+            transform: translateX(4px);
+        }
+
+        /* RAD-XR special tile */
+        .product-tile.rad-xr {
+            border-color: rgba(244, 114, 182, 0.08);
+            background: rgba(244, 114, 182, 0.02);
+        }
+        .product-tile.rad-xr:hover {
+            border-color: rgba(244, 114, 182, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(244, 114, 182, 0.06);
+        }
+        .product-tile.rad-xr .product-name {
+            color: #f472b6;
+        }
+        .product-tile.rad-xr .product-arrow {
+            color: #f472b6;
+        }
+        .product-tile.rad-xr:hover .product-arrow {
+            color: #f472b6;
+        }
+        .product-tile.rad-xr .product-badge {
+            background: rgba(244, 114, 182, 0.08);
+            color: #f472b6;
+            font-size: 0.45rem;
+            text-transform: uppercase;
+            padding: 2px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(244, 114, 182, 0.06);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== POLICY BUTTONS ===== */
+        .policy-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin: 0.5rem 0 1.5rem 0;
+            padding: 0.5rem 0;
+        }
+
+        .policy-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 10px 28px;
+            border-radius: 60px;
+            color: #b0cce6;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 10px;
+            transition: 0.25s ease;
+            font-family: inherit;
+            cursor: pointer;
         }
-        .app-action-btn i {
-            font-size: 0.5rem;
-            color: #6b8aaa;
+        .policy-btn:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(52, 211, 153, 0.08);
+            color: #eaf0fa;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
-        .app-action-btn.primary {
-            background: rgba(52, 211, 153, 0.04);
-            border-color: rgba(52, 211, 153, 0.06);
+        .policy-btn i {
             color: #34d399;
+            font-size: 0.85rem;
         }
-        .app-action-btn.primary i {
-            color: #34d399;
+        .policy-btn.terms i {
+            color: #fbbf24;
         }
-
-        .app-record-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1.8fr 0.9fr;
-            gap: 3px 6px;
-            font-size: 0.55rem;
-            padding: 3px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.01);
-            color: #a0bcd8;
-        }
-        .app-record-grid.header-row {
-            color: #4a6a8a;
-            font-weight: 600;
-            font-size: 0.45rem;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            padding-bottom: 3px;
-            margin-bottom: 1px;
-        }
-        .app-record-grid .status-ok {
-            color: #34d399;
-        }
-        .app-record-grid .status-ok i {
-            margin-right: 2px;
-        }
-        .app-record-grid .equip-name {
-            color: #b0cce6;
+        .policy-btn.privacy i {
+            color: #60a5fa;
         }
 
-        .equip-list {
-            max-height: 180px;
-            overflow-y: auto;
-            margin-bottom: 0.4rem;
-        }
-        .equip-list::-webkit-scrollbar {
-            width: 3px;
-        }
-        .equip-list::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .equip-list::-webkit-scrollbar-thumb {
-            background: #2a3a4a;
-            border-radius: 6px;
-        }
-
-        .app-console {
-            margin-top: 0.2rem;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 12px;
-            padding: 0.3rem 0.6rem;
-            border: 1px solid rgba(255, 255, 255, 0.01);
-        }
-        .app-console .console-header {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.45rem;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            color: #4a6a8a;
-            margin-bottom: 1px;
-        }
-        .app-console .console-lines {
-            font-family: "Inter", monospace;
-            font-size: 0.5rem;
-            color: #7a9abb;
-            line-height: 1.5;
-            max-height: 48px;
-            overflow-y: auto;
-        }
-        .app-console .console-lines .ok {
-            color: #34d399;
-        }
-        .app-console .console-lines .ok i {
-            margin-right: 3px;
-        }
-
-        .app-footer-preview {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 0.3rem;
-            font-size: 0.5rem;
-            color: #4a6a8a;
-            flex-wrap: wrap;
-            gap: 4px;
-        }
-        .app-footer-preview .bot-name {
-            color: #8ab0d0;
-            font-weight: 500;
-        }
-
-        /* ===== CONTENT BELOW ===== */
-        .content-below {
+        /* ===== ENQUIRY SECTION ===== */
+        .enquiry-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2.2rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         .features {
@@ -788,28 +671,10 @@
             display: none;
         }
 
-        .app-console .console-lines::-webkit-scrollbar,
-        .equip-list::-webkit-scrollbar {
-            width: 2px;
-        }
-        .app-console .console-lines::-webkit-scrollbar-track,
-        .equip-list::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .app-console .console-lines::-webkit-scrollbar-thumb,
-        .equip-list::-webkit-scrollbar-thumb {
-            background: #2a3a4a;
-            border-radius: 6px;
-        }
-
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1100px) {
             .main-container {
                 padding: 1.8rem 1.8rem;
-            }
-            .app-inner-grid {
-                grid-template-columns: 200px 1fr;
-                gap: 0.8rem;
             }
             .hero-section {
                 grid-template-columns: 1fr;
@@ -820,6 +685,10 @@
             }
             .hero-left .hero-sub {
                 max-width: 100%;
+            }
+            .enquiry-section {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
         }
 
@@ -833,23 +702,9 @@
             .hero-stats {
                 grid-template-columns: 1fr 1fr 1fr;
             }
-            .content-below {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .app-inner-grid {
-                grid-template-columns: 180px 1fr;
-                gap: 0.7rem;
-            }
-            .app-record-grid {
-                grid-template-columns: 1fr 1fr;
-                font-size: 0.5rem;
-            }
-            .app-record-grid .equip-cat {
-                display: none;
-            }
-            .app-record-grid.header-row .equip-cat {
-                display: none;
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 1rem;
             }
             .footer-section {
                 flex-direction: column;
@@ -860,6 +715,13 @@
             }
             .footer-right {
                 justify-content: center;
+            }
+            .policy-bar {
+                gap: 12px;
+            }
+            .policy-btn {
+                padding: 8px 20px;
+                font-size: 0.7rem;
             }
         }
 
@@ -908,73 +770,39 @@
             .hero-contact-chip a {
                 font-size: 0.75rem;
             }
-            .glass-tile {
-                padding: 0.8rem;
+            .section-title h2 {
+                font-size: 1.5rem;
             }
-            .app-ui {
-                padding: 0.7rem;
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 0.8rem;
             }
-            .app-inner-grid {
-                grid-template-columns: 150px 1fr;
-                gap: 0.6rem;
+            .product-tile {
+                padding: 1rem 0.8rem 1.2rem;
+                border-radius: 18px;
             }
-            .app-left-panel {
-                padding: 0.4rem 0.5rem 0.6rem;
+            .product-tile .product-name {
+                font-size: 0.75rem;
             }
-            .app-info-row .value {
-                font-size: 0.5rem;
-            }
-            .app-info-row .label {
-                font-size: 0.4rem;
-            }
-            .app-credit-row {
+            .product-tile .product-category {
                 font-size: 0.45rem;
             }
-            .app-bot-info .bot-name {
-                font-size: 0.5rem;
+            .policy-bar {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
             }
-            .app-bot-info .bot-username {
-                font-size: 0.45rem;
-            }
-            .app-folder-watch {
-                font-size: 0.5rem;
-            }
-            .app-folder-watch .badge-active {
-                font-size: 0.4rem;
-                padding: 1px 6px;
-            }
-            .app-panel-label {
-                font-size: 0.45rem;
-            }
-            .equip-list {
-                max-height: 120px;
-            }
-            .app-record-grid {
-                grid-template-columns: 1fr 1fr;
-                font-size: 0.45rem;
-            }
-            .app-footer-preview {
-                font-size: 0.45rem;
-            }
-            .footer-pill {
-                padding: 8px 20px;
-                font-size: 0.8rem;
+            .policy-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 10px 20px;
+                font-size: 0.75rem;
             }
             .demo-card {
                 padding: 1rem;
             }
             .demo-card .demo-header {
                 font-size: 0.8rem;
-            }
-            .tile-label {
-                font-size: 0.55rem;
-            }
-            .app-monitor-header .title {
-                font-size: 0.6rem;
-            }
-            .app-action-btn {
-                font-size: 0.45rem;
-                padding: 2px 8px;
             }
             .demo-form .form-row input {
                 flex: 1 1 100%;
@@ -1000,9 +828,15 @@
                 height: 26px;
                 font-size: 0.75rem;
             }
-            .app-console .console-lines {
-                font-size: 0.45rem;
-                max-height: 40px;
+            .footer-pill {
+                padding: 8px 20px;
+                font-size: 0.8rem;
+            }
+            .footer-left .copy {
+                font-size: 0.65rem;
+            }
+            .footer-right a {
+                font-size: 0.65rem;
             }
         }
 
@@ -1033,101 +867,29 @@
             .stat-card .label {
                 font-size: 0.45rem;
             }
-            .app-inner-grid {
-                grid-template-columns: 120px 1fr;
-                gap: 0.4rem;
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+                gap: 0.6rem;
             }
-            .app-left-panel {
-                padding: 0.3rem 0.4rem 0.4rem;
+            .product-tile {
+                padding: 0.8rem 0.6rem 1rem;
+                border-radius: 14px;
             }
-            .app-info-row {
-                margin-bottom: 0.3rem;
+            .product-tile .product-name {
+                font-size: 0.65rem;
             }
-            .app-info-row .value {
-                font-size: 0.45rem;
+            .product-tile .product-image {
+                border-radius: 12px;
             }
-            .app-info-row .label {
-                font-size: 0.35rem;
+            .section-title h2 {
+                font-size: 1.2rem;
             }
-            .app-credit-row {
-                font-size: 0.4rem;
-                padding: 1px 0;
+            .section-title .sub {
+                font-size: 0.75rem;
             }
-            .app-credit-row i {
-                width: 14px;
-                font-size: 0.4rem;
-            }
-            .app-bot-info {
-                padding: 0.2rem 0.4rem;
-            }
-            .app-bot-info .bot-name {
-                font-size: 0.45rem;
-            }
-            .app-bot-info .bot-username {
-                font-size: 0.4rem;
-            }
-            .app-folder-watch {
-                font-size: 0.45rem;
-            }
-            .app-folder-watch .badge-active {
-                font-size: 0.35rem;
-                padding: 1px 5px;
-            }
-            .app-panel-label {
-                font-size: 0.4rem;
-                margin-bottom: 0.3rem;
-                padding-bottom: 0.2rem;
-            }
-            .app-divider {
-                margin: 0.3rem 0;
-            }
-            .equip-list {
-                max-height: 100px;
-            }
-            .app-record-grid {
-                font-size: 0.4rem;
-                padding: 2px 0;
-                gap: 2px;
-            }
-            .app-record-grid.header-row {
-                font-size: 0.35rem;
-            }
-            .app-right-panel {
-                padding: 0;
-            }
-            .app-monitor-header .title {
-                font-size: 0.5rem;
-            }
-            .app-action-btn {
-                font-size: 0.4rem;
-                padding: 1px 6px;
-            }
-            .app-action-btn i {
-                font-size: 0.4rem;
-            }
-            .app-console {
-                padding: 0.2rem 0.4rem;
-                margin-top: 0.2rem;
-            }
-            .app-console .console-header {
-                font-size: 0.35rem;
-            }
-            .app-console .console-lines {
-                font-size: 0.4rem;
-                max-height: 32px;
-                line-height: 1.4;
-            }
-            .app-footer-preview {
-                font-size: 0.4rem;
-                margin-top: 0.2rem;
-            }
-            .footer-pill {
-                padding: 6px 14px;
-                font-size: 0.7rem;
-                gap: 6px;
-            }
-            .footer-pill i {
-                font-size: 0.8rem;
+            .policy-btn {
+                font-size: 0.65rem;
+                padding: 8px 16px;
             }
             .demo-form .form-row input {
                 font-size: 0.75rem;
@@ -1155,53 +917,35 @@
                 height: 22px;
                 font-size: 0.65rem;
             }
+            .footer-pill {
+                padding: 6px 14px;
+                font-size: 0.7rem;
+                gap: 6px;
+            }
+            .footer-pill i {
+                font-size: 0.8rem;
+            }
             .footer-left .copy {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
             }
             .footer-right a {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
             }
         }
 
         @media (max-width: 380px) {
-            .app-inner-grid {
-                grid-template-columns: 100px 1fr;
-                gap: 0.3rem;
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
             }
-            .app-left-panel {
-                padding: 0.2rem 0.3rem 0.3rem;
+            .product-tile {
+                padding: 0.6rem 0.4rem 0.8rem;
             }
-            .app-info-row .value {
+            .product-tile .product-name {
+                font-size: 0.6rem;
+            }
+            .product-tile .product-category {
                 font-size: 0.4rem;
-            }
-            .app-info-row .label {
-                font-size: 0.3rem;
-            }
-            .app-credit-row {
-                font-size: 0.35rem;
-            }
-            .app-bot-info .bot-name {
-                font-size: 0.4rem;
-            }
-            .app-bot-info .bot-username {
-                font-size: 0.35rem;
-            }
-            .app-record-grid {
-                font-size: 0.35rem;
-            }
-            .app-monitor-header .title {
-                font-size: 0.45rem;
-            }
-            .app-action-btn {
-                font-size: 0.35rem;
-                padding: 1px 5px;
-            }
-            .app-console .console-lines {
-                font-size: 0.35rem;
-                max-height: 28px;
-            }
-            .equip-list {
-                max-height: 80px;
             }
             .hero-stats {
                 grid-template-columns: 1fr 1fr;
@@ -1219,7 +963,6 @@
         <!-- ===== HEADER ===== -->
         <div class="header">
             <div class="brand-wrapper">
-                <!-- Logo Image -->
                 <img src="myrtillelogo.png" alt="Myrtille Industries Logo" class="brand-logo" />
                 <div class="brand">MYRTILLE <span>INDUSTRIES</span></div>
             </div>
@@ -1264,126 +1007,130 @@
             </div>
         </div>
 
-        <!-- ===== MAIN PROFILE CARD ===== -->
-        <div class="preview-wrapper">
-            <div class="glass-tile">
-                <div class="tile-label">
-                    <span><i class="fas fa-briefcase" style="margin-right:6px;"></i> Company Profile</span>
-                    <div class="dots">
-                        <span class="dot-red"></span>
-                        <span class="dot-yellow"></span>
-                        <span class="dot-green"></span>
-                    </div>
-                </div>
-
-                <div class="app-ui">
-                    <div class="app-inner-grid">
-
-                        <!-- LEFT: REGISTRATION & CONTACT -->
-                        <div class="app-left-panel">
-                            <div class="app-panel-label"><i class="fas fa-id-card" style="margin-right:6px;"></i> REGISTRATION</div>
-
-                            <div class="app-info-row">
-                                <div class="label">GST No.</div>
-                                <div class="value">08AMHPY5013C1Z4</div>
-                            </div>
-                            <div class="app-info-row">
-                                <div class="label">PAN No.</div>
-                                <div class="value">AMHPY5013C</div>
-                            </div>
-                            <div class="app-info-row">
-                                <div class="label">Proprietor</div>
-                                <div class="value">Anil Yadav</div>
-                            </div>
-                            <div class="app-info-row">
-                                <div class="label">Established</div>
-                                <div class="value">2018</div>
-                            </div>
-
-                            <hr class="app-divider" />
-
-                            <div class="app-panel-label" style="font-size:0.5rem; margin-bottom:0.3rem;">📍 ADDRESS</div>
-                            <div class="app-bot-info">
-                                <div class="bot-name">PLOT-25, DEEPNAGAR</div>
-                                <div class="bot-username">NEAR GUJAR KI THADI, JAIPUR, 302019</div>
-                            </div>
-
-                            <hr class="app-divider" />
-
-                            <div class="app-panel-label" style="font-size:0.5rem; margin-bottom:0.3rem;">📞 CONTACT</div>
-                            <div class="app-credit-row"><i class="fas fa-phone"></i> Mobile: <span style="color:#d4e4f4;">9782099489</span></div>
-                            <div class="app-credit-row"><i class="fas fa-envelope"></i> Email: <span style="color:#d4e4f4;">myrtilleindia@gmail.com</span></div>
-
-                            <div class="app-folder-watch">
-                                <span><i class="fas fa-check-circle" style="color:#34d399;"></i> Active Supplier</span>
-                                <span class="badge-active"><i class="fas fa-shield-alt"></i> Verified</span>
-                            </div>
-                        </div>
-
-                        <!-- RIGHT: EQUIPMENT CATALOGUE -->
-                        <div class="app-right-panel">
-                            <div class="app-monitor-header">
-                                <div class="title"><i class="fas fa-circle"></i> Equipment Catalogue</div>
-                                <div class="app-action-buttons">
-                                    <span class="app-action-btn primary"><i class="fas fa-check"></i> Govt. Tender</span>
-                                    <span class="app-action-btn"><i class="fas fa-building"></i> Private</span>
-                                    <span class="app-action-btn"><i class="fas fa-truck"></i> Pan-India</span>
-                                </div>
-                            </div>
-
-                            <!-- Grid header -->
-                            <div class="app-record-grid header-row">
-                                <span>Category</span>
-                                <span>Equipment</span>
-                                <span class="equip-cat">Status</span>
-                            </div>
-
-                            <!-- Scrollable equipment list -->
-                            <div class="equip-list">
-                                <div class="app-record-grid"><span>💺 Furniture</span><span class="equip-name">Hospital Beds, Chairs, Cabinets</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
-                                <div class="app-record-grid"><span>🩻 Radiology</span><span class="equip-name">CT Scan, X-Ray, MRI</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
-                                <div class="app-record-grid"><span>🧬 Lab</span><span class="equip-name">Centrifuge, Microscope, Analyzers</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
-                                <div class="app-record-grid"><span>💉 OT Equipment</span><span class="equip-name">OT Tables, Lights, Scrub Sinks</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
-                                <div class="app-record-grid"><span>🫀 ICU</span><span class="equip-name">Ventilators, Monitors, Pumps</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
-                                <div class="app-record-grid"><span>🧹 Sterilization</span><span class="equip-name">Autoclaves, Washer-Disinfectors</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
-                                <div class="app-record-grid"><span>🛏️ Ward</span><span class="equip-name">Bedside Lockers, Trolleys, Screens</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
-                                <div class="app-record-grid"><span>📋 Administrative</span><span class="equip-name">Filing Cabinets, Desks, Chairs</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
-                                <div class="app-record-grid"><span>🩺 Diagnostic</span><span class="equip-name">ECG, Ultrasound, Doppler</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
-                                <div class="app-record-grid"><span>🧪 Pathology</span><span class="equip-name">Incubators, Shakers, Water Baths</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
-                                <div class="app-record-grid"><span>♿ Patient Care</span><span class="equip-name">Stretchers, Wheelchairs, Walkers</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
-                                <div class="app-record-grid"><span>🧯 Safety</span><span class="equip-name">Fire Extinguishers, Masks, Gloves</span><span class="status-ok"><i class="fas fa-check-circle"></i> Stock</span></div>
-                            </div>
-
-                            <!-- CONSOLE LOG — TENDER UPDATES -->
-                            <div class="app-console">
-                                <div class="console-header">
-                                    <span>📋 Tender Activity</span>
-                                    <span><i class="far fa-copy"></i> <i class="far fa-trash-alt"></i></span>
-                                </div>
-                                <div class="console-lines">
-                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-22] Govt. tender floated — Jaipur District Hospital</div>
-                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-21] Supply order completed — SMS Medical College</div>
-                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-20] New tender: 50 beds + 20 monitors</div>
-                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-19] Private supply — Fortis, Jaipur</div>
-                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-18] CT Scan install — Jhalawar Govt. Hospital</div>
-                                    <div class="ok"><i class="fas fa-check-circle"></i> [2026-07-17] Annual maintenance contract signed</div>
-                                </div>
-                            </div>
-
-                            <!-- footer within preview -->
-                            <div class="app-footer-preview">
-                                <span><i class="fas fa-trophy"></i> <span class="bot-name">Rajasthan Govt. Empanelled</span></span>
-                                <span><i class="fas fa-circle" style="color:#34d399;font-size:0.3rem;"></i> 200+ clients</span>
-                                <span><i class="fas fa-map-marker-alt" style="color:#f472b6;"></i> Pan-India</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- ===== PRODUCTS SECTION ===== -->
+        <div class="section-title">
+            <h2><i class="fas fa-boxes"></i> Our Product Range</h2>
+            <div class="sub">Click on any product to explore more details</div>
         </div>
 
-        <!-- ===== CONTENT BELOW: About + Enquiry ===== -->
-        <div class="content-below">
+        <!-- ===== POLICY BUTTONS ===== -->
+        <div class="policy-bar">
+            <a href="privacy-policy.html" class="policy-btn privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+            <a href="terms.html" class="policy-btn terms"><i class="fas fa-file-contract"></i> Terms &amp; Conditions</a>
+        </div>
+
+        <!-- ===== PRODUCT GRID ===== -->
+        <div class="product-grid">
+
+            <!-- Product 1: Hospital Furniture -->
+            <a href="product-furniture.html" class="product-tile">
+                <img src="images/furniture.jpg" alt="Hospital Furniture" class="product-image" onerror="this.src='https://picsum.photos/seed/furniture/300/300'"/>
+                <div class="product-name">Hospital Furniture</div>
+                <div class="product-category">Beds · Chairs · Cabinets</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 2: Radiology Equipment -->
+            <a href="product-radiology.html" class="product-tile">
+                <img src="images/radiology.jpg" alt="Radiology Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/radiology/300/300'"/>
+                <div class="product-name">Radiology Equipment</div>
+                <div class="product-category">CT Scan · X-Ray · MRI</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 3: Laboratory Equipment -->
+            <a href="product-laboratory.html" class="product-tile">
+                <img src="images/laboratory.jpg" alt="Laboratory Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/laboratory/300/300'"/>
+                <div class="product-name">Laboratory Equipment</div>
+                <div class="product-category">Centrifuge · Microscope · Analyzers</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 4: OT Equipment -->
+            <a href="product-ot.html" class="product-tile">
+                <img src="images/ot-equipment.jpg" alt="OT Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/ot/300/300'"/>
+                <div class="product-name">OT Equipment</div>
+                <div class="product-category">Tables · Lights · Scrub Sinks</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 5: ICU Equipment -->
+            <a href="product-icu.html" class="product-tile">
+                <img src="images/icu-equipment.jpg" alt="ICU Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/icu/300/300'"/>
+                <div class="product-name">ICU Equipment</div>
+                <div class="product-category">Ventilators · Monitors · Pumps</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 6: Sterilization Equipment -->
+            <a href="product-sterilization.html" class="product-tile">
+                <img src="images/sterilization.jpg" alt="Sterilization Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/sterilization/300/300'"/>
+                <div class="product-name">Sterilization Equipment</div>
+                <div class="product-category">Autoclaves · Washer-Disinfectors</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 7: Ward Equipment -->
+            <a href="product-ward.html" class="product-tile">
+                <img src="images/ward-equipment.jpg" alt="Ward Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/ward/300/300'"/>
+                <div class="product-name">Ward Equipment</div>
+                <div class="product-category">Lockers · Trolleys · Screens</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 8: Administrative Furniture -->
+            <a href="product-administrative.html" class="product-tile">
+                <img src="images/administrative.jpg" alt="Administrative Furniture" class="product-image" onerror="this.src='https://picsum.photos/seed/admin/300/300'"/>
+                <div class="product-name">Administrative Furniture</div>
+                <div class="product-category">Cabinets · Desks · Chairs</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 9: Diagnostic Equipment -->
+            <a href="product-diagnostic.html" class="product-tile">
+                <img src="images/diagnostic.jpg" alt="Diagnostic Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/diagnostic/300/300'"/>
+                <div class="product-name">Diagnostic Equipment</div>
+                <div class="product-category">ECG · Ultrasound · Doppler</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 10: Pathology Equipment -->
+            <a href="product-pathology.html" class="product-tile">
+                <img src="images/pathology.jpg" alt="Pathology Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/pathology/300/300'"/>
+                <div class="product-name">Pathology Equipment</div>
+                <div class="product-category">Incubators · Shakers · Water Baths</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 11: Patient Care Equipment -->
+            <a href="product-patient-care.html" class="product-tile">
+                <img src="images/patient-care.jpg" alt="Patient Care Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/patientcare/300/300'"/>
+                <div class="product-name">Patient Care Equipment</div>
+                <div class="product-category">Stretchers · Wheelchairs · Walkers</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 12: Safety Equipment -->
+            <a href="product-safety.html" class="product-tile">
+                <img src="images/safety-equipment.jpg" alt="Safety Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/safety/300/300'"/>
+                <div class="product-name">Safety Equipment</div>
+                <div class="product-category">Fire Extinguishers · Masks · Gloves</div>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Product 13: RAD-XR (Special) -->
+            <a href="product-rad-xr.html" class="product-tile rad-xr">
+                <img src="images/rad-xr.jpg" alt="RAD-XR" class="product-image" onerror="this.src='https://picsum.photos/seed/radxr/300/300'"/>
+                <div class="product-name">RAD-XR</div>
+                <div class="product-category">Radiology Report Delivery</div>
+                <span class="product-badge"><i class="fas fa-star"></i> Featured</span>
+                <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+        </div>
+
+        <!-- ===== ENQUIRY SECTION ===== -->
+        <div class="enquiry-section">
 
             <!-- ABOUT / FEATURES -->
             <div class="features">
