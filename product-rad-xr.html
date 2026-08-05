@@ -579,6 +579,8 @@
             align-items: center;
             padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.02);
+            flex-wrap: wrap;
+            gap: 1.2rem;
         }
 
         .floating-pill {
@@ -611,6 +613,38 @@
             color: #eaf0fa;
             transform: scale(1.02);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* --- Privacy Policy Link (button style) --- */
+        .privacy-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.015);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 12px 28px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            color: #7a9abb;
+            font-weight: 400;
+            font-size: 0.9rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.25s;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            letter-spacing: 0.2px;
+            font-family: inherit;
+        }
+        .privacy-pill i {
+            color: #6b8aaa;
+            font-size: 0.9rem;
+        }
+        .privacy-pill:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.06);
+            color: #b8d0e8;
+            transform: scale(1.02);
         }
 
         .toast-msg {
@@ -765,6 +799,10 @@
             .floating-pill {
                 padding: 10px 24px;
                 font-size: 0.85rem;
+            }
+            .privacy-pill {
+                padding: 10px 20px;
+                font-size: 0.8rem;
             }
             .demo-card {
                 padding: 1rem;
@@ -922,8 +960,10 @@
                 font-size: 0.75rem;
                 gap: 6px;
             }
-            .floating-pill i {
-                font-size: 0.9rem;
+            .privacy-pill {
+                padding: 8px 16px;
+                font-size: 0.7rem;
+                gap: 6px;
             }
             .demo-form .form-row input {
                 font-size: 0.75rem;
@@ -995,6 +1035,17 @@
             }
             .patient-list {
                 max-height: 80px;
+            }
+            .footer-float {
+                gap: 0.8rem;
+            }
+            .floating-pill {
+                padding: 6px 14px;
+                font-size: 0.65rem;
+            }
+            .privacy-pill {
+                padding: 6px 12px;
+                font-size: 0.6rem;
             }
         }
     </style>
@@ -1205,10 +1256,13 @@
             </div>
         </div>
 
-        <!-- floating pill footer (centered) -->
+        <!-- FOOTER: Made by + Privacy Policy Link -->
         <div class="footer-float">
             <a href="https://instagram.com/sandeep_yadav_._._" target="_blank" class="floating-pill">
                 Made with 💕 By Sandeep
+            </a>
+            <a href="privacy-policy.html" class="privacy-pill">
+                <i class="fas fa-shield-alt"></i> Privacy Policy
             </a>
         </div>
 
