@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy · RAD-XR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #0d111c;
+            background-image: radial-gradient(circle at 20% 30%, #172237 0%, #070b12 90%);
+            min-height: 100vh;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #eaf0fa;
+        }
+
+        .policy-container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(18, 24, 40, 0.65);
+            backdrop-filter: blur(16px) saturate(160%);
+            -webkit-backdrop-filter: blur(16px) saturate(160%);
+            border-radius: 40px;
+            padding: 2.8rem 3.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.02);
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #6b8aaa;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1.8rem;
+            transition: 0.2s;
+            padding: 6px 14px;
+            border-radius: 40px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
+        .back-link:hover {
+            color: #b8d0e8;
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.04);
+        }
+        .back-link i {
+            font-size: 0.7rem;
+        }
+
+        .header-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .header-badge .brand {
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: #eaf0fa;
+            letter-spacing: -0.02em;
+        }
+        .header-badge .brand span {
+            font-weight: 300;
+            color: #6b8aaa;
+        }
+        .header-badge .badge {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 2px 14px;
+            border-radius: 40px;
+            font-size: 0.6rem;
+            color: #6b8aaa;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #eaf0fa;
+            letter-spacing: -0.02em;
+            margin: 0.2rem 0 0.3rem 0;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        h1 i {
+            color: #34d399;
+            font-size: 1.8rem;
+        }
+
+        .last-updated {
+            color: #5a7a9a;
+            font-size: 0.8rem;
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            padding-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .last-updated i {
+            color: #4a6a8a;
+        }
+
+        .policy-section {
+            margin-bottom: 2rem;
+            padding-bottom: 1.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        }
+        .policy-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .policy-section h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #d4e4f4;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .policy-section h2 i {
+            color: #34d399;
+            font-size: 1rem;
+            width: 28px;
+        }
+
+        .policy-section p {
+            color: #9ab0c8;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            font-weight: 300;
+            margin-bottom: 0.4rem;
+        }
+        .policy-section p strong {
+            color: #c8dcee;
+            font-weight: 500;
+        }
+        .policy-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0 0 0;
+        }
+        .policy-section ul li {
+            color: #9ab0c8;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            padding: 4px 0 4px 28px;
+            position: relative;
+            font-weight: 300;
+        }
+        .policy-section ul li::before {
+            content: "•";
+            position: absolute;
+            left: 6px;
+            color: #34d399;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        .policy-section ul li strong {
+            color: #c8dcee;
+            font-weight: 500;
+        }
+
+        .highlight-box {
+            background: rgba(52, 211, 153, 0.03);
+            border-left: 3px solid #34d399;
+            padding: 1rem 1.4rem;
+            border-radius: 0 12px 12px 0;
+            margin: 0.8rem 0 0.2rem 0;
+        }
+        .highlight-box p {
+            color: #b8d0e8;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .highlight-box p i {
+            color: #34d399;
+            margin-right: 6px;
+        }
+
+        .data-zero {
+            background: rgba(52, 211, 153, 0.04);
+            border: 1px solid rgba(52, 211, 153, 0.06);
+            border-radius: 16px;
+            padding: 1.2rem 1.6rem;
+            margin: 1rem 0 0.4rem 0;
+            text-align: center;
+        }
+        .data-zero .big-icon {
+            font-size: 2.4rem;
+            color: #34d399;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+        .data-zero p {
+            font-size: 1rem;
+            color: #d4e4f4;
+            font-weight: 500;
+            margin: 0;
+        }
+        .data-zero .sub-text {
+            font-size: 0.8rem;
+            color: #6b8aaa;
+            font-weight: 300;
+            margin-top: 2px;
+        }
+
+        .footer-policy {
+            margin-top: 2.2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: #5a7a9a;
+        }
+        .footer-policy a {
+            color: #6b8aaa;
+            text-decoration: none;
+            transition: 0.15s;
+        }
+        .footer-policy a:hover {
+            color: #b8d0e8;
+        }
+        .footer-policy .right {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .policy-container {
+                padding: 1.8rem 1.5rem;
+                border-radius: 28px;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            h1 i {
+                font-size: 1.4rem;
+            }
+            .header-badge .brand {
+                font-size: 1.3rem;
+            }
+            .policy-section h2 {
+                font-size: 1rem;
+            }
+            .policy-section p {
+                font-size: 0.85rem;
+            }
+            .policy-section ul li {
+                font-size: 0.82rem;
+            }
+            .data-zero p {
+                font-size: 0.9rem;
+            }
+            .footer-policy {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 0.6rem;
+            }
+            .footer-policy .right {
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0.8rem;
+            }
+            .policy-container {
+                padding: 1.2rem 1rem;
+                border-radius: 20px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            .header-badge .brand {
+                font-size: 1.1rem;
+            }
+            .header-badge .badge {
+                font-size: 0.5rem;
+                padding: 1px 10px;
+            }
+            .last-updated {
+                font-size: 0.7rem;
+            }
+            .policy-section h2 {
+                font-size: 0.9rem;
+            }
+            .policy-section p {
+                font-size: 0.78rem;
+            }
+            .policy-section ul li {
+                font-size: 0.76rem;
+                padding-left: 22px;
+            }
+            .highlight-box {
+                padding: 0.8rem 1rem;
+            }
+            .highlight-box p {
+                font-size: 0.8rem;
+            }
+            .data-zero .big-icon {
+                font-size: 2rem;
+            }
+            .data-zero p {
+                font-size: 0.8rem;
+            }
+            .data-zero .sub-text {
+                font-size: 0.7rem;
+            }
+            .footer-policy {
+                font-size: 0.65rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="policy-container">
+
+        <!-- Back link -->
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to RAD-XR
+        </a>
+
+        <!-- Header -->
+        <div class="header-badge">
+            <span class="brand">RAD<span>-XR</span></span>
+            <span class="badge"><i class="fas fa-shield-alt" style="margin-right:4px;"></i> Privacy Policy</span>
+        </div>
+
+        <h1>
+            <i class="fas fa-shield-alt"></i>
+            Privacy Policy
+        </h1>
+
+        <div class="last-updated">
+            <i class="far fa-calendar-alt"></i> Last updated: 19 July 2026
+        </div>
+
+        <!-- SECTION 1: INTRODUCTION -->
+        <div class="policy-section">
+            <h2><i class="fas fa-info-circle"></i> 1. Introduction</h2>
+            <p>
+                RAD-XR (referred to as "we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our radiology report delivery service. We believe in transparency and simplicity — this document outlines our practices in plain language.
+            </p>
+            <p>
+                By using our service, you agree to the practices described in this policy. If you have any questions, please contact us at the address provided below.
+            </p>
+        </div>
+
+        <!-- SECTION 2: INFORMATION WE COLLECT -->
+        <div class="policy-section">
+            <h2><i class="fas fa-database"></i> 2. Information We Collect</h2>
+            <div class="data-zero">
+                <span class="big-icon"><i class="fas fa-shield-alt"></i></span>
+                <p>We do not collect, store, or retain any personal data.</p>
+                <div class="sub-text">No names · No phone numbers · No medical records · No IP addresses · No cookies</div>
+            </div>
+            <p>
+                RAD-XR is designed as a <strong>stateless delivery system</strong>. When you use our service, we do not collect or store:
+            </p>
+            <ul>
+                <li><strong>Personal identification</strong> — we do not collect names, email addresses, or physical addresses.</li>
+                <li><strong>Contact information</strong> — phone numbers are used only for real‑time message delivery and are never stored.</li>
+                <li><strong>Medical data</strong> — DICOM metadata is processed in memory and discarded immediately after use.</li>
+                <li><strong>Technical data</strong> — we do not collect IP addresses, browser fingerprints, or device information.</li>
+                <li><strong>Cookies or tracking</strong> — we do not use cookies, web beacons, or any tracking mechanisms.</li>
+            </ul>
+            <p>
+                In short: <strong>we collect nothing</strong>. Our service operates on a "process and forget" model.
+            </p>
+        </div>
+
+        <!-- SECTION 3: HOW WE USE INFORMATION -->
+        <div class="policy-section">
+            <h2><i class="fas fa-cogs"></i> 3. How We Use Information</h2>
+            <p>
+                Since we do not collect or store any data, there is no information to use for any purpose. The only processing that occurs is:
+            </p>
+            <ul>
+                <li><strong>Real‑time delivery:</strong> When a DICOM file is received, we generate a PDF report and deliver it via WhatsApp. The phone number provided exists only in memory during the API call.</li>
+                <li><strong>Immediate deletion:</strong> Immediately after the message is sent, all data — including the phone number and DICOM metadata — is purged from memory.</li>
+                <li><strong>No analytics:</strong> We do not analyze, aggregate, or report on any user data because there is none to analyze.</li>
+            </ul>
+            <div class="highlight-box">
+                <p><i class="fas fa-check-circle"></i> We do not use your information for marketing, profiling, research, or any secondary purpose.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 4: DATA SHARING AND DISCLOSURE -->
+        <div class="policy-section">
+            <h2><i class="fas fa-share-alt"></i> 4. Data Sharing and Disclosure</h2>
+            <p>
+                We do not share, sell, rent, or disclose any information to third parties. Because we collect no data, there is nothing to share. Specifically:
+            </p>
+            <ul>
+                <li><strong>No third‑party sharing:</strong> We do not share data with advertisers, data brokers, or any external services.</li>
+                <li><strong>No legal disclosure:</strong> Since we retain no data, there is no information to disclose in response to legal requests.</li>
+                <li><strong>No affiliates:</strong> We do not share data with any affiliated companies or partners.</li>
+                <li><strong>Service providers:</strong> The only external service we use is <strong>WhatsApp Business API</strong> (operated by Meta) for message delivery. We do not send any data to any other provider.</li>
+            </ul>
+            <p>
+                We explicitly <strong>do not sell</strong> any information — because we collect none.
+            </p>
+        </div>
+
+        <!-- SECTION 5: DATA SECURITY -->
+        <div class="policy-section">
+            <h2><i class="fas fa-lock"></i> 5. Data Security</h2>
+            <p>
+                Although we do not store any data, we take security seriously. Our infrastructure is designed with the following safeguards:
+            </p>
+            <ul>
+                <li><strong>Encryption in transit:</strong> All communications are encrypted using TLS 1.3.</li>
+                <li><strong>Memory‑only processing:</strong> Data exists only in volatile memory and is never written to disk.</li>
+                <li><strong>No persistent storage:</strong> We have no databases, logs, or backups that contain user information.</li>
+                <li><strong>Secure APIs:</strong> All API calls are authenticated and authorized.</li>
+            </ul>
+            <p>
+                Since we retain no data, there is no risk of data breaches, leaks, or unauthorized access to stored information.
+            </p>
+        </div>
+
+        <!-- SECTION 6: USER CONSENT AND OPT‑OUT -->
+        <div class="policy-section">
+            <h2><i class="fas fa-hand-peace"></i> 6. Consent and Opt‑Out</h2>
+            <p>
+                We believe in giving users control over their communications. Here's how consent and opt‑out work:
+            </p>
+            <ul>
+                <li><strong>Explicit consent:</strong> We only send WhatsApp messages to recipients who have explicitly provided their phone number and consented to receive reports via WhatsApp.</li>
+                <li><strong>Opt‑out instructions:</strong> Every WhatsApp message we send includes clear instructions to opt out. Recipients can reply <strong>"STOP"</strong> at any time to unsubscribe from future messages.</li>
+                <li><strong>No unsolicited messages:</strong> We never send promotional or unsolicited messages. All communications are transactional and directly related to radiology report delivery.</li>
+                <li><strong>Revocation of consent:</strong> Users may revoke their consent at any time by replying "STOP" or by contacting us directly.</li>
+            </ul>
+            <div class="highlight-box">
+                <p><i class="fas fa-envelope"></i> To opt out or withdraw consent, reply "STOP" to any WhatsApp message or email us at <strong>support@rad-xr.com</strong>.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 7: USER RIGHTS -->
+        <div class="policy-section">
+            <h2><i class="fas fa-user-check"></i> 7. Your Rights</h2>
+            <p>
+                We respect your rights under applicable data protection laws, including the GDPR and CCPA. Since we do not collect or store any personal data, many of these rights are inherently satisfied. However, we provide the following assurances:
+            </p>
+            <ul>
+                <li><strong>Right to access:</strong> There is no data to access, as we do not store any.</li>
+                <li><strong>Right to rectification:</strong> No data is stored, so no correction is needed.</li>
+                <li><strong>Right to erasure:</strong> All data is erased immediately after delivery — nothing is retained.</li>
+                <li><strong>Right to object:</strong> You may opt out of WhatsApp messages at any time by replying "STOP".</li>
+                <li><strong>Right to data portability:</strong> There is no data to port.</li>
+                <li><strong>Right to lodge a complaint:</strong> You may contact us at the email below if you have any concerns.</li>
+            </ul>
+            <p>
+                If you wish to exercise any of these rights, please contact us. We will respond within <strong>48 hours</strong>.
+            </p>
+        </div>
+
+        <!-- SECTION 8: DATA RETENTION -->
+        <div class="policy-section">
+            <h2><i class="fas fa-clock"></i> 8. Data Retention</h2>
+            <p>
+                We do not retain any personal data. All information received is processed in real‑time and deleted immediately after delivery. There are no backups, archives, or logs containing user information. Our retention policy is simple:
+            </p>
+            <ul>
+                <li><strong>Processing duration:</strong> Data exists only for the duration of the API call (typically a few seconds).</li>
+                <li><strong>Deletion:</strong> Immediately after the WhatsApp message is sent, all data is purged from memory.</li>
+                <li><strong>No retention:</strong> We do not retain any data for any period of time.</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 9: CHILDREN'S PRIVACY -->
+        <div class="policy-section">
+            <h2><i class="fas fa-child"></i> 9. Children's Privacy</h2>
+            <p>
+                Our service is not directed at children under the age of 13. We do not knowingly collect or process any information from children. If you believe that a child has provided information through our service, please contact us immediately.
+            </p>
+        </div>
+
+        <!-- SECTION 10: CHANGES TO THIS POLICY -->
+        <div class="policy-section">
+            <h2><i class="fas fa-pen"></i> 10. Changes to This Policy</h2>
+            <p>
+                We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. We encourage you to review this policy periodically. If we make material changes, we will provide additional notice where appropriate.
+            </p>
+            <p>
+                The latest version of this policy is always available at this URL.
+            </p>
+        </div>
+
+        <!-- SECTION 11: CONTACT -->
+        <div class="policy-section" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+            <h2><i class="fas fa-envelope"></i> 11. Contact Us</h2>
+            <p>
+                If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us:
+            </p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:support@rad-xr.com" style="color:#34d399;text-decoration:none;">support@rad-xr.com</a></li>
+                <li><strong>Telegram:</strong> <span style="color:#6b8aaa;">@rdx_xr_bot</span></li>
+                <li><strong>Response time:</strong> We respond to all inquiries within <strong>48 hours</strong>.</li>
+            </ul>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer-policy">
+            <span>© 2026 RAD-XR · All rights reserved.</span>
+            <div class="right">
+                <a href="index.html">Home</a>
+                <a href="mailto:support@rad-xr.com">Contact</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
