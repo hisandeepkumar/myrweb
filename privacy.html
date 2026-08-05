@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Policy · RAD-XR</title>
+    <title>Privacy Policy · RAD-XR · Myrtille Industries</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
@@ -68,7 +68,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
             flex-wrap: wrap;
         }
         .header-badge .brand {
@@ -91,6 +91,19 @@
             font-weight: 500;
             letter-spacing: 0.3px;
             text-transform: uppercase;
+        }
+
+        .company-tag {
+            font-size: 0.85rem;
+            color: #6b8aaa;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .company-tag i {
+            color: #4a6a8a;
+            font-size: 0.7rem;
         }
 
         h1 {
@@ -204,7 +217,7 @@
             margin-right: 6px;
         }
 
-        .data-zero {
+        .privacy-first {
             background: rgba(52, 211, 153, 0.04);
             border: 1px solid rgba(52, 211, 153, 0.06);
             border-radius: 16px;
@@ -212,19 +225,19 @@
             margin: 1rem 0 0.4rem 0;
             text-align: center;
         }
-        .data-zero .big-icon {
+        .privacy-first .big-icon {
             font-size: 2.4rem;
             color: #34d399;
             margin-bottom: 0.3rem;
             display: block;
         }
-        .data-zero p {
+        .privacy-first p {
             font-size: 1rem;
             color: #d4e4f4;
             font-weight: 500;
             margin: 0;
         }
-        .data-zero .sub-text {
+        .privacy-first .sub-text {
             font-size: 0.8rem;
             color: #6b8aaa;
             font-weight: 300;
@@ -279,7 +292,7 @@
             .policy-section ul li {
                 font-size: 0.82rem;
             }
-            .data-zero p {
+            .privacy-first p {
                 font-size: 0.9rem;
             }
             .footer-policy {
@@ -315,6 +328,9 @@
             .last-updated {
                 font-size: 0.7rem;
             }
+            .company-tag {
+                font-size: 0.7rem;
+            }
             .policy-section h2 {
                 font-size: 0.9rem;
             }
@@ -331,13 +347,13 @@
             .highlight-box p {
                 font-size: 0.8rem;
             }
-            .data-zero .big-icon {
+            .privacy-first .big-icon {
                 font-size: 2rem;
             }
-            .data-zero p {
+            .privacy-first p {
                 font-size: 0.8rem;
             }
-            .data-zero .sub-text {
+            .privacy-first .sub-text {
                 font-size: 0.7rem;
             }
             .footer-policy {
@@ -361,6 +377,10 @@
             <span class="badge"><i class="fas fa-shield-alt" style="margin-right:4px;"></i> Privacy Policy</span>
         </div>
 
+        <div class="company-tag">
+            <i class="fas fa-building"></i> A product of <strong style="color:#b8d0e8;font-weight:500;">Myrtille Industries</strong>
+        </div>
+
         <h1>
             <i class="fas fa-shield-alt"></i>
             Privacy Policy
@@ -374,173 +394,207 @@
         <div class="policy-section">
             <h2><i class="fas fa-info-circle"></i> 1. Introduction</h2>
             <p>
-                RAD-XR (referred to as "we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our radiology report delivery service. We believe in transparency and simplicity — this document outlines our practices in plain language.
+                <strong>RAD-XR</strong> is a secure digital X‑ray delivery platform developed by <strong>Myrtille Industries</strong>. We help healthcare providers send digital X‑ray images directly to patients via WhatsApp — quickly, securely, and with the utmost respect for patient privacy.
             </p>
             <p>
-                By using our service, you agree to the practices described in this policy. If you have any questions, please contact us at the address provided below.
+                This Privacy Policy explains how we handle patient information when using the RAD‑XR service. We believe in transparency, simplicity, and putting patient privacy above everything else.
             </p>
         </div>
 
-        <!-- SECTION 2: INFORMATION WE COLLECT -->
+        <!-- SECTION 2: WHAT WE COLLECT & WHY -->
         <div class="policy-section">
-            <h2><i class="fas fa-database"></i> 2. Information We Collect</h2>
-            <div class="data-zero">
-                <span class="big-icon"><i class="fas fa-shield-alt"></i></span>
-                <p>We do not collect, store, or retain any personal data.</p>
-                <div class="sub-text">No names · No phone numbers · No medical records · No IP addresses · No cookies</div>
-            </div>
+            <h2><i class="fas fa-phone"></i> 2. What We Collect and Why</h2>
             <p>
-                RAD-XR is designed as a <strong>stateless delivery system</strong>. When you use our service, we do not collect or store:
+                To deliver a digital X‑ray to a patient's WhatsApp, we require only two things:
             </p>
             <ul>
-                <li><strong>Personal identification</strong> — we do not collect names, email addresses, or physical addresses.</li>
-                <li><strong>Contact information</strong> — phone numbers are used only for real‑time message delivery and are never stored.</li>
-                <li><strong>Medical data</strong> — DICOM metadata is processed in memory and discarded immediately after use.</li>
-                <li><strong>Technical data</strong> — we do not collect IP addresses, browser fingerprints, or device information.</li>
-                <li><strong>Cookies or tracking</strong> — we do not use cookies, web beacons, or any tracking mechanisms.</li>
+                <li><strong>The patient's WhatsApp phone number</strong> — provided by the healthcare facility with the patient's explicit consent.</li>
+                <li><strong>The digital X‑ray image</strong> — received from the imaging system (DICOM or other format).</li>
             </ul>
             <p>
-                In short: <strong>we collect nothing</strong>. Our service operates on a "process and forget" model.
+                That's it. We do not collect names, addresses, email addresses, medical history, or any other personal information. We only use the phone number to send the X‑ray to the correct recipient.
+            </p>
+            <div class="highlight-box">
+                <p><i class="fas fa-check-circle"></i> We collect <strong>only</strong> the patient's WhatsApp number — and only with their explicit consent — solely to deliver their digital X‑ray.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 3: CONSENT -->
+        <div class="policy-section">
+            <h2><i class="fas fa-handshake"></i> 3. Consent</h2>
+            <p>
+                We take consent seriously. Before any X‑ray is sent, we ensure that:
+            </p>
+            <ul>
+                <li><strong>Explicit patient consent</strong> has been obtained by the healthcare provider to send the X‑ray via WhatsApp.</li>
+                <li><strong>The patient is aware</strong> that their X‑ray will be delivered through WhatsApp and has agreed to receive it through this channel.</li>
+                <li><strong>No unsolicited messages</strong> are ever sent. We only send X‑rays that the patient has consented to receive.</li>
+            </ul>
+            <p>
+                Consent is obtained at the time of service, before any data is processed or any message is sent.
             </p>
         </div>
 
-        <!-- SECTION 3: HOW WE USE INFORMATION -->
+        <!-- SECTION 4: HOW WE USE THE INFORMATION -->
         <div class="policy-section">
-            <h2><i class="fas fa-cogs"></i> 3. How We Use Information</h2>
+            <h2><i class="fas fa-cogs"></i> 4. How We Use the Information</h2>
             <p>
-                Since we do not collect or store any data, there is no information to use for any purpose. The only processing that occurs is:
+                We use the patient's WhatsApp number for one purpose and one purpose only:
             </p>
             <ul>
-                <li><strong>Real‑time delivery:</strong> When a DICOM file is received, we generate a PDF report and deliver it via WhatsApp. The phone number provided exists only in memory during the API call.</li>
-                <li><strong>Immediate deletion:</strong> Immediately after the message is sent, all data — including the phone number and DICOM metadata — is purged from memory.</li>
-                <li><strong>No analytics:</strong> We do not analyze, aggregate, or report on any user data because there is none to analyze.</li>
+                <li><strong>To deliver the digital X‑ray</strong> — we send the X‑ray image to the patient's WhatsApp number via the WhatsApp Business API.</li>
+            </ul>
+            <p>
+                We do not use the phone number for any other purpose. We do not send promotional messages, marketing materials, newsletters, or any unsolicited communications. <strong>We only send the X‑ray that the patient has requested and consented to receive.</strong>
+            </p>
+            <div class="highlight-box">
+                <p><i class="fas fa-envelope"></i> <strong>No promotions. No marketing. No spam.</strong> Only the X‑ray — nothing more.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 5: DATA DELETION -->
+        <div class="policy-section">
+            <h2><i class="fas fa-trash-alt"></i> 5. Data Deletion</h2>
+            <p>
+                After we deliver the X‑ray to the patient's WhatsApp, we <strong>immediately delete</strong>:
+            </p>
+            <ul>
+                <li><strong>The X‑ray image</strong> — permanently removed from our systems.</li>
+                <li><strong>The patient's WhatsApp number</strong> — erased from memory.</li>
+                <li><strong>Any associated metadata</strong> — discarded.</li>
+            </ul>
+            <p>
+                We do not store, archive, or back up any X‑ray images or phone numbers. Everything is processed in real‑time and deleted immediately after delivery. <strong>We do not retain any patient data.</strong>
+            </p>
+            <div class="highlight-box">
+                <p><i class="fas fa-check-circle"></i> X‑ray delivered? Deleted. Number used? Deleted. <strong>No data is stored.</strong></p>
+            </div>
+        </div>
+
+        <!-- SECTION 6: DATA SHARING & SELLING -->
+        <div class="policy-section">
+            <h2><i class="fas fa-hand-holding-usd"></i> 6. We Do Not Sell Data</h2>
+            <p>
+                <strong>We do not sell, rent, lease, or trade any patient data.</strong> Period.
+            </p>
+            <p>
+                Since we do not store any data, there is nothing to sell. We have never sold data, and we never will. Patient privacy is not for sale.
+            </p>
+            <ul>
+                <li><strong>No data brokers:</strong> We do not share data with any third‑party data brokers or marketing platforms.</li>
+                <li><strong>No advertising:</strong> We do not use any data for advertising, retargeting, or profiling.</li>
+                <li><strong>No analytics:</strong> We do not use Google Analytics, Facebook Pixel, or any other tracking tools.</li>
+                <li><strong>No third‑party sharing:</strong> The only external service we use is WhatsApp Business API (Meta) for message delivery. We do not send data to any other service.</li>
             </ul>
             <div class="highlight-box">
-                <p><i class="fas fa-check-circle"></i> We do not use your information for marketing, profiling, research, or any secondary purpose.</p>
+                <p><i class="fas fa-gavel"></i> <strong>We do not sell patient data.</strong> We collect nothing, store nothing, and sell nothing.</p>
             </div>
         </div>
 
-        <!-- SECTION 4: DATA SHARING AND DISCLOSURE -->
+        <!-- SECTION 7: PRIVACY IS OUR TOP PRIORITY -->
         <div class="policy-section">
-            <h2><i class="fas fa-share-alt"></i> 4. Data Sharing and Disclosure</h2>
+            <h2><i class="fas fa-heart"></i> 7. Privacy Is Our Top Priority</h2>
+            <div class="privacy-first">
+                <span class="big-icon"><i class="fas fa-shield-alt"></i></span>
+                <p>🔒 <strong>Patient privacy is our highest priority.</strong></p>
+                <div class="sub-text">We treat every patient's data with the care and respect it deserves.</div>
+            </div>
             <p>
-                We do not share, sell, rent, or disclose any information to third parties. Because we collect no data, there is nothing to share. Specifically:
+                At Myrtille Industries and RAD‑XR, we believe that privacy is a fundamental right. That's why we designed our system to collect the absolute minimum information — only what's needed to deliver the X‑ray — and to delete it immediately after delivery. We don't keep records. We don't build profiles. We don't track patients.
             </p>
-            <ul>
-                <li><strong>No third‑party sharing:</strong> We do not share data with advertisers, data brokers, or any external services.</li>
-                <li><strong>No legal disclosure:</strong> Since we retain no data, there is no information to disclose in response to legal requests.</li>
-                <li><strong>No affiliates:</strong> We do not share data with any affiliated companies or partners.</li>
-                <li><strong>Service providers:</strong> The only external service we use is <strong>WhatsApp Business API</strong> (operated by Meta) for message delivery. We do not send any data to any other provider.</li>
-            </ul>
             <p>
-                We explicitly <strong>do not sell</strong> any information — because we collect none.
+                <strong>Your X‑ray is yours. We're just the messenger.</strong>
             </p>
         </div>
 
-        <!-- SECTION 5: DATA SECURITY -->
+        <!-- SECTION 8: SECURITY -->
         <div class="policy-section">
-            <h2><i class="fas fa-lock"></i> 5. Data Security</h2>
+            <h2><i class="fas fa-lock"></i> 8. Security</h2>
             <p>
-                Although we do not store any data, we take security seriously. Our infrastructure is designed with the following safeguards:
+                Although we do not store any data, we take security seriously. Our infrastructure includes:
             </p>
             <ul>
                 <li><strong>Encryption in transit:</strong> All communications are encrypted using TLS 1.3.</li>
                 <li><strong>Memory‑only processing:</strong> Data exists only in volatile memory and is never written to disk.</li>
-                <li><strong>No persistent storage:</strong> We have no databases, logs, or backups that contain user information.</li>
+                <li><strong>No persistent storage:</strong> We have no databases, logs, or backups containing patient information.</li>
                 <li><strong>Secure APIs:</strong> All API calls are authenticated and authorized.</li>
             </ul>
             <p>
-                Since we retain no data, there is no risk of data breaches, leaks, or unauthorized access to stored information.
+                Since we retain no data, there is no risk of data breaches, leaks, or unauthorized access to stored patient information.
             </p>
         </div>
 
-        <!-- SECTION 6: USER CONSENT AND OPT‑OUT -->
+        <!-- SECTION 9: PATIENT RIGHTS -->
         <div class="policy-section">
-            <h2><i class="fas fa-hand-peace"></i> 6. Consent and Opt‑Out</h2>
+            <h2><i class="fas fa-user-check"></i> 9. Patient Rights</h2>
             <p>
-                We believe in giving users control over their communications. Here's how consent and opt‑out work:
-            </p>
-            <ul>
-                <li><strong>Explicit consent:</strong> We only send WhatsApp messages to recipients who have explicitly provided their phone number and consented to receive reports via WhatsApp.</li>
-                <li><strong>Opt‑out instructions:</strong> Every WhatsApp message we send includes clear instructions to opt out. Recipients can reply <strong>"STOP"</strong> at any time to unsubscribe from future messages.</li>
-                <li><strong>No unsolicited messages:</strong> We never send promotional or unsolicited messages. All communications are transactional and directly related to radiology report delivery.</li>
-                <li><strong>Revocation of consent:</strong> Users may revoke their consent at any time by replying "STOP" or by contacting us directly.</li>
-            </ul>
-            <div class="highlight-box">
-                <p><i class="fas fa-envelope"></i> To opt out or withdraw consent, reply "STOP" to any WhatsApp message or email us at <strong>support@rad-xr.com</strong>.</p>
-            </div>
-        </div>
-
-        <!-- SECTION 7: USER RIGHTS -->
-        <div class="policy-section">
-            <h2><i class="fas fa-user-check"></i> 7. Your Rights</h2>
-            <p>
-                We respect your rights under applicable data protection laws, including the GDPR and CCPA. Since we do not collect or store any personal data, many of these rights are inherently satisfied. However, we provide the following assurances:
+                We respect patient rights under applicable data protection laws (GDPR, CCPA, etc.). Since we do not store any data, many rights are inherently satisfied. However, we provide the following assurances:
             </p>
             <ul>
                 <li><strong>Right to access:</strong> There is no data to access, as we do not store any.</li>
                 <li><strong>Right to rectification:</strong> No data is stored, so no correction is needed.</li>
                 <li><strong>Right to erasure:</strong> All data is erased immediately after delivery — nothing is retained.</li>
-                <li><strong>Right to object:</strong> You may opt out of WhatsApp messages at any time by replying "STOP".</li>
-                <li><strong>Right to data portability:</strong> There is no data to port.</li>
-                <li><strong>Right to lodge a complaint:</strong> You may contact us at the email below if you have any concerns.</li>
+                <li><strong>Right to object / opt‑out:</strong> Patients may opt out at any time by replying "STOP" to any WhatsApp message.</li>
+                <li><strong>Right to portability:</strong> There is no data to port.</li>
             </ul>
             <p>
-                If you wish to exercise any of these rights, please contact us. We will respond within <strong>48 hours</strong>.
+                For any privacy‑related concerns or requests, please contact us at the email below. We respond within <strong>48 hours</strong>.
             </p>
         </div>
 
-        <!-- SECTION 8: DATA RETENTION -->
+        <!-- SECTION 10: OPT‑OUT -->
         <div class="policy-section">
-            <h2><i class="fas fa-clock"></i> 8. Data Retention</h2>
+            <h2><i class="fas fa-ban"></i> 10. Opt‑Out</h2>
             <p>
-                We do not retain any personal data. All information received is processed in real‑time and deleted immediately after delivery. There are no backups, archives, or logs containing user information. Our retention policy is simple:
+                Patients can opt out of receiving WhatsApp messages from RAD‑XR at any time:
             </p>
             <ul>
-                <li><strong>Processing duration:</strong> Data exists only for the duration of the API call (typically a few seconds).</li>
-                <li><strong>Deletion:</strong> Immediately after the WhatsApp message is sent, all data is purged from memory.</li>
-                <li><strong>No retention:</strong> We do not retain any data for any period of time.</li>
+                <li><strong>Reply "STOP"</strong> to any WhatsApp message received from RAD‑XR.</li>
+                <li><strong>Contact us</strong> at the email address below and request to be unsubscribed.</li>
             </ul>
+            <p>
+                Once a patient opts out, we will not send any further messages to that number. Since we do not store numbers, the opt‑out is processed in real‑time.
+            </p>
+            <div class="highlight-box">
+                <p><i class="fas fa-check-circle"></i> <strong>Your choice is respected.</strong> Opt out anytime by replying "STOP".</p>
+            </div>
         </div>
 
-        <!-- SECTION 9: CHILDREN'S PRIVACY -->
+        <!-- SECTION 11: CHILDREN'S PRIVACY -->
         <div class="policy-section">
-            <h2><i class="fas fa-child"></i> 9. Children's Privacy</h2>
+            <h2><i class="fas fa-child"></i> 11. Children's Privacy</h2>
             <p>
-                Our service is not directed at children under the age of 13. We do not knowingly collect or process any information from children. If you believe that a child has provided information through our service, please contact us immediately.
+                Our service is not directed at children under the age of 13. We do not knowingly collect or process any information from children. If you believe that a child's X‑ray has been delivered through our service without proper consent, please contact us immediately.
             </p>
         </div>
 
-        <!-- SECTION 10: CHANGES TO THIS POLICY -->
+        <!-- SECTION 12: CHANGES TO THIS POLICY -->
         <div class="policy-section">
-            <h2><i class="fas fa-pen"></i> 10. Changes to This Policy</h2>
+            <h2><i class="fas fa-pen"></i> 12. Changes to This Policy</h2>
             <p>
-                We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. We encourage you to review this policy periodically. If we make material changes, we will provide additional notice where appropriate.
-            </p>
-            <p>
-                The latest version of this policy is always available at this URL.
+                We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. We encourage you to review this policy periodically. The latest version is always available at this URL.
             </p>
         </div>
 
-        <!-- SECTION 11: CONTACT -->
+        <!-- SECTION 13: CONTACT -->
         <div class="policy-section" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
-            <h2><i class="fas fa-envelope"></i> 11. Contact Us</h2>
+            <h2><i class="fas fa-envelope"></i> 13. Contact Us</h2>
             <p>
-                If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us:
+                If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle patient data, please contact us:
             </p>
             <ul>
-                <li><strong>Email:</strong> <a href="mailto:support@rad-xr.com" style="color:#34d399;text-decoration:none;">support@rad-xr.com</a></li>
-                <li><strong>Telegram:</strong> <span style="color:#6b8aaa;">@rdx_xr_bot</span></li>
+                <li><strong>Email:</strong> <a href="mailto:privacy@myrtille-industries.com" style="color:#34d399;text-decoration:none;">privacy@myrtille-industries.com</a></li>
+                <li><strong>Website:</strong> <span style="color:#6b8aaa;">www.myrtille-industries.com</span></li>
                 <li><strong>Response time:</strong> We respond to all inquiries within <strong>48 hours</strong>.</li>
             </ul>
         </div>
 
         <!-- FOOTER -->
         <div class="footer-policy">
-            <span>© 2026 RAD-XR · All rights reserved.</span>
+            <span>© 2026 Myrtille Industries · RAD-XR · All rights reserved.</span>
             <div class="right">
                 <a href="index.html">Home</a>
-                <a href="mailto:support@rad-xr.com">Contact</a>
+                <a href="mailto:privacy@myrtille-industries.com">Contact</a>
             </div>
         </div>
 
