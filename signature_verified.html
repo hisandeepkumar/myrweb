@@ -121,7 +121,7 @@
         background: radial-gradient(circle, rgba(52, 211, 153, 0.12) 0%, rgba(52, 211, 153, 0.02) 70%);
         border: 1px solid rgba(52, 211, 153, 0.18);
         box-shadow: 0 0 70px rgba(52, 211, 153, 0.12), inset 0 0 30px rgba(52, 211, 153, 0.05);
-        margin-bottom: 1.4rem;
+        margin-bottom: 0.8rem;
         animation: sealPulse 3.4s ease-in-out infinite;
     }
     .seal::before {
@@ -145,6 +145,16 @@
     @keyframes sealPulse {
         0%, 100% { box-shadow: 0 0 70px rgba(52, 211, 153, 0.12), inset 0 0 30px rgba(52, 211, 153, 0.05); }
         50%      { box-shadow: 0 0 100px rgba(52, 211, 153, 0.22), inset 0 0 40px rgba(52, 211, 153, 0.08); }
+    }
+
+    /* ===== SIGNATURE IMAGE ABOVE HEADING (NO BACKGROUND) ===== */
+    .hero-signature {
+        max-height: 110px;
+        max-width: 100%;
+        object-fit: contain;
+        margin: 0.6rem 0 1rem;
+        filter: drop-shadow(0 0 20px rgba(52, 211, 153, 0.18));
+        /* no background, no border — PNG shown as is */
     }
 
     .verify-hero h1 {
@@ -292,74 +302,6 @@
         font-weight: 500;
         margin-top: 4px;
         text-align: center;
-    }
-
-    /* signature as it appears in the PDF */
-    .sig-label {
-        margin-top: 22px;
-        width: 100%;
-        text-align: center;
-        font-size: 0.55rem;
-        text-transform: uppercase;
-        letter-spacing: 1.2px;
-        color: #4a6a8a;
-        font-weight: 700;
-        padding-top: 16px;
-        border-top: 1px solid rgba(255, 255, 255, 0.04);
-    }
-    .sig-label i {
-        color: #34d399;
-        margin-right: 5px;
-        font-size: 0.55rem;
-    }
-
-    .sig-image-wrap {
-        margin-top: 12px;
-        width: 100%;
-        background: linear-gradient(160deg, #f7fafd 0%, #e9f0f8 100%);
-        border-radius: 20px;
-        padding: 16px;
-        min-height: 148px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(0, 0, 0, 0.02);
-        position: relative;
-        overflow: hidden;
-    }
-    .sig-image-wrap::after {
-        content: '';
-        position: absolute;
-        inset: 6px;
-        border-radius: 14px;
-        border: 1px dashed rgba(13, 17, 28, 0.08);
-        pointer-events: none;
-    }
-    .sig-image {
-        max-width: 100%;
-        max-height: 116px;
-        object-fit: contain;
-        display: block;
-        filter: contrast(1.08);
-    }
-
-    .sig-tick {
-        position: absolute;
-        bottom: -10px;
-        right: 14px;
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        background: #0f1622;
-        border: 1px solid rgba(52, 211, 153, 0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #34d399;
-        font-size: 0.85rem;
-        box-shadow: 0 0 24px rgba(52, 211, 153, 0.25);
-        z-index: 2;
     }
 
     /* ---------- details column ---------- */
@@ -661,6 +603,7 @@
             white-space: normal;
         }
         .seal { width: 88px; height: 88px; font-size: 2.1rem; }
+        .hero-signature { max-height: 85px; margin: 0.5rem 0 0.8rem; }
         .verify-hero h1 { font-size: 1.6rem; }
         .verify-hero .hero-sub { font-size: 0.88rem; }
         .status-pill { font-size: 0.62rem; padding: 7px 18px; }
@@ -682,10 +625,9 @@
         .brand-logo { height: 34px; }
         .verify-hero h1 { font-size: 1.3rem; }
         .seal { width: 74px; height: 74px; font-size: 1.7rem; }
+        .hero-signature { max-height: 68px; }
         .avatar-wrap { width: 96px; height: 96px; }
         .avatar-tick { width: 30px; height: 30px; font-size: 0.72rem; }
-        .sig-image-wrap { min-height: 124px; padding: 12px; }
-        .sig-image { max-height: 96px; }
         .sig-name { font-size: 0.95rem; }
         .detail-row .ico { width: 28px; height: 28px; font-size: 0.68rem; border-radius: 10px; }
         .detail-row .v { font-size: 0.74rem; }
@@ -714,9 +656,13 @@
         <div class="seal">
             <i class="fas fa-check"></i>
         </div>
+
+        <!-- Signature image shown directly below the tick, above the heading (no background) -->
+        <img src="default_signature.png" alt="Anil Yadav Signature" class="hero-signature" onerror="this.style.display='none'" />
+
         <h1><i class="fas fa-signature"></i> Signature Verified</h1>
         <div class="hero-sub">
-            This is to certify that the signature appearing below belongs to
+            This is to certify that the signature appearing above belongs to
             <strong>ANIL YADAV</strong>, Authorized Signatory of
             <strong>MYRTILLE INDUSTRIES</strong>, and has been duly verified
             against the firm's official records.
@@ -729,28 +675,16 @@
     <!-- ===== VERIFIED CARD ===== -->
     <div class="verify-card">
 
-        <!-- Signature / Identity Column -->
+        <!-- Identity Column (photo + name only) -->
         <div class="sig-col">
-
             <!-- Circular photo of Anil Yadav -->
             <div class="avatar-wrap">
                 <img src="anilyadav.png" alt="Anil Yadav" class="avatar" onerror="this.style.opacity='0.25'" />
                 <div class="avatar-tick"><i class="fas fa-check"></i></div>
             </div>
-
             <div class="sig-name">Anil Yadav</div>
             <div class="sig-role"><i class="fas fa-check-circle" style="margin-right:5px;"></i> Authorized Signatory</div>
             <div class="sig-firm">Proprietorship Firm</div>
-
-            <!-- Signature as it appears in the digitally signed PDF -->
-            <div class="sig-label">
-                <i class="fas fa-file-pdf"></i> Signature as on the digitally signed PDF
-            </div>
-            <div class="sig-image-wrap">
-                <img src="default_signature.png" alt="Anil Yadav Signature" class="sig-image" onerror="this.style.opacity='0.25'" />
-                <div class="sig-tick"><i class="fas fa-check"></i></div>
-            </div>
-
         </div>
 
         <!-- Details Column -->
