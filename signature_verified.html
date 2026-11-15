@@ -145,7 +145,6 @@
         animation: flipSeal 8s ease-in-out infinite;
         will-change: transform;
     }
-    /* 0-30% : tick · 50-80% : photo · 100% : back to tick */
     @keyframes flipSeal {
         0%, 30%   { transform: rotateY(0deg); }
         50%, 80%  { transform: rotateY(180deg); }
@@ -266,14 +265,35 @@
         margin-top: 3px;
     }
 
-    /* ===== SIGNATURE IMAGE ABOVE HEADING (NO BACKGROUND, LARGER) ===== */
+    /* ===== SIGNATURE IMAGE IN WHITE BOX (proper size, mobile + desktop) ===== */
+    .hero-signature-box {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 14px 24px;
+        width: 100%;
+        max-width: 420px;
+        margin: 0.2rem auto 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
+        position: relative;
+    }
+    .hero-signature-box::after {
+        content: '';
+        position: absolute;
+        inset: 6px;
+        border-radius: 11px;
+        border: 1px dashed rgba(13, 17, 28, 0.12);
+        pointer-events: none;
+    }
     .hero-signature {
-        max-height: 365px;
-        max-width: 100%;
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+        max-height: 150px;
         object-fit: contain;
-        margin: 0.2rem 0 1rem;
-        filter: drop-shadow(0 0 22px rgba(52, 211, 153, 0.18));
-        /* no background, no border — PNG shown as is */
+        display: block;
     }
 
     .verify-hero h1 {
@@ -634,7 +654,16 @@
         .signatory-top { padding: 8px 20px 8px 8px; gap: 12px; }
         .signatory-top .avatar-wrap { width: 56px; height: 56px; }
         .signatory-top .sig-name { font-size: 0.92rem; }
-        .hero-signature { max-height: 240px; }
+
+        .hero-signature-box {
+            max-width: 100%;
+            padding: 12px 18px;
+            margin: 0.2rem auto 1rem;
+        }
+        .hero-signature {
+            max-height: 120px;
+        }
+
         .verify-hero h1 { font-size: 1.6rem; }
         .verify-hero .hero-sub { font-size: 0.88rem; }
         .status-pill { font-size: 0.62rem; padding: 7px 18px; }
@@ -660,7 +689,13 @@
         .signatory-top .sig-name { font-size: 0.8rem; }
         .signatory-top .sig-role { font-size: 0.55rem; }
         .signatory-top .sig-firm { font-size: 0.5rem; }
+
+        .hero-signature-box {
+            padding: 10px 14px;
+            border-radius: 12px;
+        }
         .hero-signature { max-height: 92px; }
+
         .verify-hero h1 { font-size: 1.3rem; }
         .detail-row .ico { width: 28px; height: 28px; font-size: 0.68rem; border-radius: 10px; }
         .detail-row .v { font-size: 0.74rem; }
@@ -712,8 +747,10 @@
             </div>
         </div>
 
-        <!-- Signature image shown as-is (no background), just above the heading -->
-        <img src="default_signature.png" alt="Anil Yadav Signature" class="hero-signature" onerror="this.style.display='none'" />
+        <!-- Signature image inside white box (properly sized, mobile + desktop) -->
+        <div class="hero-signature-box">
+            <img src="default_signature.png" alt="Anil Yadav Signature" class="hero-signature" onerror="this.style.display='none'" />
+        </div>
 
         <h1><i class="fas fa-signature"></i> Signature Verified</h1>
         <div class="hero-sub">
@@ -801,11 +838,11 @@
         </div>
     </div>
 
-    <!-- ===== META STRIP ===== -->
+    <!-- ===== META STRIP (dates zero-padded DD/MM/YYYY) ===== -->
     <div class="meta-strip">
         <div class="meta-chip"><i class="fas fa-fingerprint"></i> Verification ID : <b>MI-SIG-AY-001</b></div>
-        <div class="meta-chip"><i class="fas fa-calendar-check"></i> Verified On : <b>Official Record</b></div>
-        <div class="meta-chip"><i class="fas fa-lock"></i> Method : <b>Manual &amp; Documentary</b></div>
+        <div class="meta-chip"><i class="fas fa-calendar-check"></i> Verified On : <b id="verifyDate">—</b></div>
+        <div class="meta-chip"><i class="fas fa-clock"></i> Verified At : <b id="verifyTime">—</b></div>
     </div>
 
     <!-- ===== NOTICE ===== -->
@@ -814,7 +851,7 @@
         <p>
             <b>Note:</b> You have reached this page by clicking the signature on a PDF document
             digitally signed by <b>MYRTILLE INDUSTRIES</b>. The signature shown above
-             is the authorised signature of <b>ANIL YADAV</b>, who is
+            (<b>default_signature.png</b>) is the authorised signature of <b>ANIL YADAV</b>, who is
             empowered to sign tenders, quotations, supply orders, invoices and all official
             correspondence on behalf of the firm. Any document bearing a different signature
             should be treated as unverified. For confirmation, please contact us at
@@ -847,6 +884,32 @@
     </div>
 
 </div>
+
+<!-- ===== Date / Time with strict zero-padding (DD/MM/YYYY · HH:MM:SS) ===== -->
+<script>
+    (function() {
+        const pad = n => String(n).padStart(2, '0');
+
+        function renderDateTime() {
+            const d = new Date();
+
+            // Date in DD/MM/YYYY with leading zeros on day and month
+            const dateStr = pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + d.getFullYear();
+
+            // 24-hour time with zero-padded HH:MM:SS
+            const timeStr = pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
+
+            const dateEl = document.getElementById('verifyDate');
+            const timeEl = document.getElementById('verifyTime');
+            if (dateEl) dateEl.textContent = dateStr;
+            if (timeEl) timeEl.textContent = timeStr;
+        }
+
+        renderDateTime();
+        // keep time ticking (helps show leading zeros always in sync)
+        setInterval(renderDateTime, 1000);
+    })();
+</script>
 
 </body>
 </html>
