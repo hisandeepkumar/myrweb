@@ -294,33 +294,84 @@
     }
     .modal-footer .btn { width: auto; }
 
-    /* History List */
-    .history-item {
-      padding: 0;
-      background: transparent;
-      border: none;
-      margin-bottom: 20px;
-    }
-    .history-meta {
-      background: rgba(0,0,0,0.3);
-      padding: 10px 15px;
-      border-radius: 12px 12px 0 0;
+    /* ===== NEW HISTORY TILE UI ===== */
+    .history-tile {
+      background: rgba(0,0,0,0.2);
       border: 1px solid var(--border);
-      border-bottom: none;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .history-tile-image {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border);
+    }
+    .history-tile-content {
+      padding: 1.2rem;
+      position: relative;
+    }
+    .history-tile-header {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       font-size: 0.75rem;
       color: var(--text-muted);
+      margin-bottom: 0.8rem;
+      font-weight: 500;
     }
-    .history-bubble-wrap {
-      background: #efeae2;
-      background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
-      border-radius: 0 0 12px 12px;
-      padding: 15px;
-      border: 1px solid var(--border);
-      border-top: none;
+    .history-tile-date {
       display: flex;
-      justify-content: center;
+      align-items: center;
+      gap: 6px;
+    }
+    .history-tile-stats {
+      color: var(--accent);
+      background: rgba(52, 211, 153, 0.1);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .history-tile-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text);
+      white-space: pre-wrap;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .history-tile-text.expanded {
+      -webkit-line-clamp: unset;
+      display: block;
+    }
+    .read-more-btn {
+      background: none;
+      border: none;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0;
+      margin-top: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .read-more-btn:hover { text-decoration: underline; }
+    
+    .history-tile-footer {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      white-space: pre-wrap;
+      line-height: 1.5;
     }
 
     /* Toast */
@@ -621,6 +672,18 @@ NEAR GUJAR KI THADI, JAIPUR, 302019
       const d = new Date();
       return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) + ' at ' + formatTime();
     }
+
+    // Toggle Read More in History
+    window.toggleReadMore = function(btn) {
+      const textEl = btn.previousElementSibling;
+      if (textEl.classList.contains('expanded')) {
+        textEl.classList.remove('expanded');
+        btn.innerText = 'Read More';
+      } else {
+        textEl.classList.add('expanded');
+        btn.innerText = 'Read Less';
+      }
+    };
 
     // --- Initialization ---
     function init() {
@@ -1036,33 +1099,34 @@ NEAR GUJAR KI THADI, JAIPUR, 302019
         return;
       }
 
-      list.innerHTML = history.map(h => `
-        <div class="history-item">
-          <div class="history-meta">
-            <span><i class="fas fa-calendar-alt"></i> ${h.date}</span>
-            <span style="color:var(--accent); font-weight:bold;">✅ ${h.success} / ${h.total}</span>
-          </div>
-          <div class="history-bubble-wrap">
-            <div class="wa-bubble" style="margin:0;">
-              ${h.image ? `<img src="${h.image}" class="wa-image" style="max-height:180px;">` : ''}
-              <div class="wa-content">
-                <div style="font-weight:600; margin-bottom:8px; color:#000;">*MYRTILLE INDUSTRIES*</div>
-                <div style="white-space:pre-wrap; margin-bottom:12px; color:#000;">${h.text}</div>
-                <div style="border-top:1px solid #eee; padding-top:8px; font-size:13px; color:#333;">
-                  <b>ANIL YADAV</b><br>
-                  MOBILE NO.- 9782099489<br>
-                  <b>ADDRESS</b>- PLOT-25, DEEPNAGAR, <br>
-                  NEAR GUJAR KI THADI, JAIPUR, 302019
-                </div>
-                <div class="wa-footer" style="margin-top: 10px;">
-                  <span>MADE WITH LOVE BY SANDEEP</span>
-                  <span>${h.time}</span>
-                </div>
-              </div>
+      list.innerHTML = history.map(h => {
+        // Determine if text needs a Read More button (roughly > 100 characters)
+        const needsReadMore = h.text.length > 100;
+        
+        return `
+        <div class="history-tile">
+          ${h.image ? `<img src="${h.image}" class="history-tile-image">` : ''}
+          <div class="history-tile-content">
+            <div class="history-tile-header">
+              <span class="history-tile-date"><i class="fas fa-calendar-alt"></i> ${h.date}</span>
+              <span class="history-tile-stats">✅ ${h.success} / ${h.total}</span>
+            </div>
+            
+            <div class="history-tile-text" id="text-${h.time.replace(':','')}">
+              <div style="font-weight:600; margin-bottom:8px;">*MYRTILLE INDUSTRIES*</div>
+              ${h.text}
+            </div>
+            ${needsReadMore ? `<button class="read-more-btn" onclick="toggleReadMore(this)">Read More</button>` : ''}
+            
+            <div class="history-tile-footer">
+<b>ANIL YADAV</b>
+MOBILE NO.- 9782099489
+<b>ADDRESS</b>- PLOT-25, DEEPNAGAR, 
+NEAR GUJAR KI THADI, JAIPUR, 302019
             </div>
           </div>
         </div>
-      `).join('');
+      `}).join('');
     }
 
     function clearHistory() {
