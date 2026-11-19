@@ -305,12 +305,22 @@
       flex-direction: column;
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
+    
+    /* Image Container & Glowing Border */
+    .history-img-container {
+      padding: 12px 12px 0 12px;
+      width: 100%;
+    }
     .history-tile-image {
       width: 100%;
-      max-height: 220px;
-      object-fit: cover;
-      border-bottom: 1px solid var(--border);
+      height: 200px; /* Fixed height for uniformity */
+      object-fit: cover; /* Ensures image fits perfectly without stretching */
+      border-radius: 12px;
+      border: 2px solid #ffffff; /* 2px white border */
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Glowing effect */
+      display: block;
     }
+    
     .history-tile-content {
       padding: 1.2rem;
       position: relative;
@@ -1105,14 +1115,14 @@ NEAR GUJAR KI THADI, JAIPUR, 302019
         
         return `
         <div class="history-tile">
-          ${h.image ? `<img src="${h.image}" class="history-tile-image">` : ''}
+          ${h.image ? `<div class="history-img-container"><img src="${h.image}" class="history-tile-image"></div>` : ''}
           <div class="history-tile-content">
             <div class="history-tile-header">
               <span class="history-tile-date"><i class="fas fa-calendar-alt"></i> ${h.date}</span>
               <span class="history-tile-stats">✅ ${h.success} / ${h.total}</span>
             </div>
             
-            <div class="history-tile-text" id="text-${h.time.replace(':','')}">
+            <div class="history-tile-text">
               <div style="font-weight:600; margin-bottom:8px;">*MYRTILLE INDUSTRIES*</div>
               ${h.text}
             </div>
