@@ -21,9 +21,9 @@
 
         body {
             font-family: "Inter", sans-serif;
-            background: #f0f4f8;
+            background: #0d111c;
             background-image:
-                radial-gradient(circle at 20% 20%, #e8edf4 0%, #d5dde8 90%);
+                radial-gradient(circle at 20% 20%, #1a2a3a 0%, #070b12 90%);
             min-height: 100vh;
             padding: 1.5rem;
             display: flex;
@@ -34,13 +34,13 @@
         .main-container {
             max-width: 1320px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.70);
+            background: rgba(18, 24, 40, 0.55);
             backdrop-filter: blur(14px) saturate(160%);
             -webkit-backdrop-filter: blur(14px) saturate(160%);
             border-radius: 48px;
             padding: 2.2rem 2.8rem;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.02);
         }
 
         /* ===== HEADER ===== */
@@ -62,11 +62,11 @@
         .brand-logo {
             height: 52px;
             width: auto;
-            filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.04));
+            filter: drop-shadow(0 0 20px rgba(52, 211, 153, 0.08));
             border-radius: 12px;
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.02);
             padding: 4px 8px;
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.03);
             object-fit: contain;
         }
 
@@ -74,29 +74,29 @@
             font-weight: 800;
             font-size: 1.8rem;
             letter-spacing: -0.02em;
-            color: #1a2634;
-            text-shadow: 0 0 18px rgba(0, 0, 0, 0.02);
+            color: #eaf0fa;
+            text-shadow: 0 0 18px rgba(0, 160, 255, 0.06);
             line-height: 1;
         }
         .brand span {
             font-weight: 300;
-            color: #5a7a8a;
+            color: #6b8aaa;
         }
 
         .tagline {
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03);
             padding: 8px 22px;
             border-radius: 60px;
             font-size: 0.8rem;
-            color: #2a4a5a;
+            color: #8ab0d0;
             display: flex;
             align-items: center;
             gap: 10px;
             white-space: nowrap;
         }
         .tagline i {
-            color: #1a8a5a;
+            color: #34d399;
             font-size: 0.5rem;
         }
 
@@ -112,16 +112,16 @@
         .hero-left h1 {
             font-size: 2.6rem;
             font-weight: 700;
-            color: #1a2634;
+            color: #eaf0fa;
             letter-spacing: -0.02em;
             line-height: 1.1;
         }
         .hero-left h1 i {
-            color: #1a8a5a;
+            color: #34d399;
             margin-right: 8px;
         }
         .hero-left .hero-sub {
-            color: #3a5a6a;
+            color: #7a9abb;
             font-size: 1.05rem;
             font-weight: 400;
             margin-top: 10px;
@@ -135,19 +135,19 @@
             margin-top: 18px;
         }
         .hero-badge {
-            background: rgba(255, 255, 255, 0.5);
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03);
             padding: 6px 18px;
             border-radius: 40px;
             font-size: 0.7rem;
-            color: #2a4a5a;
+            color: #8ab0d0;
             display: flex;
             align-items: center;
             gap: 8px;
             font-weight: 500;
         }
         .hero-badge i {
-            color: #1a8a5a;
+            color: #34d399;
             font-size: 0.55rem;
         }
 
@@ -162,8 +162,8 @@
             gap: 12px;
         }
         .stat-card {
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03);
             border-radius: 20px;
             padding: 16px 14px;
             text-align: center;
@@ -171,32 +171,32 @@
             transition: 0.2s;
         }
         .stat-card:hover {
-            border-color: rgba(26, 138, 90, 0.15);
-            background: rgba(255, 255, 255, 0.7);
+            border-color: rgba(52, 211, 153, 0.08);
+            background: rgba(255, 255, 255, 0.025);
         }
         .stat-card .number {
             font-size: 1.6rem;
             font-weight: 700;
-            color: #1a2634;
+            color: #eaf0fa;
             letter-spacing: -0.02em;
         }
         .stat-card .label {
             font-size: 0.55rem;
             text-transform: uppercase;
-            color: #5a7a8a;
+            color: #5a7a9a;
             letter-spacing: 0.4px;
             margin-top: 4px;
             font-weight: 500;
         }
         .stat-card .number i {
-            color: #1a8a5a;
+            color: #34d399;
             font-size: 1.2rem;
             margin-right: 4px;
         }
 
         .hero-contact-chip {
-            background: rgba(255, 255, 255, 0.5);
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.03);
             border-radius: 60px;
             padding: 10px 22px;
             display: flex;
@@ -207,7 +207,7 @@
             margin-top: 4px;
         }
         .hero-contact-chip a {
-            color: #2a4a5a;
+            color: #b0cce6;
             text-decoration: none;
             font-size: 0.8rem;
             display: flex;
@@ -216,10 +216,10 @@
             transition: 0.2s;
         }
         .hero-contact-chip a:hover {
-            color: #1a2634;
+            color: #eaf0fa;
         }
         .hero-contact-chip a i {
-            color: #1a8a5a;
+            color: #34d399;
             font-size: 0.7rem;
             width: 20px;
         }
@@ -232,15 +232,15 @@
         .section-title h2 {
             font-size: 2rem;
             font-weight: 700;
-            color: #1a2634;
+            color: #eaf0fa;
             letter-spacing: -0.02em;
         }
         .section-title h2 i {
-            color: #1a8a5a;
+            color: #34d399;
             margin-right: 10px;
         }
         .section-title .sub {
-            color: #5a7a8a;
+            color: #6b8aaa;
             font-size: 0.95rem;
             font-weight: 400;
             margin-top: 4px;
@@ -255,13 +255,13 @@
         }
 
         .product-tile {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 24px;
             padding: 1.2rem 1rem 1.4rem;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.01);
             transition: all 0.3s ease;
             cursor: pointer;
             text-decoration: none;
@@ -280,16 +280,16 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, rgba(26, 138, 90, 0.03) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(52, 211, 153, 0.02) 0%, transparent 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
             pointer-events: none;
         }
         .product-tile:hover {
-            border-color: rgba(26, 138, 90, 0.15);
+            border-color: rgba(52, 211, 153, 0.12);
             transform: translateY(-6px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(26, 138, 90, 0.04);
-            background: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(52, 211, 153, 0.04);
+            background: rgba(255, 255, 255, 0.025);
         }
         .product-tile:hover::before {
             opacity: 1;
@@ -303,18 +303,18 @@
             aspect-ratio: 1 / 1;
             border-radius: 16px;
             object-fit: cover;
-            background: rgba(255, 255, 255, 0.5);
-            border: 1px solid rgba(0, 0, 0, 0.03);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03);
             transition: 0.3s ease;
         }
         .product-tile:hover .product-image {
-            border-color: rgba(26, 138, 90, 0.08);
+            border-color: rgba(52, 211, 153, 0.08);
         }
 
         .product-tile .product-name {
             font-weight: 600;
             font-size: 0.85rem;
-            color: #1a2634;
+            color: #eaf0fa;
             letter-spacing: -0.01em;
             line-height: 1.3;
             margin-top: 2px;
@@ -323,67 +323,67 @@
             font-size: 0.55rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: #5a7a8a;
+            color: #5a7a9a;
             font-weight: 500;
         }
         .product-tile .product-arrow {
-            color: #7a9aaa;
+            color: #4a6a8a;
             font-size: 0.7rem;
             transition: 0.3s ease;
             margin-top: 2px;
         }
         .product-tile:hover .product-arrow {
-            color: #1a8a5a;
+            color: #34d399;
             transform: translateX(4px);
         }
 
         /* RAD-XR special tile */
         .product-tile.rad-xr {
-            border-color: rgba(180, 80, 120, 0.08);
-            background: rgba(244, 114, 182, 0.04);
+            border-color: rgba(244, 114, 182, 0.08);
+            background: rgba(244, 114, 182, 0.02);
         }
         .product-tile.rad-xr:hover {
-            border-color: rgba(180, 80, 120, 0.2);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(180, 80, 120, 0.06);
+            border-color: rgba(244, 114, 182, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(244, 114, 182, 0.06);
         }
         .product-tile.rad-xr .product-name {
-            color: #b44a7a;
+            color: #f472b6;
         }
         .product-tile.rad-xr .product-arrow {
-            color: #b44a7a;
+            color: #f472b6;
         }
         .product-tile.rad-xr:hover .product-arrow {
-            color: #b44a7a;
+            color: #f472b6;
         }
         .product-tile.rad-xr .product-badge {
-            background: rgba(180, 80, 120, 0.08);
-            color: #b44a7a;
+            background: rgba(244, 114, 182, 0.08);
+            color: #f472b6;
             font-size: 0.45rem;
             text-transform: uppercase;
             padding: 2px 10px;
             border-radius: 20px;
-            border: 1px solid rgba(180, 80, 120, 0.06);
+            border: 1px solid rgba(244, 114, 182, 0.06);
             font-weight: 600;
             letter-spacing: 0.3px;
         }
 
         /* Dental tile special */
         .product-tile.dental {
-            border-color: rgba(60, 120, 200, 0.08);
-            background: rgba(96, 165, 250, 0.04);
+            border-color: rgba(96, 165, 250, 0.08);
+            background: rgba(96, 165, 250, 0.02);
         }
         .product-tile.dental:hover {
-            border-color: rgba(60, 120, 200, 0.2);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(60, 120, 200, 0.06);
+            border-color: rgba(96, 165, 250, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(96, 165, 250, 0.06);
         }
         .product-tile.dental .product-name {
-            color: #3a7ab8;
+            color: #60a5fa;
         }
         .product-tile.dental .product-arrow {
-            color: #3a7ab8;
+            color: #60a5fa;
         }
         .product-tile.dental:hover .product-arrow {
-            color: #3a7ab8;
+            color: #60a5fa;
         }
 
         /* ===== ENQUIRY + ABOUT SECTION ===== */
@@ -402,15 +402,15 @@
         .features h2 {
             font-size: 1.4rem;
             font-weight: 600;
-            color: #1a2634;
+            color: #eaf0fa;
             letter-spacing: -0.02em;
         }
         .features h2 i {
-            color: #1a8a5a;
+            color: #34d399;
             margin-right: 8px;
         }
         .features .sub {
-            color: #5a7a8a;
+            color: #7a9abb;
             font-size: 0.92rem;
             margin-bottom: 0.2rem;
             font-weight: 400;
@@ -424,38 +424,38 @@
             align-items: flex-start;
             gap: 14px;
             padding: 12px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-            color: #2a4a5a;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            color: #c8dcee;
             font-weight: 400;
             font-size: 0.92rem;
         }
         .feature-list li i {
             width: 30px;
             height: 30px;
-            background: rgba(26, 138, 90, 0.04);
-            border: 1px solid rgba(26, 138, 90, 0.06);
+            background: rgba(52, 211, 153, 0.04);
+            border: 1px solid rgba(52, 211, 153, 0.06);
             border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #1a8a5a;
+            color: #34d399;
             font-size: 0.85rem;
             flex-shrink: 0;
             margin-top: 2px;
         }
         .feature-list li strong {
-            color: #1a2634;
+            color: #eaf0fa;
             font-weight: 600;
         }
 
         .demo-card {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.015);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 24px;
             padding: 1.2rem 1.6rem 1.6rem;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -465,12 +465,12 @@
             align-items: center;
             gap: 12px;
             margin-bottom: 1rem;
-            color: #2a4a5a;
+            color: #b8d0e8;
             font-weight: 500;
             font-size: 0.95rem;
         }
         .demo-card .demo-header i {
-            color: #1a8a5a;
+            color: #34d399;
             font-size: 1rem;
         }
         .demo-form {
@@ -487,12 +487,12 @@
         .demo-form .form-row textarea {
             flex: 1 1 150px;
             min-width: 120px;
-            background: rgba(255, 255, 255, 0.7);
-            border: 1px solid rgba(0, 0, 0, 0.06);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             padding: 11px 16px;
             border-radius: 40px;
             font-size: 0.85rem;
-            color: #1a2634;
+            color: #eaf0fa;
             outline: none;
             transition: 0.15s;
             font-family: inherit;
@@ -506,22 +506,22 @@
         }
         .demo-form .form-row input::placeholder,
         .demo-form .form-row textarea::placeholder {
-            color: #7a9aaa;
+            color: #4a6a8a;
             font-weight: 300;
         }
         .demo-form .form-row input:focus,
         .demo-form .form-row textarea:focus {
-            border-color: rgba(26, 138, 90, 0.2);
-            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(52, 211, 153, 0.12);
+            background: rgba(255, 255, 255, 0.02);
         }
         .demo-form button {
-            background: rgba(26, 138, 90, 0.04);
-            border: 1px solid rgba(26, 138, 90, 0.06);
+            background: rgba(52, 211, 153, 0.04);
+            border: 1px solid rgba(52, 211, 153, 0.06);
             padding: 11px 26px;
             border-radius: 40px;
             font-weight: 500;
             font-size: 0.85rem;
-            color: #1a2634;
+            color: #b8d0e8;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -533,12 +533,12 @@
             margin-top: 4px;
         }
         .demo-form button:hover {
-            background: rgba(26, 138, 90, 0.06);
-            border-color: rgba(26, 138, 90, 0.1);
-            color: #1a2634;
+            background: rgba(52, 211, 153, 0.06);
+            border-color: rgba(52, 211, 153, 0.1);
+            color: #eaf0fa;
         }
         .demo-form button i {
-            color: #1a8a5a;
+            color: #34d399;
         }
         .demo-form button:disabled {
             opacity: 0.5;
@@ -549,15 +549,15 @@
         .info-buttons-section {
             margin: 2.5rem 0 1.5rem 0;
             padding: 1.2rem 0;
-            border-top: 1px solid rgba(0, 0, 0, 0.04);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
         }
         .info-buttons-section .info-label {
             text-align: center;
             font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: #5a7a8a;
+            color: #4a6a8a;
             font-weight: 600;
             margin-bottom: 1.2rem;
         }
@@ -569,11 +569,11 @@
         }
 
         .info-btn {
-            background: rgba(255, 255, 255, 0.5);
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             padding: 10px 26px;
             border-radius: 60px;
-            color: #2a4a5a;
+            color: #b0cce6;
             font-size: 0.8rem;
             font-weight: 500;
             text-decoration: none;
@@ -585,35 +585,35 @@
             cursor: pointer;
         }
         .info-btn:hover {
-            background: rgba(255, 255, 255, 0.7);
-            border-color: rgba(26, 138, 90, 0.08);
-            color: #1a2634;
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(52, 211, 153, 0.08);
+            color: #eaf0fa;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
         .info-btn i {
             font-size: 0.85rem;
         }
         .info-btn.privacy i {
-            color: #3a7ab8;
+            color: #60a5fa;
         }
         .info-btn.terms i {
-            color: #c88a2a;
+            color: #fbbf24;
         }
         .info-btn.performance i {
-            color: #1a8a5a;
+            color: #34d399;
         }
         .info-btn.owner i {
-            color: #b44a7a;
+            color: #f472b6;
         }
         .info-btn.team i {
-            color: #7a5aaa;
+            color: #a78bfa;
         }
         .info-btn.certificates i {
-            color: #c88a2a;
+            color: #f59e0b;
         }
         .info-btn.contact i {
-            color: #1a8a5a;
+            color: #34d399;
         }
 
         /* ===== CONTACT DETAILS BAR ===== */
@@ -630,22 +630,22 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            color: #2a4a5a;
+            color: #b0cce6;
             font-size: 0.85rem;
             text-decoration: none;
             transition: 0.2s;
         }
         .contact-details-bar .contact-item:hover {
-            color: #1a2634;
+            color: #eaf0fa;
         }
         .contact-details-bar .contact-item i {
-            color: #1a8a5a;
+            color: #34d399;
             font-size: 1.1rem;
             width: 24px;
             text-align: center;
         }
         .contact-details-bar .contact-item .label {
-            color: #5a7a8a;
+            color: #4a6a8a;
             font-size: 0.6rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -656,7 +656,7 @@
             font-weight: 500;
         }
         .contact-divider {
-            color: #c0d0d8;
+            color: #2a3a4a;
             font-size: 1.2rem;
             font-weight: 300;
         }
@@ -665,7 +665,7 @@
         .footer-section {
             margin-top: 1.5rem;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -680,11 +680,11 @@
             flex-wrap: wrap;
         }
         .footer-left .copy {
-            color: #5a7a8a;
+            color: #4a6a8a;
             font-size: 0.75rem;
         }
         .footer-left .copy i {
-            color: #1a8a5a;
+            color: #34d399;
             margin-right: 4px;
         }
 
@@ -695,7 +695,7 @@
             flex-wrap: wrap;
         }
         .footer-right a {
-            color: #5a7a8a;
+            color: #6b8aaa;
             text-decoration: none;
             font-size: 0.8rem;
             display: flex;
@@ -704,10 +704,10 @@
             transition: 0.2s;
         }
         .footer-right a:hover {
-            color: #2a4a5a;
+            color: #b0cce6;
         }
         .footer-right a i {
-            color: #1a8a5a;
+            color: #34d399;
             font-size: 0.7rem;
         }
 
@@ -715,32 +715,32 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             padding: 10px 28px;
             border-radius: 100px;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            color: #2a4a5a;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            color: #b8d0e8;
             font-weight: 500;
             font-size: 0.9rem;
             text-decoration: none;
             transition: 0.25s;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.01);
             letter-spacing: 0.2px;
             font-family: inherit;
         }
         .footer-pill i {
-            color: #b44a7a;
+            color: #f472b6;
             font-size: 1rem;
-            filter: drop-shadow(0 0 12px rgba(180, 80, 120, 0.04));
+            filter: drop-shadow(0 0 12px rgba(244, 114, 182, 0.08));
         }
         .footer-pill:hover {
-            background: rgba(255, 255, 255, 0.7);
-            border-color: rgba(180, 80, 120, 0.06);
-            color: #1a2634;
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 200, 200, 0.04);
+            color: #eaf0fa;
             transform: scale(1.02);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
         }
 
         /* ===== TOAST ===== */
@@ -749,15 +749,15 @@
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(18, 24, 40, 0.85);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(26, 138, 90, 0.06);
+            border: 1px solid rgba(52, 211, 153, 0.06);
             padding: 12px 30px;
             border-radius: 60px;
-            color: #1a2634;
+            color: #b8d0e8;
             font-weight: 400;
             font-size: 0.9rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
             z-index: 999;
             display: none;
         }
@@ -1252,7 +1252,7 @@
                 <div class="product-arrow"><i class="fas fa-arrow-right"></i></div>
             </a>
 
-            <!-- Product 13: Dental Equipment -->
+            <!-- Product 13: Dental Equipment (NEW) -->
             <a href="product-dental.html" class="product-tile dental">
                 <img src="images/dental.png" alt="Dental Equipment" class="product-image" onerror="this.src='https://picsum.photos/seed/dental/300/300'"/>
                 <div class="product-name">Dental Equipment</div>
@@ -1310,7 +1310,7 @@
             <div class="demo-card">
                 <div class="demo-header">
                     <i class="fas fa-paper-plane"></i> Send an Enquiry
-                    <span style="font-size:0.65rem;color:#5a7a8a;font-weight:400;margin-left:auto;">we'll get back to you</span>
+                    <span style="font-size:0.65rem;color:#4a6a8a;font-weight:400;margin-left:auto;">we'll get back to you</span>
                 </div>
                 <form class="demo-form" id="enquiryForm">
                     <div class="form-row">
@@ -1372,8 +1372,9 @@
                 <a href="privacy-policy.html" class="info-btn privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
                 <a href="terms.html" class="info-btn terms"><i class="fas fa-file-contract"></i> Terms &amp; Conditions</a>
                 <a href="past-performance.html" class="info-btn performance"><i class="fas fa-chart-line"></i> Past Performance</a>
+               
                 <a href="certificates.html" class="info-btn certificates"><i class="fas fa-certificate"></i> Certificates</a>
-                <a href="about-owner.html" class="info-btn owner"><i class="fas fa-user-tie"></i> About Owner</a>
+                 <a href="about-owner.html" class="info-btn owner"><i class="fas fa-user-tie"></i> About Owner</a>
                 <a href="team.html" class="info-btn team"><i class="fas fa-users"></i> Team</a>
                 <a href="contact.html" class="info-btn contact"><i class="fas fa-address-book"></i> Contact Details</a>
             </div>
@@ -1383,15 +1384,15 @@
         <div class="footer-section">
             <div class="footer-left">
                 <span class="copy"><i class="fas fa-copyright"></i> 2026 Myrtille Industries. All rights reserved.</span>
-                <span style="color:#5a7a8a;font-size:0.7rem;">|</span>
-                <span style="color:#5a7a8a;font-size:0.7rem;">GST: 08AMHPY5013C1Z4</span>
+                <span style="color:#4a6a8a;font-size:0.7rem;">|</span>
+                <span style="color:#4a6a8a;font-size:0.7rem;">GST: 08AMHPY5013C1Z4</span>
             </div>
             <div class="footer-right">
                 <a href="tel:9782099489"><i class="fas fa-phone"></i> 9782099489</a>
                 <a href="mailto:myrtilleindia@gmail.com"><i class="fas fa-envelope"></i> myrtilleindia@gmail.com</a>
                 <a href="#"><i class="fas fa-map-marker-alt"></i> Jaipur</a>
                 <a href="#" class="footer-pill">
-                    <i class="fas fa-heart" style="color:#b44a7a;"></i> Made with Care
+                    <i class="fas fa-heart" style="color:#f472b6;"></i> Made with Care
                 </a>
             </div>
         </div>
@@ -1459,21 +1460,17 @@
                 const safeHospital = escapeMarkdown(hospital.trim()) || '—';
                 const safeDetails = escapeMarkdown(details.trim()) || '—';
 
-                
-                
-
-               // ✅ FIXED: Using \n for newlines instead of %0A
                 const message =
-                    '📋 *NEW ENQUIRY — MYRTILLE INDUSTRIES*\n' +
-                    '━━━━━━━━━━━━━━━━━━━━━\n' +
-                    '👤 *Name*\n' + safeName + '\n\n' +
-                    '📱 *Mobile*\n' + safeMobile + '\n\n' +
-                    '🏥 *Hospital / Institute*\n' + safeHospital + '\n\n' +
-                    '📝 *Requirement Details*\n' + safeDetails + '\n\n' +
-                    '━━━━━━━━━━━━━━━━━━━━━\n' +
-                    '🕒 ' + dateStr + '\n' +
-                    '🏢 *Myrtille Industries*\n' +
-                    '📞 9782099489 · myrtilleindia@gmail.com';
+                    `📋 *NEW ENQUIRY — MYRTILLE INDUSTRIES*%0A` +
+                    `━━━━━━━━━━━━━━━━━━━━━%0A` +
+                    `👤 *Name*%0A${safeName}%0A%0A` +
+                    `📱 *Mobile*%0A${safeMobile}%0A%0A` +
+                    `🏥 *Hospital / Institute*%0A${safeHospital}%0A%0A` +
+                    `📝 *Requirement Details*%0A${safeDetails}%0A%0A` +
+                    `━━━━━━━━━━━━━━━━━━━━━%0A` +
+                    `🕒 ${dateStr}%0A` +
+                    `🏢 *Myrtille Industries*%0A` +
+                    `📞 9782099489 · myrtilleindia@gmail.com`;
 
                 const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
